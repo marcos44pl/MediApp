@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WcfService.Entities
 {
+        [Serializable]
     public class IllnessHasSymptom
     {
         public int IllnessHasSymptomId { get; set; }

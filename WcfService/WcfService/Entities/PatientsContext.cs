@@ -2,13 +2,13 @@ namespace WcfService.Entities
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
 
     public class PatientsContext : DbContext
     {
 
         public PatientsContext()
-            : base("name=Patients")
         {           
         }
 
@@ -21,7 +21,7 @@ namespace WcfService.Entities
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<>
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
         }
     }

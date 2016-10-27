@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace WcfService.Entities
 {
+    [Serializable]
     public class Illness
     {
-        public int IllnessId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

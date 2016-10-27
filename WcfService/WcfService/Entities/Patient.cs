@@ -5,9 +5,10 @@ using System.Web;
 
 namespace WcfService.Entities
 {
+    [Serializable]
     public class Patient
     {
-        public int PatientId { get; set; }
+        public int Id { get; set; }
         public string FstName { get; set; }
         public string Surname { get; set; }
         public bool Sex { get; set; }

@@ -5,9 +5,10 @@ using System.Web;
 
 namespace WcfService.Entities
 {
+        [Serializable]
     public class LifeFuncMeasure
     {
-        public int LifeFuncMeasureId { get; set; }
+        public int Id { get; set; }
         public double Temp { get; set; }
         public int LowPressure { get; set; }
         public int HighPressure { get; set; }
