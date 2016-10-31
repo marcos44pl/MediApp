@@ -9,7 +9,9 @@ namespace WcfService.Entities
     {
 
         public PatientsContext()
-        {           
+             : base("name=Pacjent")
+        {
+            Database.SetInitializer<PatientsContext>(new CreateDatabaseIfNotExists<PatientsContext>());
         }
 
         public DbSet<Illness> TableIllness { get; set; }

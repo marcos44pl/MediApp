@@ -10,6 +10,11 @@ namespace MediApp.Controllers
     {
         public ActionResult Index()
         {
+            string serviceUri = "http://localhost:2670/WcfDataService.svc";
+            DbServices.PatientsContext context = new DbServices.PatientsContext(new Uri(serviceUri));
+            serviceUri += "/GetIllness";
+            var result = context.Execute<DbServices.Illness>(new Uri(serviceUri));
+            var resultList = result.ToList();
             return View();
         }
 

@@ -13,7 +13,7 @@ namespace WcfService.Entities
         public string Surname { get; set; }
         public bool Sex { get; set; }
         public int Height { get; set; }
-        public int Email { get; set; }
+        public string Email { get; set; }
         public byte[] Pass { get; set;} 
     }
 }

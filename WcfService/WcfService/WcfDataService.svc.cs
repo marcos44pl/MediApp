@@ -22,25 +22,22 @@ namespace WcfService
         // This method is called only once to initialize service-wide policies.
         public static void InitializeService(DataServiceConfiguration config)
         {
+            config.SetEntitySetAccessRule("*", EntitySetRights.All);
+            config.SetServiceOperationAccessRule("*", ServiceOperationRights.All);
             config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V3;
         }
         
         // Sample method to get data
-        [WebInvoke(Method = "POST")]
-        public IQueryable<Illness> GetIllness()
+        [WebGet]
+        public IEnumerable<Illness> GetIllness()
         {
             return CurrentDataSource.TableIllness;
         }
+
         [WebGet]
-        public int GetIdTest()
+        public void fill()
         {
-            return 123;
-        }
-        [WebGet]
-        public void GetTest()
-        {
-            int i = 5;
-            i += 5;
+            FillDb fillDb = new FillDb();
         }
     }
 }
