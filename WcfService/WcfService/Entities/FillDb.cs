@@ -13,8 +13,8 @@ namespace WcfService.Entities
             {
 
                 Illness i1 = new Illness { Name = "Grypa" };
-                Illness i2 = new Illness { Name = "Rak" };
-                Illness i3 = new Illness { Name = "Rzeżączka" };
+                Illness i2 = new Illness { Name = "Astma" };
+                Illness i3 = new Illness { Name = "Angina" };
 
                 var illness = db.Set<Illness>();
                 illness.Add(i1);
@@ -23,8 +23,8 @@ namespace WcfService.Entities
 
                 db.SaveChanges();
 
-                Patient patient = new Patient { Email = "abc@rak.pl", FstName = "Janusz", Surname = "Rak", Height = 180, Sex = true };
-                Patient patient1 = new Patient { Email = "abc@hiv.pl", FstName = "Marian", Surname = "Hiv", Height = 160, Sex = true };
+                Patient patient = new Patient { Email = "jankow@pacjent.com", FstName = "Janusz", Surname = "Kowalski", Height = 180, Sex = "mężczyzna" };
+                Patient patient1 = new Patient { Email = "marnow@pacjent.com", FstName = "Marian", Surname = "Nowak", Height = 160, Sex = "mężczyzna" };
                 var patients = db.Set<Patient>();
                 patients.Add(patient);
                 patients.Add(patient1);
@@ -32,7 +32,7 @@ namespace WcfService.Entities
                 db.SaveChanges();
 
                 var patientwassick = db.Set<PatientWasSick>();
-                patientwassick.Add(new PatientWasSick { Date = DateTime.Now,Illness = i1,Patient = patient });
+                patientwassick.Add(new PatientWasSick { Date = DateTime.Now,Illness = i1, Patient = patient });
                 patientwassick.Add(new PatientWasSick { Date = DateTime.Now, Illness = i2, Patient = patient });
                 patientwassick.Add(new PatientWasSick { Date = DateTime.Now, Illness = i3, Patient = patient1 });
 
