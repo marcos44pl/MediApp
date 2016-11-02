@@ -27,13 +27,25 @@ namespace WcfService
             config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V3;
         }
         
-        // Sample method to get data
+        // Methods to get data
         [WebGet]
         public IEnumerable<Illness> GetIllness()
         {
             return CurrentDataSource.TableIllness;
         }
 
+        [WebGet]
+        public IEnumerable<Patient> GetPatient()
+        {
+            return CurrentDataSource.TablePatient;
+        }
+
+        [WebGet]
+        public IEnumerable<Symptom> GetSymptom()
+        {
+            return CurrentDataSource.TableSymptom;
+        }
+        
         [WebGet]
         public void fill()
         {
