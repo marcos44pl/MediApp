@@ -45,7 +45,20 @@ namespace WcfService
         {
             return CurrentDataSource.TableSymptom;
         }
-        
+
+        [WebGet]
+        public IEnumerable<Question> GetQuestion()
+        {
+            return CurrentDataSource.TableQuestion;
+        }
+
+        [WebGet]
+        public IEnumerable<Output> GetOutput()
+        {
+            return CurrentDataSource.TableOutput;
+        }
+
+        // Method to fill database
         [WebGet]
         public void fill()
         {
