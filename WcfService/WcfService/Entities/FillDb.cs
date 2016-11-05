@@ -11,10 +11,14 @@ namespace WcfService.Entities
         {
             using (var db = new PatientsContext())
             {
-
+                // Adding all illnesses
                 Illness i1 = new Illness { Name = "Grypa" };
                 Illness i2 = new Illness { Name = "Astma" };
                 Illness i3 = new Illness { Name = "Angina" };
+                Illness i4 = new Illness { Name = "Nieżyt nosa" };
+                Illness i5 = new Illness { Name = "Przewlekłe zapalenie krtani" };
+                Illness i6 = new Illness { Name = "Zapalenie oskrzeli" };
+                Illness i7 = new Illness { Name = "Katar sienny" };
 
                 var illness = db.Set<Illness>();
                 illness.Add(i1);
@@ -38,9 +42,8 @@ namespace WcfService.Entities
 
                 db.SaveChanges();
 
-                // Dodanie wszystkich pytań do bazy
-
-                Question question = new Question { Name = "Kichanie", Content = "Czy kichasz znacznie częściej niż zdarzało Ci się poprzednio?" };
+                // Adding all questions 
+                Question question1 = new Question { Name = "Kichanie", Content = "Czy kichasz znacznie częściej niż zdarzało Ci się poprzednio?" };
                 Question question2 = new Question { Name = "Ból gardła", Content = "Czy boli Cię gardło?" };
                 Question question3 = new Question { Name = "Osłabienie", Content = "Czy czujesz się osłabiony?" };
                 Question question4 = new Question { Name = "Bóle kostno-stawowe", Content = "Czy odczuwasz bóle kostno-stawowe?" };
@@ -55,7 +58,7 @@ namespace WcfService.Entities
                 Question question13 = new Question { Name = "Spuchnięte gardło", Content = "Czy masz spuchnięte gardło, problemy z przełykaniemm i męczy Cię chrypka?" };
 
                 var questions = db.Set<Question>();
-                questions.Add(question);
+                questions.Add(question1);
                 questions.Add(question2);
                 questions.Add(question3);
                 questions.Add(question4);

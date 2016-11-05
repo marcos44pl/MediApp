@@ -53,6 +53,13 @@ namespace WcfService
         }
 
         [WebGet]
+        public IEnumerable<Output> GetOutput()
+        {
+            return CurrentDataSource.TableOutput;
+        }
+
+        // Method to fill database
+        [WebGet]
         public void fill()
         {
             FillDb fillDb = new FillDb();

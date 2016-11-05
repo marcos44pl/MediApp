@@ -21,6 +21,7 @@ namespace WcfService.Entities
         public DbSet<LifeFuncMeasure> TableLifeFuncMeasure { get; set; }
         public DbSet<PatientWasSick> TablePatientWasSick { get; set; }
         public DbSet<Question> TableQuestion { get; set; }
+        public DbSet<Output> TableOutput { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
