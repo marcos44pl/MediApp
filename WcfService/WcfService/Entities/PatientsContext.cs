@@ -20,6 +20,7 @@ namespace WcfService.Entities
         public DbSet<Patient> TablePatient { get; set; }
         public DbSet<LifeFuncMeasure> TableLifeFuncMeasure { get; set; }
         public DbSet<PatientWasSick> TablePatientWasSick { get; set; }
+        public DbSet<Question> TableQuestion { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

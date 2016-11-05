@@ -37,6 +37,17 @@ namespace WcfService.Entities
                 patientwassick.Add(new PatientWasSick { Date = DateTime.Now, Illness = i3, Patient = patient1 });
 
                 db.SaveChanges();
+
+                Question question = new Question { Name = "Kichanie", Content = "Czy kichasz znacznie częściej niż zdarzało Ci się poprzednio?" };
+                Question question2 = new Question { Name = "Ból gardła", Content = "Czy boli Cię gardło?" };
+                Question question3 = new Question { Name = "Osłabienie", Content = "Czy czujesz się osłabiony?" };
+                Question question4 = new Question { Name = "Bóle kostno-stawowe", Content = "Czy odczuwasz bóle kostno-stawowe?" };
+
+                var questions = db.Set<Question>();
+                questions.Add(question);
+                questions.Add(question2);
+                questions.Add(question3);
+                questions.Add(question4);
             }
         }
     }

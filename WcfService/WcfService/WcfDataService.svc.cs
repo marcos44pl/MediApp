@@ -45,7 +45,13 @@ namespace WcfService
         {
             return CurrentDataSource.TableSymptom;
         }
-        
+
+        [WebGet]
+        public IEnumerable<Question> GetQuestion()
+        {
+            return CurrentDataSource.TableQuestion;
+        }
+
         [WebGet]
         public void fill()
         {
