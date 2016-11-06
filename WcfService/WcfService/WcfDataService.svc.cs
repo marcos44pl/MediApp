@@ -12,7 +12,8 @@ using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Web;
-using WcfService.Entities;
+using WcfService.DbContext;
+using EntityModels;
 
 namespace WcfService
 {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MediApp.Controllers
+namespace MediApp.WcfControllers
 {
-    public class ConfigWCF
+    public class WcfConfig
     {
         public static int WcfPort = 2670;
         public static string WcfName = "WcfDataService.svc";
-        public static string WcfAdress = string.Format("http://localhost:{1}/{2}",WcfPort,WcfName);
+        public static string WcfAdress = string.Format("http://localhost:{0}/{1}",WcfPort,WcfName);
         public static Uri WcfUri = new Uri(WcfAdress);
     }
 }

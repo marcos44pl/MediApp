@@ -1,9 +1,10 @@
-namespace WcfService.Entities
+namespace WcfService.DbContext
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
+    using EntityModels;
 
     public class PatientsContext : DbContext
     {
@@ -20,6 +21,10 @@ namespace WcfService.Entities
         public DbSet<Patient> TablePatient { get; set; }
         public DbSet<LifeFuncMeasure> TableLifeFuncMeasure { get; set; }
         public DbSet<PatientWasSick> TablePatientWasSick { get; set; }
+        public DbSet<Role> TableRole { get; set; }
+        public DbSet<User> TableUser { get; set; }
+        public DbSet<UserHasRole> TableUserHasRole { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
