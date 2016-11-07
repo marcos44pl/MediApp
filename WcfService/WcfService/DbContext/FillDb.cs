@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using EntityModels;
 
-namespace WcfService.Entities
+namespace WcfService.DbContext
 {
     public class FillDb
     {
@@ -11,7 +12,35 @@ namespace WcfService.Entities
         {
             using (var db = new PatientsContext())
             {
-                // Adding all illnesses
+                var users = db.Set<User>();
+                User u = new User { Email = "abc@rak.pl" };
+                User u1 = new User { Email = "efg@hiv.pl" };
+
+                users.Add(u);
+                users.Add(u1);
+
+                db.SaveChanges();
+
+                
+                var roles = db.Set<Role>();
+                Role r = new Role { Name = RolesKind.PATIENT, Users = db.TableUser.ToList() };
+                Role r1 = new Role { Name = RolesKind.MEDIC };
+                Role r3 = new Role { Name = RolesKind.ADMIN };
+
+                roles.Add(r);
+                roles.Add(r1);
+                roles.Add(r3);
+
+                db.SaveChanges();
+
+                Patient patient = new Patient {  Height = 180, Sex = true };
+                Patient patient1 = new Patient { Height = 160, Sex = true };
+                var patients = db.Set<Patient>();
+                patients.Add(patient);
+                patients.Add(patient1);
+
+                db.SaveChanges();
+
                 Illness i1 = new Illness { Name = "Grypa" };
                 Illness i2 = new Illness { Name = "Astma" };
                 Illness i3 = new Illness { Name = "Angina" };
@@ -24,14 +53,6 @@ namespace WcfService.Entities
                 illness.Add(i1);
                 illness.Add(i2);
                 illness.Add(i3);
-
-                db.SaveChanges();
-
-                Patient patient = new Patient { Email = "jankow@pacjent.com", FstName = "Janusz", Surname = "Kowalski", Height = 180, Sex = "mężczyzna" };
-                Patient patient1 = new Patient { Email = "marnow@pacjent.com", FstName = "Marian", Surname = "Nowak", Height = 160, Sex = "mężczyzna" };
-                var patients = db.Set<Patient>();
-                patients.Add(patient);
-                patients.Add(patient1);
 
                 db.SaveChanges();
 
