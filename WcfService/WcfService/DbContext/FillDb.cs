@@ -19,25 +19,25 @@ namespace WcfService.DbContext
                 users.Add(u);
                 users.Add(u1);
 
+                db.SaveChanges();
+
+                
                 var roles = db.Set<Role>();
-                Role r = new Role { Name = "Pacjent" };
-                Role r1 = new Role { Name = "Lekarz" };
+                Role r = new Role { Name = RolesKind.PATIENT, Users = db.TableUser.ToList() };
+                Role r1 = new Role { Name = RolesKind.MEDIC };
+                Role r3 = new Role { Name = RolesKind.ADMIN };
 
                 roles.Add(r);
                 roles.Add(r1);
+                roles.Add(r3);
+
+                db.SaveChanges();
 
                 Patient patient = new Patient {  Height = 180, Sex = true };
                 Patient patient1 = new Patient { Height = 160, Sex = true };
                 var patients = db.Set<Patient>();
                 patients.Add(patient);
                 patients.Add(patient1);
-
-                var uhrs = db.Set<UserHasRole>();
-                UserHasRole uhr = new UserHasRole { Role = r, User = u };
-                UserHasRole uhr1 = new UserHasRole { Role = r, User = u1 };
-
-                uhrs.Add(uhr);
-                uhrs.Add(uhr1);
 
                 db.SaveChanges();
 

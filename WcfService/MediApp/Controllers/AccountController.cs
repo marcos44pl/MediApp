@@ -8,13 +8,14 @@ namespace MediApp.Controllers
 {
     public class AccountController : Controller
     {
-
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
         //
         // POST: /Account/Login
+       [AllowAnonymous]
        [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
@@ -28,6 +29,8 @@ namespace MediApp.Controllers
 
             if (WcfController.authenticateUser(model.Email, crypto))
             {
+                Security.SessionPersister.Username = model.Email;
+
                 if(null != returnUrl)
                     return Redirect(returnUrl);
                 else
@@ -38,6 +41,7 @@ namespace MediApp.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -45,6 +49,7 @@ namespace MediApp.Controllers
 
         //
         // POST: /Account/Register
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
@@ -75,29 +80,13 @@ namespace MediApp.Controllers
         }
 
 
-        //
-        // GET: /Account/ForgotPassword
-        [AllowAnonymous]
-        public ActionResult ForgotPassword()
-        {
-            return View();
-        }
-
-
-        //
-        // GET: /Account/ForgotPasswordConfirmation
-        [AllowAnonymous]
-        public ActionResult ForgotPasswordConfirmation()
-        {
-            return View();
-        }
 
         //
         // POST: /Account/LogOff
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            Security.SessionPersister.Username = string.Empty;
             return RedirectToAction("Index", "Home");
         }
 

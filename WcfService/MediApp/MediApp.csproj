@@ -198,7 +198,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Security\MediAuthorizeAttribute.cs" />
     <Compile Include="Security\RolePrincipal.cs" />
+    <Compile Include="Security\SessionPersister.cs" />
     <Compile Include="WcfControllers\WcfConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -266,6 +269,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Service References\DbServices\service.edmx" />
+    <Content Include="Views\Account\AccessDenied.cshtml" />
+    <Content Include="Views\Shared\_PatientPartial.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\App_Data\" />

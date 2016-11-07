@@ -13,5 +13,6 @@ namespace EntityModels
         public int?  Pesel { get; set; }
         public string Email { get; set; }
         public byte[] Pass { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }

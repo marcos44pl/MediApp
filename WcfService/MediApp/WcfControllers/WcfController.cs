@@ -11,6 +11,20 @@ namespace MediApp.WcfControllers
     {
         static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
 
+        public static User findUser(string email)
+        {
+            var user = db.TableUser.Where(e => e.Email == email).First();
+
+            List<Role> usrRoles = new List<Role>();
+            foreach (var r in user.Roles)
+                usrRoles.Add(new Role { Id = r.Id, Name = r.Name });  
+
+            return new User { Email = user.Email, Id = user.Id, FstName = user.FstName,
+                               Surname = user.Surname, Pass = user.Pass ,
+                               Pesel = user.Pesel, Roles = usrRoles };
+        }
+
+
         public static bool checkIfExist(string email)
         {
             try

@@ -64,6 +64,7 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Name" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="Users" Relationship="WcfService.DbContext.User_Roles" ToRole="User_Roles_Source" FromRole="User_Roles_Target" />
       </EntityType>
       <EntityType Name="User">
         <Key>
@@ -75,16 +76,7 @@
         <Property Name="Pesel" Type="Edm.Int32" />
         <Property Name="Email" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Pass" Type="Edm.Binary" MaxLength="Max" FixedLength="false" />
-      </EntityType>
-      <EntityType Name="UserHasRole">
-        <Key>
-          <PropertyRef Name="Id" />
-        </Key>
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-        <Property Name="UserId" Type="Edm.Int32" Nullable="false" />
-        <Property Name="RoleId" Type="Edm.Int32" Nullable="false" />
-        <NavigationProperty Name="Role" Relationship="WcfService.DbContext.UserHasRole_Role" ToRole="UserHasRole_Role_Target" FromRole="UserHasRole_Role_Source" />
-        <NavigationProperty Name="User" Relationship="WcfService.DbContext.UserHasRole_User" ToRole="UserHasRole_User_Target" FromRole="UserHasRole_User_Source" />
+        <NavigationProperty Name="Roles" Relationship="WcfService.DbContext.User_Roles" ToRole="User_Roles_Target" FromRole="User_Roles_Source" />
       </EntityType>
       <Association Name="IllnessHasSymptom_Illness">
         <End Type="WcfService.DbContext.Illness" Role="IllnessHasSymptom_Illness_Target" Multiplicity="1">
@@ -156,33 +148,9 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="UserHasRole_Role">
-        <End Type="WcfService.DbContext.Role" Role="UserHasRole_Role_Target" Multiplicity="1">
-          <OnDelete Action="Cascade" />
-        </End>
-        <End Type="WcfService.DbContext.UserHasRole" Role="UserHasRole_Role_Source" Multiplicity="*" />
-        <ReferentialConstraint>
-          <Principal Role="UserHasRole_Role_Target">
-            <PropertyRef Name="Id" />
-          </Principal>
-          <Dependent Role="UserHasRole_Role_Source">
-            <PropertyRef Name="RoleId" />
-          </Dependent>
-        </ReferentialConstraint>
-      </Association>
-      <Association Name="UserHasRole_User">
-        <End Type="WcfService.DbContext.User" Role="UserHasRole_User_Target" Multiplicity="1">
-          <OnDelete Action="Cascade" />
-        </End>
-        <End Type="WcfService.DbContext.UserHasRole" Role="UserHasRole_User_Source" Multiplicity="*" />
-        <ReferentialConstraint>
-          <Principal Role="UserHasRole_User_Target">
-            <PropertyRef Name="Id" />
-          </Principal>
-          <Dependent Role="UserHasRole_User_Source">
-            <PropertyRef Name="UserId" />
-          </Dependent>
-        </ReferentialConstraint>
+      <Association Name="User_Roles">
+        <End Type="WcfService.DbContext.User" Role="User_Roles_Source" Multiplicity="*" />
+        <End Type="WcfService.DbContext.Role" Role="User_Roles_Target" Multiplicity="*" />
       </Association>
       <EntityContainer Name="PatientsContext" m:IsDefaultEntityContainer="true">
         <EntitySet Name="TableIllness" EntityType="WcfService.DbContext.Illness" />
@@ -193,7 +161,6 @@
         <EntitySet Name="TablePatientWasSick" EntityType="WcfService.DbContext.PatientWasSick" />
         <EntitySet Name="TableRole" EntityType="WcfService.DbContext.Role" />
         <EntitySet Name="TableUser" EntityType="WcfService.DbContext.User" />
-        <EntitySet Name="TableUserHasRole" EntityType="WcfService.DbContext.UserHasRole" />
         <FunctionImport Name="GetIllness" ReturnType="Collection(WcfService.DbContext.Illness)" EntitySet="TableIllness" m:HttpMethod="GET" />
         <FunctionImport Name="fill" m:HttpMethod="GET" />
         <AssociationSet Name="IllnessHasSymptom_Illness" Association="WcfService.DbContext.IllnessHasSymptom_Illness">
@@ -216,13 +183,9 @@
           <End Role="PatientWasSick_Patient_Source" EntitySet="TablePatientWasSick" />
           <End Role="PatientWasSick_Patient_Target" EntitySet="TablePatient" />
         </AssociationSet>
-        <AssociationSet Name="UserHasRole_Role" Association="WcfService.DbContext.UserHasRole_Role">
-          <End Role="UserHasRole_Role_Source" EntitySet="TableUserHasRole" />
-          <End Role="UserHasRole_Role_Target" EntitySet="TableRole" />
-        </AssociationSet>
-        <AssociationSet Name="UserHasRole_User" Association="WcfService.DbContext.UserHasRole_User">
-          <End Role="UserHasRole_User_Source" EntitySet="TableUserHasRole" />
-          <End Role="UserHasRole_User_Target" EntitySet="TableUser" />
+        <AssociationSet Name="User_Roles" Association="WcfService.DbContext.User_Roles">
+          <End Role="User_Roles_Target" EntitySet="TableRole" />
+          <End Role="User_Roles_Source" EntitySet="TableUser" />
         </AssociationSet>
       </EntityContainer>
     </Schema>

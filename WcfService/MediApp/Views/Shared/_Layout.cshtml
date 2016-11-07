@@ -24,8 +24,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("O nas", "About", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    @Html.Partial("_PatientPartial")
                 </ul>
                 @Html.Partial("_LoginPartial")
+
             </div>
         </div>
     </div>

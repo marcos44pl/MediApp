@@ -1,0 +1,13 @@
+﻿@using MediApp.Security;
+@using EntityModels;
+
+@if(null != SessionPersister.User && SessionPersister.User.Roles.Any(r => r.Name == RolesKind.PATIENT))
+{
+
+    <li>
+        @Html.ActionLink("Cos tam Pacjenta", "Index", "Patient", routeValues: null, htmlAttributes: new { title = "Manage" })
+    </li>
+
+}
+
+

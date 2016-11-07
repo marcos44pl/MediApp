@@ -23,8 +23,6 @@ namespace WcfService.DbContext
         public DbSet<PatientWasSick> TablePatientWasSick { get; set; }
         public DbSet<Role> TableRole { get; set; }
         public DbSet<User> TableUser { get; set; }
-        public DbSet<UserHasRole> TableUserHasRole { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

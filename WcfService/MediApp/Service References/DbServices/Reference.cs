@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 06.11.2016 22:24:48
+// Generation date: 07.11.2016 19:33:51
 namespace MediApp.DbServices
 {
     
@@ -197,23 +197,6 @@ namespace MediApp.DbServices
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<User> _TableUser;
         /// <summary>
-        /// There are no comments for TableUserHasRole in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<UserHasRole> TableUserHasRole
-        {
-            get
-            {
-                if ((this._TableUserHasRole == null))
-                {
-                    this._TableUserHasRole = base.CreateQuery<UserHasRole>("TableUserHasRole");
-                }
-                return this._TableUserHasRole;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<UserHasRole> _TableUserHasRole;
-        /// <summary>
         /// There are no comments for TableIllness in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -277,14 +260,6 @@ namespace MediApp.DbServices
         {
             base.AddObject("TableUser", user);
         }
-        /// <summary>
-        /// There are no comments for TableUserHasRole in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToTableUserHasRole(UserHasRole userHasRole)
-        {
-            base.AddObject("TableUserHasRole", userHasRole);
-        }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private abstract class GeneratedEdmModel
         {
@@ -341,106 +316,87 @@ namespace MediApp.DbServices
                 "ame=\"Role\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int" +
                 "32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schema" +
                 "s.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Type=\"Edm.St" +
-                "ring\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /></EntityType><EntityT" +
-                "ype Name=\"User\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Ed" +
-                "m.Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://s" +
-                "chemas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"FstName\" Type" +
-                "=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Nam" +
-                "e=\"Surname\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\"" +
-                " /><Property Name=\"Pesel\" Type=\"Edm.Int32\" /><Property Name=\"Email\" Type=\"Edm.St" +
-                "ring\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Pass\"" +
-                " Type=\"Edm.Binary\" MaxLength=\"Max\" FixedLength=\"false\" /></EntityType><EntityTyp" +
-                "e Name=\"UserHasRole\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Typ" +
-                "e=\"Edm.Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"htt" +
-                "p://schemas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"UserId\" " +
-                "Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"RoleId\" Type=\"Edm.Int32\" Nul" +
-                "lable=\"false\" /><NavigationProperty Name=\"Role\" Relationship=\"WcfService.DbConte" +
-                "xt.UserHasRole_Role\" ToRole=\"UserHasRole_Role_Target\" FromRole=\"UserHasRole_Role" +
-                "_Source\" /><NavigationProperty Name=\"User\" Relationship=\"WcfService.DbContext.Us" +
-                "erHasRole_User\" ToRole=\"UserHasRole_User_Target\" FromRole=\"UserHasRole_User_Sour" +
-                "ce\" /></EntityType><Association Name=\"IllnessHasSymptom_Illness\"><End Type=\"WcfS" +
-                "ervice.DbContext.Illness\" Role=\"IllnessHasSymptom_Illness_Target\" Multiplicity=\"" +
-                "1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.IllnessHas" +
-                "Symptom\" Role=\"IllnessHasSymptom_Illness_Source\" Multiplicity=\"*\" /><Referential" +
-                "Constraint><Principal Role=\"IllnessHasSymptom_Illness_Target\"><PropertyRef Name=" +
-                "\"Id\" /></Principal><Dependent Role=\"IllnessHasSymptom_Illness_Source\"><PropertyR" +
-                "ef Name=\"IllnessId\" /></Dependent></ReferentialConstraint></Association><Associa" +
-                "tion Name=\"IllnessHasSymptom_Symptom\"><End Type=\"WcfService.DbContext.Symptom\" R" +
-                "ole=\"IllnessHasSymptom_Symptom_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascad" +
-                "e\" /></End><End Type=\"WcfService.DbContext.IllnessHasSymptom\" Role=\"IllnessHasSy" +
-                "mptom_Symptom_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=" +
-                "\"IllnessHasSymptom_Symptom_Target\"><PropertyRef Name=\"Id\" /></Principal><Depende" +
-                "nt Role=\"IllnessHasSymptom_Symptom_Source\"><PropertyRef Name=\"SymptomId\" /></Dep" +
-                "endent></ReferentialConstraint></Association><Association Name=\"LifeFuncMeasure_" +
-                "Patient\"><End Type=\"WcfService.DbContext.Patient\" Role=\"LifeFuncMeasure_Patient_" +
-                "Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfServic" +
-                "e.DbContext.LifeFuncMeasure\" Role=\"LifeFuncMeasure_Patient_Source\" Multiplicity=" +
-                "\"*\" /><ReferentialConstraint><Principal Role=\"LifeFuncMeasure_Patient_Target\"><P" +
-                "ropertyRef Name=\"Id\" /></Principal><Dependent Role=\"LifeFuncMeasure_Patient_Sour" +
-                "ce\"><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialConstraint></Associ" +
-                "ation><Association Name=\"PatientWasSick_Illness\"><End Type=\"WcfService.DbContext" +
-                ".Illness\" Role=\"PatientWasSick_Illness_Target\" Multiplicity=\"1\"><OnDelete Action" +
-                "=\"Cascade\" /></End><End Type=\"WcfService.DbContext.PatientWasSick\" Role=\"Patient" +
-                "WasSick_Illness_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Rol" +
-                "e=\"PatientWasSick_Illness_Target\"><PropertyRef Name=\"Id\" /></Principal><Dependen" +
-                "t Role=\"PatientWasSick_Illness_Source\"><PropertyRef Name=\"IllnessId\" /></Depende" +
-                "nt></ReferentialConstraint></Association><Association Name=";
+                "ring\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><NavigationProperty N" +
+                "ame=\"Users\" Relationship=\"WcfService.DbContext.User_Roles\" ToRole=\"User_Roles_So" +
+                "urce\" FromRole=\"User_Roles_Target\" /></EntityType><EntityType Name=\"User\"><Key><" +
+                "PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"fal" +
+                "se\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsoft.com/a" +
+                "do/2009/02/edm/annotation\" /><Property Name=\"FstName\" Type=\"Edm.String\" MaxLengt" +
+                "h=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Surname\" Type=\"Edm." +
+                "String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Pes" +
+                "el\" Type=\"Edm.Int32\" /><Property Name=\"Email\" Type=\"Edm.String\" MaxLength=\"Max\" " +
+                "FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Pass\" Type=\"Edm.Binary\" Max" +
+                "Length=\"Max\" FixedLength=\"false\" /><NavigationProperty Name=\"Roles\" Relationship" +
+                "=\"WcfService.DbContext.User_Roles\" ToRole=\"User_Roles_Target\" FromRole=\"User_Rol" +
+                "es_Source\" /></EntityType><Association Name=\"IllnessHasSymptom_Illness\"><End Typ" +
+                "e=\"WcfService.DbContext.Illness\" Role=\"IllnessHasSymptom_Illness_Target\" Multipl" +
+                "icity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.Ill" +
+                "nessHasSymptom\" Role=\"IllnessHasSymptom_Illness_Source\" Multiplicity=\"*\" /><Refe" +
+                "rentialConstraint><Principal Role=\"IllnessHasSymptom_Illness_Target\"><PropertyRe" +
+                "f Name=\"Id\" /></Principal><Dependent Role=\"IllnessHasSymptom_Illness_Source\"><Pr" +
+                "opertyRef Name=\"IllnessId\" /></Dependent></ReferentialConstraint></Association><" +
+                "Association Name=\"IllnessHasSymptom_Symptom\"><End Type=\"WcfService.DbContext.Sym" +
+                "ptom\" Role=\"IllnessHasSymptom_Symptom_Target\" Multiplicity=\"1\"><OnDelete Action=" +
+                "\"Cascade\" /></End><End Type=\"WcfService.DbContext.IllnessHasSymptom\" Role=\"Illne" +
+                "ssHasSymptom_Symptom_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Principa" +
+                "l Role=\"IllnessHasSymptom_Symptom_Target\"><PropertyRef Name=\"Id\" /></Principal><" +
+                "Dependent Role=\"IllnessHasSymptom_Symptom_Source\"><PropertyRef Name=\"SymptomId\" " +
+                "/></Dependent></ReferentialConstraint></Association><Association Name=\"LifeFuncM" +
+                "easure_Patient\"><End Type=\"WcfService.DbContext.Patient\" Role=\"LifeFuncMeasure_P" +
+                "atient_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"Wc" +
+                "fService.DbContext.LifeFuncMeasure\" Role=\"LifeFuncMeasure_Patient_Source\" Multip" +
+                "licity=\"*\" /><ReferentialConstraint><Principal Role=\"LifeFuncMeasure_Patient_Tar" +
+                "get\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"LifeFuncMeasure_Patie" +
+                "nt_Source\"><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialConstraint><" +
+                "/Association><Association Name=\"PatientWasSick_Illness\"><End Type=\"WcfService.Db" +
+                "Context.Illness\" Role=\"PatientWasSick_Illness_Target\" Multiplicity=\"1\"><OnDelete" +
+                " Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.PatientWasSick\" Role=\"" +
+                "PatientWasSick_Illness_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Princi" +
+                "pal Role=\"PatientWasSick_Illness_Target\"><PropertyRef Name=\"Id\" /></Principal><D" +
+                "ependent Role=\"PatientWasSick_Illness_Source\"><PropertyRef Name=\"IllnessId\" /></" +
+                "Dependent></ReferentialConstraint></Association><Association Name=\"PatientWasSic" +
+                "k_Patient\"><End Type=\"WcfService.DbContext.Patient\" Role=\"PatientWasSick_Patient" +
+                "_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfServi" +
+                "ce.DbContext.PatientWasSick\" Role=\"PatientWasSick_Patient_Source\" Multiplicity=\"" +
+                "*\" /><ReferentialConstraint><Principal Role=\"PatientWasSick_Patient_Target\"><Pro" +
+                "pertyRef Name=\"Id\" /></Principal><Dependent Role=\"PatientWa";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = "\"PatientWasSick_Patient\"><End Type=\"WcfService.DbContext.Patient\" Role=\"PatientWa" +
-                "sSick_Patient_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End T" +
-                "ype=\"WcfService.DbContext.PatientWasSick\" Role=\"PatientWasSick_Patient_Source\" M" +
-                "ultiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"PatientWasSick_Patient" +
-                "_Target\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"PatientWasSick_Pa" +
-                "tient_Source\"><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialConstrain" +
-                "t></Association><Association Name=\"UserHasRole_Role\"><End Type=\"WcfService.DbCon" +
-                "text.Role\" Role=\"UserHasRole_Role_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cas" +
-                "cade\" /></End><End Type=\"WcfService.DbContext.UserHasRole\" Role=\"UserHasRole_Rol" +
-                "e_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"UserHasRole" +
-                "_Role_Target\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"UserHasRole_" +
-                "Role_Source\"><PropertyRef Name=\"RoleId\" /></Dependent></ReferentialConstraint></" +
-                "Association><Association Name=\"UserHasRole_User\"><End Type=\"WcfService.DbContext" +
-                ".User\" Role=\"UserHasRole_User_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade" +
-                "\" /></End><End Type=\"WcfService.DbContext.UserHasRole\" Role=\"UserHasRole_User_So" +
-                "urce\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"UserHasRole_Use" +
-                "r_Target\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"UserHasRole_User" +
-                "_Source\"><PropertyRef Name=\"UserId\" /></Dependent></ReferentialConstraint></Asso" +
-                "ciation><EntityContainer Name=\"PatientsContext\" m:IsDefaultEntityContainer=\"true" +
-                "\"><EntitySet Name=\"TableIllness\" EntityType=\"WcfService.DbContext.Illness\" /><En" +
-                "titySet Name=\"TableIllnessHasSymptom\" EntityType=\"WcfService.DbContext.IllnessHa" +
-                "sSymptom\" /><EntitySet Name=\"TableSymptom\" EntityType=\"WcfService.DbContext.Symp" +
-                "tom\" /><EntitySet Name=\"TableLifeFuncMeasure\" EntityType=\"WcfService.DbContext.L" +
-                "ifeFuncMeasure\" /><EntitySet Name=\"TablePatient\" EntityType=\"WcfService.DbContex" +
-                "t.Patient\" /><EntitySet Name=\"TablePatientWasSick\" EntityType=\"WcfService.DbCont" +
-                "ext.PatientWasSick\" /><EntitySet Name=\"TableRole\" EntityType=\"WcfService.DbConte" +
-                "xt.Role\" /><EntitySet Name=\"TableUser\" EntityType=\"WcfService.DbContext.User\" />" +
-                "<EntitySet Name=\"TableUserHasRole\" EntityType=\"WcfService.DbContext.UserHasRole\"" +
-                " /><FunctionImport Name=\"GetIllness\" ReturnType=\"Collection(WcfService.DbContext" +
-                ".Illness)\" EntitySet=\"TableIllness\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"f" +
-                "ill\" m:HttpMethod=\"GET\" /><AssociationSet Name=\"IllnessHasSymptom_Illness\" Assoc" +
-                "iation=\"WcfService.DbContext.IllnessHasSymptom_Illness\"><End Role=\"IllnessHasSym" +
-                "ptom_Illness_Source\" EntitySet=\"TableIllnessHasSymptom\" /><End Role=\"IllnessHasS" +
-                "ymptom_Illness_Target\" EntitySet=\"TableIllness\" /></AssociationSet><AssociationS" +
-                "et Name=\"IllnessHasSymptom_Symptom\" Association=\"WcfService.DbContext.IllnessHas" +
-                "Symptom_Symptom\"><End Role=\"IllnessHasSymptom_Symptom_Source\" EntitySet=\"TableIl" +
-                "lnessHasSymptom\" /><End Role=\"IllnessHasSymptom_Symptom_Target\" EntitySet=\"Table" +
-                "Symptom\" /></AssociationSet><AssociationSet Name=\"LifeFuncMeasure_Patient\" Assoc" +
-                "iation=\"WcfService.DbContext.LifeFuncMeasure_Patient\"><End Role=\"LifeFuncMeasure" +
-                "_Patient_Source\" EntitySet=\"TableLifeFuncMeasure\" /><End Role=\"LifeFuncMeasure_P" +
-                "atient_Target\" EntitySet=\"TablePatient\" /></AssociationSet><AssociationSet Name=" +
-                "\"PatientWasSick_Illness\" Association=\"WcfService.DbContext.PatientWasSick_Illnes" +
-                "s\"><End Role=\"PatientWasSick_Illness_Source\" EntitySet=\"TablePatientWasSick\" /><" +
-                "End Role=\"PatientWasSick_Illness_Target\" EntitySet=\"TableIllness\" /></Associatio" +
-                "nSet><AssociationSet Name=\"PatientWasSick_Patient\" Association=\"WcfService.DbCon" +
-                "text.PatientWasSick_Patient\"><End Role=\"PatientWasSick_Patient_Source\" EntitySet" +
-                "=\"TablePatientWasSick\" /><End Role=\"PatientWasSick_Patient_Target\" EntitySet=\"Ta" +
-                "blePatient\" /></AssociationSet><AssociationSet Name=\"UserHasRole_Role\" Associati" +
-                "on=\"WcfService.DbContext.UserHasRole_Role\"><End Role=\"UserHasRole_Role_Source\" E" +
-                "ntitySet=\"TableUserHasRole\" /><End Role=\"UserHasRole_Role_Target\" EntitySet=\"Tab" +
-                "leRole\" /></AssociationSet><AssociationSet Name=\"UserHasRole_User\" Association=\"" +
-                "WcfService.DbContext.UserHasRole_User\"><End Role=\"UserHasRole_User_Source\" Entit" +
-                "ySet=\"TableUserHasRole\" /><End Role=\"UserHasRole_User_Target\" EntitySet=\"TableUs" +
-                "er\" /></AssociationSet></EntityContainer></Schema></edmx:DataServices></edmx:Edm" +
-                "x>";
+            private const string ModelPart1 = "sSick_Patient_Source\"><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialCo" +
+                "nstraint></Association><Association Name=\"User_Roles\"><End Type=\"WcfService.DbCo" +
+                "ntext.User\" Role=\"User_Roles_Source\" Multiplicity=\"*\" /><End Type=\"WcfService.Db" +
+                "Context.Role\" Role=\"User_Roles_Target\" Multiplicity=\"*\" /></Association><EntityC" +
+                "ontainer Name=\"PatientsContext\" m:IsDefaultEntityContainer=\"true\"><EntitySet Nam" +
+                "e=\"TableIllness\" EntityType=\"WcfService.DbContext.Illness\" /><EntitySet Name=\"Ta" +
+                "bleIllnessHasSymptom\" EntityType=\"WcfService.DbContext.IllnessHasSymptom\" /><Ent" +
+                "itySet Name=\"TableSymptom\" EntityType=\"WcfService.DbContext.Symptom\" /><EntitySe" +
+                "t Name=\"TableLifeFuncMeasure\" EntityType=\"WcfService.DbContext.LifeFuncMeasure\" " +
+                "/><EntitySet Name=\"TablePatient\" EntityType=\"WcfService.DbContext.Patient\" /><En" +
+                "titySet Name=\"TablePatientWasSick\" EntityType=\"WcfService.DbContext.PatientWasSi" +
+                "ck\" /><EntitySet Name=\"TableRole\" EntityType=\"WcfService.DbContext.Role\" /><Enti" +
+                "tySet Name=\"TableUser\" EntityType=\"WcfService.DbContext.User\" /><FunctionImport " +
+                "Name=\"GetIllness\" ReturnType=\"Collection(WcfService.DbContext.Illness)\" EntitySe" +
+                "t=\"TableIllness\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"fill\" m:HttpMethod=\"" +
+                "GET\" /><AssociationSet Name=\"IllnessHasSymptom_Illness\" Association=\"WcfService." +
+                "DbContext.IllnessHasSymptom_Illness\"><End Role=\"IllnessHasSymptom_Illness_Source" +
+                "\" EntitySet=\"TableIllnessHasSymptom\" /><End Role=\"IllnessHasSymptom_Illness_Targ" +
+                "et\" EntitySet=\"TableIllness\" /></AssociationSet><AssociationSet Name=\"IllnessHas" +
+                "Symptom_Symptom\" Association=\"WcfService.DbContext.IllnessHasSymptom_Symptom\"><E" +
+                "nd Role=\"IllnessHasSymptom_Symptom_Source\" EntitySet=\"TableIllnessHasSymptom\" />" +
+                "<End Role=\"IllnessHasSymptom_Symptom_Target\" EntitySet=\"TableSymptom\" /></Associ" +
+                "ationSet><AssociationSet Name=\"LifeFuncMeasure_Patient\" Association=\"WcfService." +
+                "DbContext.LifeFuncMeasure_Patient\"><End Role=\"LifeFuncMeasure_Patient_Source\" En" +
+                "titySet=\"TableLifeFuncMeasure\" /><End Role=\"LifeFuncMeasure_Patient_Target\" Enti" +
+                "tySet=\"TablePatient\" /></AssociationSet><AssociationSet Name=\"PatientWasSick_Ill" +
+                "ness\" Association=\"WcfService.DbContext.PatientWasSick_Illness\"><End Role=\"Patie" +
+                "ntWasSick_Illness_Source\" EntitySet=\"TablePatientWasSick\" /><End Role=\"PatientWa" +
+                "sSick_Illness_Target\" EntitySet=\"TableIllness\" /></AssociationSet><AssociationSe" +
+                "t Name=\"PatientWasSick_Patient\" Association=\"WcfService.DbContext.PatientWasSick" +
+                "_Patient\"><End Role=\"PatientWasSick_Patient_Source\" EntitySet=\"TablePatientWasSi" +
+                "ck\" /><End Role=\"PatientWasSick_Patient_Target\" EntitySet=\"TablePatient\" /></Ass" +
+                "ociationSet><AssociationSet Name=\"User_Roles\" Association=\"WcfService.DbContext." +
+                "User_Roles\"><End Role=\"User_Roles_Target\" EntitySet=\"TableRole\" /><End Role=\"Use" +
+                "r_Roles_Source\" EntitySet=\"TableUser\" /></AssociationSet></EntityContainer></Sch" +
+                "ema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -1235,6 +1191,26 @@ namespace MediApp.DbServices
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Users in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.Collection<User> Users
+        {
+            get
+            {
+                return this._Users;
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    this._Users = value;
+                }
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.Collection<User> _Users = new global::System.Collections.ObjectModel.Collection<User>();
     }
     /// <summary>
     /// There are no comments for WcfService.DbContext.User in the schema.
@@ -1389,127 +1365,25 @@ namespace MediApp.DbServices
         private byte[] _Pass;
         partial void OnPassChanging(byte[] value);
         partial void OnPassChanged();
-    }
-    /// <summary>
-    /// There are no comments for WcfService.DbContext.UserHasRole in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class UserHasRole
-    {
         /// <summary>
-        /// Create a new UserHasRole object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="userId">Initial value of UserId.</param>
-        /// <param name="roleId">Initial value of RoleId.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static UserHasRole CreateUserHasRole(int ID, int userId, int roleId)
-        {
-            UserHasRole userHasRole = new UserHasRole();
-            userHasRole.Id = ID;
-            userHasRole.UserId = userId;
-            userHasRole.RoleId = roleId;
-            return userHasRole;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
+        /// There are no comments for Roles in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int Id
+        public global::System.Collections.ObjectModel.Collection<Role> Roles
         {
             get
             {
-                return this._Id;
+                return this._Roles;
             }
             set
             {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
+                if ((value != null))
+                {
+                    this._Roles = value;
+                }
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _Id;
-        partial void OnIdChanging(int value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property UserId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int UserId
-        {
-            get
-            {
-                return this._UserId;
-            }
-            set
-            {
-                this.OnUserIdChanging(value);
-                this._UserId = value;
-                this.OnUserIdChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _UserId;
-        partial void OnUserIdChanging(int value);
-        partial void OnUserIdChanged();
-        /// <summary>
-        /// There are no comments for Property RoleId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int RoleId
-        {
-            get
-            {
-                return this._RoleId;
-            }
-            set
-            {
-                this.OnRoleIdChanging(value);
-                this._RoleId = value;
-                this.OnRoleIdChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _RoleId;
-        partial void OnRoleIdChanging(int value);
-        partial void OnRoleIdChanged();
-        /// <summary>
-        /// There are no comments for Role in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Role Role
-        {
-            get
-            {
-                return this._Role;
-            }
-            set
-            {
-                this._Role = value;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Role _Role;
-        /// <summary>
-        /// There are no comments for User in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public User User
-        {
-            get
-            {
-                return this._User;
-            }
-            set
-            {
-                this._User = value;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private User _User;
+        private global::System.Collections.ObjectModel.Collection<Role> _Roles = new global::System.Collections.ObjectModel.Collection<Role>();
     }
 }
