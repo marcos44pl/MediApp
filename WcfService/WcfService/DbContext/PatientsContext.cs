@@ -23,7 +23,8 @@ namespace WcfService.DbContext
         public DbSet<PatientWasSick> TablePatientWasSick { get; set; }
         public DbSet<Role> TableRole { get; set; }
         public DbSet<User> TableUser { get; set; }
-
+        public DbSet<Question> TableQuestion { get; set; }
+        public DbSet<Output> TableOutput { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();

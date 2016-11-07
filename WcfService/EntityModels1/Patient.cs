@@ -10,7 +10,7 @@ namespace EntityModels
     {
         public int Id { get; set; }
         public int Pesel { get; set; }
-        public bool Sex { get; set; }
+        public string Sex { get; set; }
         public int Height { get; set; }
     }
 }
