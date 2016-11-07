@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DiseasesHistoryController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Models\PatientViewModels.cs" />
@@ -207,11 +208,13 @@
     <Compile Include="WcfControllers\WcfConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\DiseasesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\DbServices\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -271,6 +274,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Service References\DbServices\service.edmx" />
+    <Content Include="Views\Diseases\Survey.cshtml" />
+    <Content Include="Views\Diseases\DiseasesHistory.cshtml" />
     <Content Include="Views\Account\AccessDenied.cshtml" />
     <Content Include="Views\Shared\_PatientPartial.cshtml" />
     <Content Include="Views\Patient\Index.cshtml" />
