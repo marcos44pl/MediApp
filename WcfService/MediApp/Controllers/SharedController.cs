@@ -13,7 +13,7 @@ namespace MediApp.Controllers
     {
         
         [ChildActionOnly]
-        public ActionResult PatientPartial()
+        public ActionResult _PatientPartial()
         {
             PatientPartialModel model = new PatientPartialModel();
 
