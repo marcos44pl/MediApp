@@ -29,11 +29,11 @@ namespace MediApp.Models
         public string Provider { get; set; }
 
         [Required]
-        [Display(Name = "Code")]
+        [Display(Name = "Kod")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
+        [Display(Name = "Zapamiętać tę przeglądarkęr?")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -55,22 +55,22 @@ namespace MediApp.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
 
-        [Display(Name = "Zapamiętaj mnie?")]
+        [Display(Name = "Zapamiętaj mnie")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "Za mało znaków, conajmniej {2} ", MinimumLength = 2)]
+        [StringLength(100, ErrorMessage = "Za mało znaków, należy wpisać co najmniej {2} ", MinimumLength = 2)]
         [Display(Name = "Imię")]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "Za mało znaków, conajmniej {2}", MinimumLength = 2)]
+        [StringLength(100, ErrorMessage = "Za mało znaków, należy wpisać co najmniej {2}", MinimumLength = 2)]
         [Display(Name = "Nazwisko")]
         public string SurName { get; set; }
 

@@ -11,6 +11,7 @@ namespace MediApp.Controllers
         // GET: Survey
         public ActionResult Index()
         {
+            ViewBag.Message = "Badanie";
             return View();
         }
     }
