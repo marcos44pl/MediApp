@@ -16,6 +16,7 @@ namespace MediApp.Controllers
         //
         // POST: /Account/Login
        [AllowAnonymous]
+       [ValidateAntiForgeryToken]
        [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
@@ -50,6 +51,7 @@ namespace MediApp.Controllers
         //
         // POST: /Account/Register
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
@@ -84,6 +86,7 @@ namespace MediApp.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             Security.SessionPersister.Username = string.Empty;

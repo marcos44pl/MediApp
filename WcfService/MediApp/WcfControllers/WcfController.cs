@@ -54,16 +54,17 @@ namespace MediApp.WcfControllers
 
         public static void createPatient(User user)
         {
-            
+            DbServices.Role role = db.TableRole.Where(r => r.Name == RolesKind.PATIENT).FirstOrDefault();
+
             var userWcf = new DbServices.User
             {
-                
                 FstName = user.FstName,
                 Surname = user.Surname,
                 Email = user.Email,
-                Pass = user.Pass
+                Pass = user.Pass,
+                Roles = { role }
             };
-            
+
             try
             {
                 db.AddToTableUser(userWcf);
