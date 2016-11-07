@@ -11,6 +11,7 @@ namespace MediApp.Controllers
         // GET: DiseasesHistory
         public ActionResult Index()
         {
+            ViewBag.Message = "Historia przebytych chorób";
             return View();
         }
     }

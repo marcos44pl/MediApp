@@ -15,14 +15,14 @@ namespace MediApp.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Informacje na temat projektu MediApp";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Informacje kontaktowe";
 
             return View();
         }
