@@ -43,9 +43,11 @@
     <Compile Include="Illness.cs" />
     <Compile Include="IllnessHasSymptom.cs" />
     <Compile Include="LifeFuncMeasure.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientWasSick.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="RolesKind.cs" />
     <Compile Include="Symptom.cs" />
