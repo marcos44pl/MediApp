@@ -200,6 +200,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DiseasesHistoryController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Models\PatientViewModels.cs" />
     <Compile Include="Security\MediAuthorizeAttribute.cs" />
     <Compile Include="Security\RolePrincipal.cs" />
     <Compile Include="Security\SessionPersister.cs" />

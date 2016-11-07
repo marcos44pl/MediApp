@@ -33,8 +33,8 @@ namespace WcfService.DbContext
 
                 db.SaveChanges();
 
-                Patient patient = new Patient {  Height = 180, Sex = true };
-                Patient patient1 = new Patient { Height = 160, Sex = true };
+                Patient patient = new Patient {  Height = 180, Sex = "mężczyzna" };
+                Patient patient1 = new Patient { Height = 160, Sex = "kobieta" };
                 var patients = db.Set<Patient>();
                 patients.Add(patient);
                 patients.Add(patient1);
