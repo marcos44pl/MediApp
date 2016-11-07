@@ -100,6 +100,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Output.cs" />
     <Compile Include="Entities\FillDb.cs" />
     <Compile Include="Entities\Illness.cs" />
     <Compile Include="Entities\IllnessHasSymptom.cs" />
