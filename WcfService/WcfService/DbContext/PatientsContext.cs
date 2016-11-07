@@ -21,10 +21,8 @@ namespace WcfService.DbContext
         public DbSet<Patient> TablePatient { get; set; }
         public DbSet<LifeFuncMeasure> TableLifeFuncMeasure { get; set; }
         public DbSet<PatientWasSick> TablePatientWasSick { get; set; }
-        public DbSet<Role> TableRole { get; set; }
-        public DbSet<User> TableUser { get; set; }
-        public DbSet<UserHasRole> TableUserHasRole { get; set; }
-
+        public DbSet<Question> TableQuestion { get; set; }
+        public DbSet<Output> TableOutput { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
