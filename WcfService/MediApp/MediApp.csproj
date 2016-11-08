@@ -198,7 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DiseasesHistoryController.cs" />
+    <Compile Include="Controllers\DiseasesController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Models\PatientViewModels.cs" />
@@ -208,7 +208,6 @@
     <Compile Include="WcfControllers\WcfConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
