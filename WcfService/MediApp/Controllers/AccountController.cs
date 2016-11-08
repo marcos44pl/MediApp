@@ -81,8 +81,6 @@ namespace MediApp.Controllers
             return View(model);
         }
 
-
-
         //
         // POST: /Account/LogOff
         [HttpPost]
@@ -92,6 +90,5 @@ namespace MediApp.Controllers
             Security.SessionPersister.Username = string.Empty;
             return RedirectToAction("Index", "Home");
         }
-
     }
 }
