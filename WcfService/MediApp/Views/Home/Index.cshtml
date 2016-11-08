@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "Strona domowa";
 }
+@Scripts.Render("~/bundles/js-image-slider")
+
 
 <div class="text-center">
     <div class="row ">
@@ -14,8 +16,14 @@
         </div>
     </div>
     <p>
-        Witamy na stronie projektu MediApp. <br />Nasz system został stworzony z myślą o pacjentach, którzy chcą w wygodny sposób
-        przechowywać informacje o przebytych chorobach, <br />mieć szybki dostęp do wstępnej diagnozy chorób oraz kontakt z lekarzami.
+        <div id="sliderFrame">
+            <div id="slider">
+                <img src="~/Content/images/sick.jpg" class="imagemain" />
+                <img src="~/Content/images/cancer.jpg" class="imagemain" />
+                <img src="~/Content/images/care.jpg" class="imagemain"/>
+                <img src="~/Content/images/money.jpg" class="imagemain" />
+            </div>
+        </div>
     </p>
     <div class="row">
         <div class=".center-container">

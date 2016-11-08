@@ -44,8 +44,14 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Pesel" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Sex" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Sex" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Height" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="Output">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
       </EntityType>
       <EntityType Name="PatientWasSick">
         <Key>
@@ -57,6 +63,14 @@
         <Property Name="IllnessId" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Illness" Relationship="WcfService.DbContext.PatientWasSick_Illness" ToRole="PatientWasSick_Illness_Target" FromRole="PatientWasSick_Illness_Source" />
         <NavigationProperty Name="Patient" Relationship="WcfService.DbContext.PatientWasSick_Patient" ToRole="PatientWasSick_Patient_Target" FromRole="PatientWasSick_Patient_Source" />
+      </EntityType>
+      <EntityType Name="Question">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="Content" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
       </EntityType>
       <EntityType Name="Role">
         <Key>
@@ -158,10 +172,16 @@
         <EntitySet Name="TableSymptom" EntityType="WcfService.DbContext.Symptom" />
         <EntitySet Name="TableLifeFuncMeasure" EntityType="WcfService.DbContext.LifeFuncMeasure" />
         <EntitySet Name="TablePatient" EntityType="WcfService.DbContext.Patient" />
+        <EntitySet Name="TableOutput" EntityType="WcfService.DbContext.Output" />
         <EntitySet Name="TablePatientWasSick" EntityType="WcfService.DbContext.PatientWasSick" />
+        <EntitySet Name="TableQuestion" EntityType="WcfService.DbContext.Question" />
         <EntitySet Name="TableRole" EntityType="WcfService.DbContext.Role" />
         <EntitySet Name="TableUser" EntityType="WcfService.DbContext.User" />
         <FunctionImport Name="GetIllness" ReturnType="Collection(WcfService.DbContext.Illness)" EntitySet="TableIllness" m:HttpMethod="GET" />
+        <FunctionImport Name="GetPatient" ReturnType="Collection(WcfService.DbContext.Patient)" EntitySet="TablePatient" m:HttpMethod="GET" />
+        <FunctionImport Name="GetSymptom" ReturnType="Collection(WcfService.DbContext.Symptom)" EntitySet="TableSymptom" m:HttpMethod="GET" />
+        <FunctionImport Name="GetQuestion" ReturnType="Collection(WcfService.DbContext.Question)" EntitySet="TableQuestion" m:HttpMethod="GET" />
+        <FunctionImport Name="GetOutput" ReturnType="Collection(WcfService.DbContext.Output)" EntitySet="TableOutput" m:HttpMethod="GET" />
         <FunctionImport Name="fill" m:HttpMethod="GET" />
         <AssociationSet Name="IllnessHasSymptom_Illness" Association="WcfService.DbContext.IllnessHasSymptom_Illness">
           <End Role="IllnessHasSymptom_Illness_Source" EntitySet="TableIllnessHasSymptom" />
