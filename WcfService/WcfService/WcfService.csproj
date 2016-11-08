@@ -103,16 +103,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Output.cs" />
-    <Compile Include="Entities\FillDb.cs" />
-    <Compile Include="Entities\Illness.cs" />
-    <Compile Include="Entities\IllnessHasSymptom.cs" />
-    <Compile Include="Entities\LifeFuncMeasure.cs" />
-    <Compile Include="Entities\Patient.cs" />
-    <Compile Include="Entities\PatientsContext.cs" />
-    <Compile Include="Entities\PatientWasSick.cs" />
-    <Compile Include="Entities\Question.cs" />
-    <Compile Include="Entities\Symptom.cs" />
+    <Compile Include="DbContext\FillDb.cs" />
+    <Compile Include="DbContext\PatientsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WcfDataService.svc.cs">
       <DependentUpon>WcfDataService.svc</DependentUpon>
