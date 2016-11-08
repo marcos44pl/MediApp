@@ -1,12 +1,25 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: white;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+}
+.body-content:before {
     background-image:url("images/background.jpg");
 
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
+      left: 0;
+      right: 0;
+      z-index: 0;
     padding-left: 15px;
     padding-right: 15px;
 }
