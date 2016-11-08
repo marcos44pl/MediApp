@@ -1,9 +1,18 @@
-﻿@{
+﻿@model MediApp.Models.SurveyModel
+@{
     ViewBag.Title = "Badanie";
 }
 
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
+
+<div>
+    @foreach (var item in Model)
+    { 
+        // TODO
+        <p>item</p>
+    }
+</div>
 
 <div>
     <p>Pytanie nr 1: Czy odczuwasz bóle kostno-stawowe?</p>

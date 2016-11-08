@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntityModels;
+using MediApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +17,15 @@ namespace MediApp.Controllers
         }
         public ActionResult Survey()
         {
+            Question[] q = new Question[5];
+            q.Initialize();
+            for (int i = 0; i < 5; i++)
+            {
+                q[i] = new Question();
+                q[i].Name = "Katar";
+                q[i].Content = "Czy masz katar?";
+            }
+            SurveyModel sm = new SurveyModel(q);
             ViewBag.Message = "Wstępna diagnoza chorób";
             return View();
         }
