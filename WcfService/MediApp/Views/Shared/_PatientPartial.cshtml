@@ -3,9 +3,10 @@
 
 @if(Model.IsPatient)
 {
-    <li>
-        @Html.ActionLink("Cos tam Pacjenta", "Index", "Patient", routeValues: null, htmlAttributes: new { title = "Manage" })
-    </li>
+
+    <li>@Html.ActionLink("Badanie", "Survey", "Diseases")</li>
+    <li>@Html.ActionLink("Historia chorób", "DiseasesHistory", "Diseases")</li>    
+
 }
 
 
