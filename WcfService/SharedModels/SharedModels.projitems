@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>555a7881-3fba-4fc9-8840-6cd374cc237c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedModels</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Illness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\IllnessHasSymptom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\LifeFuncMeasure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Output.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Patient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\PatientWasSick.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Question.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Role.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\RolesKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Symptom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityModels\User.cs" />
+  </ItemGroup>
+</Project>

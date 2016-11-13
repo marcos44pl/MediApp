@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EntityModels
 {
-        [Serializable]
+#if  DB_CLASS
+    [Serializable]
+#endif
     public class IllnessHasSymptom
     {
         public int IllnessHasSymptomId { get; set; }

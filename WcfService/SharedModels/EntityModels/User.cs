@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace EntityModels
 {
+#if DB_CLASS
     [Serializable]
+#endif
     public class User
     {
         public int   Id { get; set; }

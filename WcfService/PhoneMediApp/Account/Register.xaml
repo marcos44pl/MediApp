@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="PhoneMediApp.Account.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneMediApp.Account"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="MediApp" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Zarejestruj się" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <Grid>
+            <ScrollViewer  VerticalScrollBarVisibility="Visible"
+                           VerticalScrollMode="Enabled"
+                           IsHoldingEnabled="True"
+                           AllowDrop="False" 
+                           Margin="0,118,0,0"
+                           Height="520">
+                <ListView x:Name="ContentRoot" Margin="19,10,19,10" Padding="10,20,10,20">
+                    <TextBlock x:Name="nameBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"  Height="44" Width="80" FontSize="25"/>
+                    <TextBox x:Name="nameBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress"  TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241"/>
+                    <TextBlock x:Name="snameBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Height="44" Width="119" FontSize="25"/>
+                    <TextBox x:Name="snameBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241" />
+                    <TextBlock x:Name="loginBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top"  Height="44" Width="80" FontSize="25"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241" />
+                    <TextBlock x:Name="passBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" Height="33" Width="119" FontSize="25"/>
+                    <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="241"/>
+                    <TextBlock x:Name="rpassBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Powtórz hasło" VerticalAlignment="Top" Height="33" Width="165" FontSize="25"/>
+                    <PasswordBox x:Name="rpasswordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="241"/>
+                    <Button x:Name="button" Content="Zarejestruj" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

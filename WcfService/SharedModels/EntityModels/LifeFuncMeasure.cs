@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 
 namespace EntityModels
 {
-        [Serializable]
+#if  DB_CLASS
+    [Serializable]
+#endif
     public class LifeFuncMeasure
     {
         public int Id { get; set; }

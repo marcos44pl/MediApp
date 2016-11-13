@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityModels
 {
+#if  DB_CLASS
     [Serializable]
+#endif
     public class PatientWasSick
     {
         public int Id { get; set; }
