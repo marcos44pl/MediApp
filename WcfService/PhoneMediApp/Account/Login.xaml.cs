@@ -32,6 +32,9 @@ namespace PhoneMediApp
 
         public Login()
         {
+
+
+
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
