@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data.Services.Client;
 using System.Linq;
 using System.Web;
-using EntityModels; 
-
-namespace MediApp.WcfControllers
+using EntityModels;
+using WcfControllers;
+namespace MediApp.Controllers
 {
     public static class WcfController
     {

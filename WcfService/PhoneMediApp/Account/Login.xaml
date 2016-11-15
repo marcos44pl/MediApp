@@ -30,15 +30,16 @@
             	<Run/>
             </TextBlock>
         </StackPanel>
-
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,10,19,0">
             <TextBox x:Name="textBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress" Margin="58,175,0,291" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241"/>
             <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="58,267,0,0" VerticalAlignment="Top" Height="32" Width="241"/>
             <TextBlock x:Name="loginBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Margin="58,131,0,0" Height="44" Width="80" FontSize="25"/>
             <TextBlock x:Name="passBlock" HorizontalAlignment="Left" Margin="58,229,0,0" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" Height="33" Width="119" FontSize="25"/>
-            <HyperlinkButton x:Name="logButton" Content="Zaloguj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="232,391,0,0" />
+            <HyperlinkButton x:Name="logButton" Content="Zaloguj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="232,391,0,0" Click="logButton_Click" />
             <HyperlinkButton x:Name="regButton" Content="Zarejestruj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,391,0,0" Click="regButton_Click"/>
+            <TextBlock x:Name="LoadingBlock" HorizontalAlignment="Left" TextAlignment="Center" Visibility="Collapsed"  TextWrapping="Wrap" Text="loguje..." VerticalAlignment="Top" Height="25" Width="171" FontSize="15" Margin="95,447,0,0"/>
+            <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,467,0,0"/>
         </Grid>
     </Grid>
 </Page>

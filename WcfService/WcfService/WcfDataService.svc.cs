@@ -14,7 +14,6 @@ using System.ServiceModel.Web;
 using System.Web;
 using WcfService.DbContext;
 using EntityModels;
-
 namespace WcfService
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
@@ -36,10 +35,15 @@ namespace WcfService
         }
 
         [WebGet(UriTemplate = "GetPatient")]
-]
         public IEnumerable<Patient> GetPatient()
         {
             return CurrentDataSource.TablePatient;
+        }
+
+        [WebGet]
+        public IEnumerable<User> GetUser(string email)
+        {
+            return CurrentDataSource.TableUser.Where(p => p.Email == email);
         }
 
         [WebGet]

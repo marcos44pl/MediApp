@@ -201,11 +201,11 @@
     <Compile Include="Controllers\DiseasesController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\WcfController.cs" />
     <Compile Include="Models\PatientViewModels.cs" />
     <Compile Include="Security\MediAuthorizeAttribute.cs" />
     <Compile Include="Security\RolePrincipal.cs" />
     <Compile Include="Security\SessionPersister.cs" />
-    <Compile Include="WcfControllers\WcfConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -221,7 +221,6 @@
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="WcfControllers\WcfController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-modern.css" />

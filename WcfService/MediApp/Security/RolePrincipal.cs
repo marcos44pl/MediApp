@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 using EntityModels;
-using MediApp.WcfControllers;
+using MediApp.Controllers;
 
 namespace MediApp.Security
 {

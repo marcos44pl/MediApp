@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using EntityModels;
+using MediApp.Controllers;
 
 namespace MediApp.Security
 {
@@ -14,7 +15,7 @@ namespace MediApp.Security
             get
             {
                 if (!string.IsNullOrEmpty(Username))
-                   return WcfControllers.WcfController.findUser(Username);
+                   return WcfController.findUser(Username);
 
                    return null;
             }

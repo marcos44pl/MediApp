@@ -45,7 +45,7 @@
                     <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="241"/>
                     <TextBlock x:Name="rpassBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Powtórz hasło" VerticalAlignment="Top" Height="33" Width="165" FontSize="25"/>
                     <PasswordBox x:Name="rpasswordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="241"/>
-                    <Button x:Name="button" Content="Zarejestruj" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Button x:Name="button" Content="Zarejestruj" HorizontalAlignment="Left" VerticalAlignment="Top" Click="button_Click"/>
                 </ListView>
             </ScrollViewer>
         </Grid>

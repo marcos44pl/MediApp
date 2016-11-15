@@ -15,7 +15,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using Windows.UI.Popups;
+using EntityModels;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace PhoneMediApp.Account
@@ -107,5 +108,38 @@ namespace PhoneMediApp.Account
         }
 
         #endregion
+
+        private async void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (nameBox.Text == "")
+            {
+                MessageDialog msg = new MessageDialog("Podaj imię!");
+                await msg.ShowAsync();
+            }
+            else if (snameBox.Text == "")
+            {
+                MessageDialog msg = new MessageDialog("Podaj nazwisko!");
+                await msg.ShowAsync();
+            }
+            else if (passwordBox.Password.Length < 6)
+            {
+                MessageDialog msg = new MessageDialog("Hasło za krótkie!");
+                await msg.ShowAsync();
+            }
+            else if (passwordBox.Password != rpasswordBox.Password)
+            {
+                MessageDialog msg = new MessageDialog("Hasła nie pasują do siebie!");
+                await msg.ShowAsync();
+            }
+            else if (textBox.Text == "")
+            {
+                MessageDialog msg = new MessageDialog("Podaj email!");
+                await msg.ShowAsync();
+            }
+            else
+            {
+
+            }
+        }
     }
 }

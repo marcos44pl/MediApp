@@ -20,5 +20,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)EntityModels\RolesKind.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EntityModels\Symptom.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EntityModels\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WcfControllers\WcfConfig.cs" />
   </ItemGroup>
 </Project>

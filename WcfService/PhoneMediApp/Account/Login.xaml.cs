@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -15,7 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using PhoneMediApp.WcfRestControllers;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace PhoneMediApp
@@ -111,6 +113,42 @@ namespace PhoneMediApp
         private void regButton_Click(object sender, RoutedEventArgs e)
         {
            Frame.Navigate(typeof(Account.Register));
+        }
+
+        private  async void logButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBox.Text == "")
+            {
+                MessageDialog msg = new MessageDialog("Podaj email!");
+                await msg.ShowAsync();
+                return;
+            }
+            else if (passwordBox.Password == "")
+            {
+                MessageDialog msg = new MessageDialog("Podaj hasło!");
+                await msg.ShowAsync();
+                return;
+            }
+            LoadingBlock.Text = "loguje...";
+
+            LoadingBar.IsEnabled = true;
+            LoadingBar.Visibility = Visibility.Visible;
+            LoadingBlock.Visibility = Visibility.Visible;
+
+            bool result = await UserController.authenticateUser(textBox.Text, passwordBox.Password);
+
+            LoadingBar.IsEnabled = false;
+            LoadingBar.Visibility = Visibility.Collapsed;
+
+            if (result)
+            {
+                LoadingBlock.Text = "Zalogowano!";
+                Frame.Navigate(typeof(PivotPage));
+            }
+            else
+            {
+                LoadingBlock.Text = "Coś tam nieprawidłowe!";
+            }
         }
     }
 }
