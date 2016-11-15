@@ -36,7 +36,7 @@ namespace WcfService
         }
 
         [WebGet(UriTemplate = "GetPatient")]
-]
+
         public IEnumerable<Patient> GetPatient()
         {
             return CurrentDataSource.TablePatient;
