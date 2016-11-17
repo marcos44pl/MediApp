@@ -25,7 +25,7 @@ namespace MediApp.Controllers
             }
             SHA256Managed crypt = new SHA256Managed();
             byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(model.Password), 0,
-                                              Encoding.UTF.8GetByteCount(model.Password));
+                                              Encoding.UTF8.GetByteCount(model.Password));
 
             if (WcfController.authenticateUser(model.Email, crypto))
             {

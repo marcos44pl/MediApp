@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,7 @@ namespace MediApp.Controllers
         public ActionResult Survey()
         {
             ViewBag.Message = "Wstępna diagnoza chorób";
-            return View();
+            return View(new SurveyModel());
         }
         public ActionResult DiseasesHistory()
         {
