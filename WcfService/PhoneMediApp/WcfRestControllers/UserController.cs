@@ -21,7 +21,6 @@ namespace PhoneMediApp.WcfRestControllers
                 return false;
 
             var pass = list.First().Pass;
-            byte[] array;
             IBuffer buff = CryptographicBuffer.ConvertStringToBinary(password, BinaryStringEncoding.Utf8);
             HashAlgorithmProvider hap = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Sha256);
             IBuffer shaBuff = hap.HashData(buff);
@@ -29,5 +28,22 @@ namespace PhoneMediApp.WcfRestControllers
             return CryptographicBuffer.Compare(passDb, shaBuff);
         }
 
+        static public async Task<bool> createUser(User user, string password)
+        {
+            WcfRestController<User> controller = new WcfRestController<User>();
+             var list = await controller.getObjects(WcfConfig.getUserUrl(user.Email));
+
+            if (list.Count != 0)
+                return false;
+
+            IBuffer buff = CryptographicBuffer.ConvertStringToBinary(password, BinaryStringEncoding.Utf8);
+            HashAlgorithmProvider hap = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Sha256);
+            IBuffer shaBuff = hap.HashData(buff);
+            byte[] pass;
+            CryptographicBuffer.CopyToByteArray(shaBuff, out pass);
+            user.Pass = pass;
+            await controller.insertObject(user, WcfConfig.TableUser);
+            return true;
+        }
     }
 }

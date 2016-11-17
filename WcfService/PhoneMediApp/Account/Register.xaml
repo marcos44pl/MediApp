@@ -33,7 +33,7 @@
                            IsHoldingEnabled="True"
                            AllowDrop="False" 
                            Margin="0,118,0,0"
-                           Height="520">
+                           Height="500">
                 <ListView x:Name="ContentRoot" Margin="19,10,19,10" Padding="10,20,10,20">
                     <TextBlock x:Name="nameBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"  Height="44" Width="80" FontSize="25"/>
                     <TextBox x:Name="nameBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress"  TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241"/>
@@ -48,6 +48,7 @@
                     <Button x:Name="button" Content="Zarejestruj" HorizontalAlignment="Left" VerticalAlignment="Top" Click="button_Click"/>
                 </ListView>
             </ScrollViewer>
+            <ProgressBar x:Name="LoadingBar"  Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom"/>
         </Grid>
     </Grid>
 </Page>

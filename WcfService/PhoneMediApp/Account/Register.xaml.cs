@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using EntityModels;
+using PhoneMediApp.WcfRestControllers;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace PhoneMediApp.Account
@@ -115,30 +117,51 @@ namespace PhoneMediApp.Account
             {
                 MessageDialog msg = new MessageDialog("Podaj imię!");
                 await msg.ShowAsync();
+                return;
             }
             else if (snameBox.Text == "")
             {
                 MessageDialog msg = new MessageDialog("Podaj nazwisko!");
                 await msg.ShowAsync();
+                return;
             }
             else if (passwordBox.Password.Length < 6)
             {
                 MessageDialog msg = new MessageDialog("Hasło za krótkie!");
                 await msg.ShowAsync();
+                return;
             }
             else if (passwordBox.Password != rpasswordBox.Password)
             {
                 MessageDialog msg = new MessageDialog("Hasła nie pasują do siebie!");
                 await msg.ShowAsync();
+                return;
             }
             else if (textBox.Text == "")
             {
                 MessageDialog msg = new MessageDialog("Podaj email!");
                 await msg.ShowAsync();
+                return;
             }
             else
             {
 
+                LoadingBar.IsEnabled = true;
+                LoadingBar.Visibility = Visibility.Visible;
+                User user = new User{ Email = textBox.Text, FstName = nameBox.Text, Surname = snameBox.Text, };
+                if(await UserController.createUser(user, passwordBox.Password))
+                {
+                    MessageDialog msg = new MessageDialog("Pomyślnie stworzono użytkownika!");
+                    await msg.ShowAsync();
+                    Frame.Navigate(typeof(Login));
+                }
+                else
+                {
+                    MessageDialog msg = new MessageDialog("Jest już taki użytkownik");
+                    await msg.ShowAsync();
+                }
+                LoadingBar.IsEnabled = false;
+                LoadingBar.Visibility = Visibility.Collapsed;
             }
         }
     }
