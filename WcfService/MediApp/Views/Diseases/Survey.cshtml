@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MediApp.Models.SurveyModel
+
+@{
     ViewBag.Title = "Badanie";
 }
 
@@ -6,9 +8,20 @@
 <h3>@ViewBag.Message</h3>
 
 <div>
-    <p>Pytanie nr 1: Czy odczuwasz bóle kostno-stawowe?</p>
-    <input id="P1true" type="radio" value="true" />
-    <label for="P1true">TAK</label>
-    <input id="P1false" type="radio" value="false" />
-    <label for="P1false">NIE</label>
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>
+                <p>@item.Content</p>
+                <label> TAK
+                    <input type="radio" name="@item.Name" value="true" />
+                </label>
+                <label> NIE
+                    <input type="radio" name="@item.Name" value="false" />
+                </label>
+            </li>
+            <br />
+        }
+    </ol>
+    <button>Wyślij</button>
 </div>

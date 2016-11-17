@@ -1,7 +1,7 @@
 ﻿/* http://www.menucool.com */
 .imagemain
 {
-    max-width: 1100px;
+    max-width: 100%;
 }
 
 #sliderFrame, #sliderFrame div {
@@ -9,7 +9,7 @@
 }
 #sliderFrame 
 {
-    width:1000px;
+    width:90%;
     margin:0 auto; /*center-aligned*/
     margin-top: 50px;
     margin-bottom: 50px;
@@ -17,7 +17,7 @@
 }
 
 #slider, #slider .sliderInner {
-    width:1000px;
+    width:90%;
     height:540px;/* Must be the same size as the slider images */
     border-radius:3px;
 }

@@ -9,7 +9,6 @@
 }
 .body-content:before {
     background-image:url("images/background.jpg");
-
     left: 0;
     right: 0;
     z-index: 1;
@@ -17,9 +16,9 @@
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
-      left: 0;
-      right: 0;
-      z-index: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
     padding-left: 15px;
     padding-right: 15px;
 }
