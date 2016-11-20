@@ -8,6 +8,7 @@ namespace EntityModels
 #endif
     public struct Response
     {
+        public int Id { get; set; }
         public Question Question { get; set; }
         public bool Chosen { get; set; }
     }

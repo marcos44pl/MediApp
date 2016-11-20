@@ -14,15 +14,15 @@
             @foreach (var item in Model)
             {
                 <li>
-                    <p>@item.Content</p>
+                    <p>@item.Question.Content</p>
                     <div class="form-group">
                         <div class="col-md-10">
-                            @Html.LabelFor(m => m.Answer, "Tak", new { @class = "col-md-2 control-label" })
-                            @Html.RadioButtonFor(m => m.Answer[item.Id], new { @class = "form-control" })
+                            @Html.LabelFor(m => m._output.Answer[item.Id].Chosen, "Tak", new { @class = "col-md-2 control-label",  })
+                            @Html.RadioButtonFor(m => m._output.Answer[item.Id].Chosen, new { @class = "form-control" })
                         </div>
                         <div class="col-md-10">
-                            @Html.LabelFor(m => m.Answer, "Nie", new { @class = "col-md-2 control-label" })
-                            @Html.RadioButtonFor(m => m.Answer[item.Id], new { @class = "form-control" })
+                            @Html.LabelFor(m => m._output.Answer[item.Id].Chosen, "Nie", new { @class = "col-md-2 control-label" })
+                            @Html.RadioButtonFor(m => m._output.Answer[item.Id].Chosen, new { @class = "form-control" })
                         </div>
                      </div>
                </li>
