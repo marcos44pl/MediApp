@@ -93,5 +93,39 @@ namespace MediApp.Controllers
                     "An error occurred when saving changes.", ex);
             }
         }
+
+        public static void saveSurvey(Output output)
+        {
+            var outputWcf = new DbServices.Output
+            {
+                Answer = output.Answer
+            };
+            try
+            {
+                db.AddToTableOutput(outputWcf);
+
+                DataServiceResponse response = db.SaveChanges();
+                foreach (ChangeOperationResponse change in response)
+                {
+                    EntityDescriptor descriptor = change.Descriptor as EntityDescriptor;
+
+                    if (descriptor != null)
+                    {
+                        DbServices.Output added = descriptor.Entity as DbServices.Output;
+
+                        if (added != null)
+                        {
+                            Console.WriteLine("Ankieta została zapisana");
+                        }
+                    }
+                }
+
+            }
+            catch (DataServiceRequestException ex)
+            {
+                throw new ApplicationException(
+                    "An error occurred when saving changes.", ex);
+            }
+        }
     }
 }

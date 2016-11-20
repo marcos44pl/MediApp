@@ -10,6 +10,8 @@
 
 // Original file name:
 // Generation date: 08.11.2016 16:55:19
+using EntityModels;
+
 namespace MediApp.DbServices
 {
     
@@ -1088,6 +1090,8 @@ namespace MediApp.DbServices
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _Id;
+        internal Response[] Answer;
+
         partial void OnIdChanging(int value);
         partial void OnIdChanged();
     }

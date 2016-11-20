@@ -33,7 +33,7 @@ namespace MediApp.Models
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Zapamiętać tę przeglądarkęr?")]
+        [Display(Name = "Zapamiętać tę przeglądarkę?")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }

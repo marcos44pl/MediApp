@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using WcfControllers;
@@ -10,8 +11,8 @@ namespace MediApp.Models
 {
     public class SurveyModel : IEnumerable
     {
-        public string Question { get; set; }
-        public bool Chosen { get; set; }
+        [Required]
+        public Response[] Answer { get; set; }
 
         private Question[] _question;
 
@@ -23,6 +24,7 @@ namespace MediApp.Models
             for (int i = 0; i < size; i++)
             {
                 _question[i] = new Question();
+                _question[i].Id = i;
             }
             _question[0].Name = "Kichanie";
             _question[0].Content = "Czy kichasz znacznie częściej niż zdarzało Ci się wcześniej?";

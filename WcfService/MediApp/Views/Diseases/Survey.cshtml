@@ -7,21 +7,30 @@
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<div>
-    <ol>
-        @foreach (var item in Model)
-        {
-            <li>
-                <p>@item.Content</p>
-                <label> TAK
-                    <input type="radio" name="@item.Name" value="true" />
-                </label>
-                <label> NIE
-                    <input type="radio" name="@item.Name" value="false" />
-                </label>
-            </li>
-            <br />
-        }
-    </ol>
-    <button>Wyślij</button>
-</div>
+@using (Html.BeginForm("Survey", "Diseases", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div>
+        <ol>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <p>@item.Content</p>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.LabelFor(m => m.Answer, "Tak", new { @class = "col-md-2 control-label" })
+                            @Html.RadioButtonFor(m => m.Answer[item.Id], new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-10">
+                            @Html.LabelFor(m => m.Answer, "Nie", new { @class = "col-md-2 control-label" })
+                            @Html.RadioButtonFor(m => m.Answer[item.Id], new { @class = "form-control" })
+                        </div>
+                     </div>
+               </li>
+            }
+        </ol>
+        <input type="submit" class="btn btn-default" value="Wyślij" />
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -14,11 +14,25 @@ namespace MediApp.Controllers
         {
             return View();
         }
+        
         public ActionResult Survey()
         {
             ViewBag.Message = "Wstępna diagnoza chorób";
             return View(new SurveyModel());
         }
+        
+        [HttpPost]
+        public ActionResult Survey(SurveyModel model)
+        {
+            ViewBag.Message = "Wstępna diagnoza chorób";
+            WcfController.saveSurvey(new EntityModels.Output
+            {
+                Answer = model.Answer
+            });
+
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult DiseasesHistory()
         {
             ViewBag.Message = "Historia przebytych chorób";
