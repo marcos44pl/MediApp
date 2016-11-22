@@ -6,7 +6,7 @@ using System.Web;
 using EntityModels;
 using WcfControllers;
 namespace MediApp.Controllers
-{
+{   
     public static class WcfController
     {
         static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
@@ -14,14 +14,14 @@ namespace MediApp.Controllers
         public static User findUser(string email)
         {
             var user = db.TableUser.Where(e => e.Email == email).First();
-
-            List<Role> usrRoles = new List<Role>();
-            foreach (var r in user.Roles)
-                usrRoles.Add(new Role { Id = r.Id, Name = r.Name });  
+            var usrRoles = db.Execute<DbServices.Role>(new Uri(WcfConfig.getUserRole(user.Id),UriKind.Relative));
+            var roles = new List<Role>();
+            foreach (var r in usrRoles)
+                roles.Add(new Role { Id = r.Id, Name = r.Name });  
 
             return new User { Email = user.Email, Id = user.Id, FstName = user.FstName,
                                Surname = user.Surname, Pass = user.Pass ,
-                               Pesel = user.Pesel, Roles = usrRoles };
+                               Pesel = user.Pesel, Roles = roles };
         }
 
 
@@ -48,7 +48,6 @@ namespace MediApp.Controllers
 
             if (null == pat.Pass)
                 return false;
-
             return pat.Pass.SequenceEqual(password);
         }
 
@@ -61,14 +60,13 @@ namespace MediApp.Controllers
                 FstName = user.FstName,
                 Surname = user.Surname,
                 Email = user.Email,
-                Pass = user.Pass,
-                Roles = { role }
+                Pass = user.Pass,  
+                Roles = { role }             
             };
 
             try
             {
-                db.AddToTableUser(userWcf);
-
+                db.AddRelatedObject(role, "Users", userWcf);
                 DataServiceResponse response = db.SaveChanges();
                 foreach (ChangeOperationResponse change in response)
                 {

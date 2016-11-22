@@ -26,27 +26,31 @@ namespace WcfService
             config.SetServiceOperationAccessRule("*", ServiceOperationRights.All);
             config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V3;
         }
-        
-        // Methods to get data
-        [WebGet]
-        public IEnumerable<Illness> GetIllness()
-        {
-            return CurrentDataSource.TableIllness;
-        }
-
-        [WebGet(UriTemplate = "GetPatient")]
-
-        public IEnumerable<Patient> GetPatient()
-        {
-            return CurrentDataSource.TablePatient;
-        }
-
         [WebGet]
         public IEnumerable<User> GetUser(string email)
         {
             return CurrentDataSource.TableUser.Where(p => p.Email == email);
         }
-
+        [WebGet]
+        public IEnumerable<Patient> GetPatient(string pesel)
+        {
+            return CurrentDataSource.TablePatient.Where(p => pesel == p.Pesel);
+        }
+        [WebGet]
+        public IEnumerable<Role> GetRole(string role)
+        {
+            return CurrentDataSource.TableRole.Where(p => p.Name == role);
+        }
+        [WebGet]
+        public IEnumerable<Role> GetUserRole(int userId)
+        {
+            return CurrentDataSource.TableRole.Where(p => p.Users.Any(u => u.Id == userId));
+        }
+        [WebGet]
+        public IEnumerable<LifeFuncMeasure> GetPatientMeasures(string pesel)
+        {
+            return CurrentDataSource.TableLifeFuncMeasure.Where(p => p.Patient.Pesel == pesel);
+        }
         [WebGet]
         public IEnumerable<Symptom> GetSymptom()
         {
@@ -64,7 +68,6 @@ namespace WcfService
         {
             return CurrentDataSource.TableOutput;
         }
-
         // Method to fill database
         [WebGet]
         public void fill()

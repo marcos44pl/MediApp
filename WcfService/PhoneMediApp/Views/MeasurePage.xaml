@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="PhoneMediApp.Views.MeasurePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneMediApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+        <TextBlock Text="Ciśnienie:" FontSize="30" Margin="54,257,173,328"/>
+        <TextBlock Text="Tętno:" FontSize="30" Margin="99,184,175,403"/>
+        <TextBlock Text="-" FontSize="30" Margin="255,184,91,267"/>
+        <TextBlock Text="Temperatura:" FontSize="30" Margin="8,326,172,267"/>
+        <TextBlock Text="Data:" FontSize="30" Margin="112,400,178,193"/>
+        <TextBlock x:Name="pulse" HorizontalAlignment="Left" Margin="190,327,0,0" TextWrapping="Wrap"  FontSize="30" Text="   0"  FontWeight="Bold"  VerticalAlignment="Top" Height="37" Width="81"/>
+        <TextBlock x:Name="lowPres" HorizontalAlignment="Left" Margin="199,184,0,0" TextWrapping="Wrap"  FontSize="30" Text="  0"  FontWeight="Bold"  VerticalAlignment="Top"/>
+        <TextBlock x:Name="highPres" HorizontalAlignment="Left" Margin="271,184,0,0" TextWrapping="Wrap"  FontSize="30" Text="  0"  FontWeight="Bold"  VerticalAlignment="Top"/>
+        <TextBlock x:Name="temp" HorizontalAlignment="Left" Margin="204,257,0,0" TextWrapping="Wrap"  FontSize="30" Text="   "  FontWeight="Bold" VerticalAlignment="Top" Width="99" Height="32"/>
+        <TextBlock x:Name="date" Text="" FontSize="30" Margin="189,400,10,193"/>
+
+        <AppBarButton  x:Name="button" Icon="Back" Margin="-11,27,0,0" Click="button_Click"/>
+    </Grid>
+</Page>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5ab0ea7d-9375-4d6e-9ce4-7acd8521ef46" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="011f6d4f-0a73-412d-a441-e22a9c6994bf" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
   <MetadataSources>
     <MetadataSource Address="http://localhost:2670/WcfDataService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="f7bd31e9-1451-4330-8f9e-85be7ebd8df3" SourceId="1" SourceUrl="http://localhost:2670/WcfDataService.svc" />
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="f2e09c14-35cd-4a12-83c6-b06491832796" SourceId="1" SourceUrl="http://localhost:2670/WcfDataService.svc" />
   </Metadata>
   <Extensions />
   <Parameters>

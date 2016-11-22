@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using EntityModels;
-using PhoneMediApp.WcfRestControllers;
+using PhoneMediApp.Controllers;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -125,6 +125,12 @@ namespace PhoneMediApp.Account
                 await msg.ShowAsync();
                 return;
             }
+            else if (peselBox.Text.Length != 11)
+            {
+                MessageDialog msg = new MessageDialog("Numer pesel nieprawidłowy");
+                await msg.ShowAsync();
+                return;
+            }
             else if (passwordBox.Password.Length < 6)
             {
                 MessageDialog msg = new MessageDialog("Hasło za krótkie!");
@@ -148,7 +154,7 @@ namespace PhoneMediApp.Account
 
                 LoadingBar.IsEnabled = true;
                 LoadingBar.Visibility = Visibility.Visible;
-                User user = new User{ Email = textBox.Text, FstName = nameBox.Text, Surname = snameBox.Text, };
+                User user = new User{ Email = textBox.Text, FstName = nameBox.Text, Surname = snameBox.Text, Pesel = peselBox.Text };
                 if(await UserController.createUser(user, passwordBox.Password))
                 {
                     MessageDialog msg = new MessageDialog("Pomyślnie stworzono użytkownika!");

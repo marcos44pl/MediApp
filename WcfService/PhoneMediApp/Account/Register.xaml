@@ -38,7 +38,9 @@
                     <TextBlock x:Name="nameBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"  Height="44" Width="80" FontSize="25"/>
                     <TextBox x:Name="nameBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress"  TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241"/>
                     <TextBlock x:Name="snameBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Height="44" Width="119" FontSize="25"/>
-                    <TextBox x:Name="snameBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241" />
+                    <TextBox x:Name="snameBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress"  TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241"/>
+                    <TextBlock x:Name="peselBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Pesel" VerticalAlignment="Top" Height="44" Width="119" FontSize="25"/>
+                    <TextBox x:Name="peselBox" HorizontalAlignment="Left" InputScope="Number" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241" />
                     <TextBlock x:Name="loginBlock" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top"  Height="44" Width="80" FontSize="25"/>
                     <TextBox x:Name="textBox" HorizontalAlignment="Left" InputScope="EmailSmtpAddress" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="241" />
                     <TextBlock x:Name="passBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" Height="33" Width="119" FontSize="25"/>

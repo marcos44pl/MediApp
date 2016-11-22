@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using WcfControllers;
 using System.Net.Http;
 using System.Text;
+using Windows.UI.Popups;
 
-namespace PhoneMediApp.WcfRestControllers
+namespace PhoneMediApp.Controllers
 {
     public class WcfRestController<T>
     {
@@ -28,22 +29,31 @@ namespace PhoneMediApp.WcfRestControllers
 
         public async Task<List<T>> getObjects(string uri)
         {
-            HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
-            request.Accept = "application/json";
-            using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
+            try
             {
-                if (response.StatusCode != HttpStatusCode.OK)
-                    throw new Exception(String.Format(
-                    "Server error (HTTP {0}: {1}).",
-                    response.StatusCode,
-                    response.StatusDescription));
+                HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+                request.Accept = "application/json";
+                using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception(String.Format(
+                        "Server error (HTTP {0}: {1}).",
+                        response.StatusCode,
+                        response.StatusDescription));
 
-                var resStream = response.GetResponseStream();
-                var stri = new StreamReader(resStream);
-                var json = stri.ReadToEnd();
-                var result = JsonConvert.DeserializeObject<ODataResponse<T>>(json);
-                return result.Value;
+                    var resStream = response.GetResponseStream();
+                    var stri = new StreamReader(resStream);
+                    var json = stri.ReadToEnd();
+                    var result = JsonConvert.DeserializeObject<ODataResponse<T>>(json);
+                    return result.Value;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageDialog msg = new MessageDialog(ex.Message);
+                await msg.ShowAsync();
+            }
+            return new List<T>();
         }
 
         public async Task<bool> insertObject(T obj, string tableName)
@@ -61,7 +71,8 @@ namespace PhoneMediApp.WcfRestControllers
             }
             catch (Exception ex)
             {
-                
+                MessageDialog msg = new MessageDialog(ex.Message);
+                await msg.ShowAsync();
             }
             return false;
         }

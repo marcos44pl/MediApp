@@ -10,7 +10,7 @@ namespace MediApp.Security
     public static class SessionPersister
     {
         static string usernameSessionvar = "username";
-        public static User User
+        public static EntityModels.User User
         {
             get
             {
