@@ -26,7 +26,7 @@ namespace WcfService.DbContext
                     db.SaveChanges();
                 
                     var roles = db.Set<Role>();
-                    Role r = new Role { Name = RolesKind.PATIENT, Users = db.TableUser.ToList() };
+                    Role r = new Role { Name = RolesKind.PATIENT};
                     Role r1 = new Role { Name = RolesKind.MEDIC };
                     Role r3 = new Role { Name = RolesKind.ADMIN };
 

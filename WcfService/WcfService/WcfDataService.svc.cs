@@ -42,6 +42,11 @@ namespace WcfService
             return CurrentDataSource.TableRole.Where(p => p.Name == role);
         }
         [WebGet]
+        public IEnumerable<Role> GetUserRole(int userId)
+        {
+            return CurrentDataSource.TableRole.Where(p => p.Users.Any(u => u.Id == userId));
+        }
+        [WebGet]
         public IEnumerable<LifeFuncMeasure> GetPatientMeasures(string pesel)
         {
             return CurrentDataSource.TableLifeFuncMeasure.Where(p => p.Patient.Pesel == pesel);

@@ -276,7 +276,6 @@
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <None Include="Service References\DbServices\service.edmx" />
     <Content Include="Views\Diseases\Survey.cshtml" />
     <Content Include="Views\Diseases\DiseasesHistory.cshtml" />
     <Content Include="Views\Account\AccessDenied.cshtml" />
@@ -284,6 +283,7 @@
     <Content Include="Views\Patient\Index.cshtml" />
     <Content Include="Views\Shared\_MedicPartial.cshtml" />
     <Content Include="Views\Medic\Patients.cshtml" />
+    <None Include="Service References\DbServices\service.edmx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\App_Data\" />

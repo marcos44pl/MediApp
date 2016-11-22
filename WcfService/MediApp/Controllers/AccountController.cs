@@ -87,6 +87,7 @@ namespace MediApp.Controllers
         public ActionResult LogOff()
         {
             Security.SessionPersister.Username = string.Empty;
+            Security.SessionPersister.User = null;
             return RedirectToAction("Index", "Home");
         }
     }

@@ -30,6 +30,11 @@ namespace WcfControllers
         {
             return (WcfAdress + string.Format("/GetPatient?pesel='{0}'", pesel));
         }
+        public static string getUserRole(int id)
+        {
+            return (string.Format("GetUserRole?userid={0}", id));
+
+        }
     }
 
 }
