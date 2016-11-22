@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using PhoneMediApp.Controllers;
 
 // The Pivot Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
 
@@ -107,9 +108,16 @@ namespace PhoneMediApp
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter.
-
-
-                if (!rootFrame.Navigate(typeof(Login), e.Arguments))
+                bool result;
+                if (UserController.isUserLogged())
+                {
+                    result = rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                }
+                else
+                {
+                    result = rootFrame.Navigate(typeof(Login), e.Arguments);
+                }
+                if (!result)
                 {
                     throw new Exception("Failed to create initial page");
                 }

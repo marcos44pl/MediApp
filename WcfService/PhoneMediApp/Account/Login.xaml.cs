@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using PhoneMediApp.WcfRestControllers;
+using PhoneMediApp.Controllers;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace PhoneMediApp
@@ -32,14 +32,12 @@ namespace PhoneMediApp
 
         public Login()
         {
-
-
-
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
         }
 
         /// <summary>
@@ -146,7 +144,7 @@ namespace PhoneMediApp
             if (result)
             {
                 LoadingBlock.Text = "Zalogowano!";
-                Frame.Navigate(typeof(PivotPage));
+                Frame.Navigate(typeof(MainPage));
             }
             else
             {
