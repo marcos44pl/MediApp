@@ -13,6 +13,7 @@ namespace EntityModels
         public int LowPressure { get; set; }
         public int HighPressure { get; set; }
         public int Pulse { get; set; }
+        public DateTime Date { get; set; }
         public int PatientId { get; set; }
         public virtual Patient Patient {get;set;}
     }
