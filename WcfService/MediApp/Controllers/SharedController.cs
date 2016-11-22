@@ -25,5 +25,19 @@ namespace MediApp.Controllers
 
             return PartialView(model);
         }
+
+        [ChildActionOnly]
+        public ActionResult _MedicPartial()
+        {
+            MedicPartialModel model = new MedicPartialModel();
+
+            if (null != SessionPersister.User &&
+               SessionPersister.User.Roles.Any(r => r.Name == RolesKind.MEDIC))
+                model.IsMedic = true;
+            else
+                model.IsMedic = false;
+
+            return PartialView(model);
+        }
     }
 }

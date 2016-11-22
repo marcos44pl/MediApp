@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 
 namespace EntityModels
 {
@@ -18,6 +18,6 @@ namespace EntityModels
     public class Output
     {
         public int Id { get; set; }
-        public Response[] Answer { get; set; }
+        public List<Response> Answer { get; set; }
     }
 }

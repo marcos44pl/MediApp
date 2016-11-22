@@ -11,6 +11,7 @@
 // Original file name:
 // Generation date: 08.11.2016 16:55:19
 using EntityModels;
+using System.Collections.Generic;
 
 namespace MediApp.DbServices
 {
@@ -958,7 +959,7 @@ namespace MediApp.DbServices
         /// <param name="pesel">Initial value of Pesel.</param>
         /// <param name="height">Initial value of Height.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Patient CreatePatient(int ID, int pesel, int height)
+        public static Patient CreatePatient(int ID, string pesel, int height)
         {
             Patient patient = new Patient();
             patient.Id = ID;
@@ -991,7 +992,7 @@ namespace MediApp.DbServices
         /// There are no comments for Property Pesel in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int Pesel
+        public string Pesel
         {
             get
             {
@@ -1005,8 +1006,8 @@ namespace MediApp.DbServices
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _Pesel;
-        partial void OnPeselChanging(int value);
+        private string _Pesel;
+        partial void OnPeselChanging(string value);
         partial void OnPeselChanged();
         /// <summary>
         /// There are no comments for Property Sex in the schema.
@@ -1090,7 +1091,7 @@ namespace MediApp.DbServices
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _Id;
-        internal Response[] Answer;
+        internal List<Response> Answer;
 
         partial void OnIdChanging(int value);
         partial void OnIdChanged();
@@ -1494,7 +1495,7 @@ namespace MediApp.DbServices
         /// There are no comments for Property Pesel in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<int> Pesel
+        public string Pesel
         {
             get
             {
@@ -1508,8 +1509,8 @@ namespace MediApp.DbServices
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<int> _Pesel;
-        partial void OnPeselChanging(global::System.Nullable<int> value);
+        private string _Pesel;
+        partial void OnPeselChanging(string value);
         partial void OnPeselChanged();
         /// <summary>
         /// There are no comments for Property Email in the schema.

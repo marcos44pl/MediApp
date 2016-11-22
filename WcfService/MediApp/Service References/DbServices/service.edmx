@@ -43,7 +43,7 @@
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-        <Property Name="Pesel" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Pesel" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Sex" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Height" Type="Edm.Int32" Nullable="false" />
       </EntityType>
@@ -87,7 +87,7 @@
         <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="FstName" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Surname" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        <Property Name="Pesel" Type="Edm.Int32" />
+        <Property Name="Pesel" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Email" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="Pass" Type="Edm.Binary" MaxLength="Max" FixedLength="false" />
         <NavigationProperty Name="Roles" Relationship="WcfService.DbContext.User_Roles" ToRole="User_Roles_Target" FromRole="User_Roles_Source" />

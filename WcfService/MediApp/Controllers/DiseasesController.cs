@@ -27,7 +27,7 @@ namespace MediApp.Controllers
             ViewBag.Message = "Wstępna diagnoza chorób";
             WcfController.saveSurvey(new EntityModels.Output
             {
-                Answer = model._output.Answer
+                Answer = model.responses
             });
 
             return RedirectToAction("Index", "Home");

@@ -199,9 +199,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DiseasesController.cs" />
+    <Compile Include="Controllers\MedicController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\WcfController.cs" />
+    <Compile Include="Models\MedicModel.cs" />
     <Compile Include="Models\PatientViewModels.cs" />
     <Compile Include="Security\MediAuthorizeAttribute.cs" />
     <Compile Include="Security\RolePrincipal.cs" />
@@ -280,6 +282,8 @@
     <Content Include="Views\Account\AccessDenied.cshtml" />
     <Content Include="Views\Shared\_PatientPartial.cshtml" />
     <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Shared\_MedicPartial.cshtml" />
+    <Content Include="Views\Medic\Patients.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\App_Data\" />

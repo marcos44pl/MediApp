@@ -1,0 +1,9 @@
+﻿@using MediApp.Models
+@model MedicPartialModel
+
+@if (Model.IsMedic)
+{
+    <li>@Html.ActionLink("Pacjenci", "Patients", "Medic")</li>
+}
+
+

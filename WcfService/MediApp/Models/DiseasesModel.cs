@@ -11,64 +11,17 @@ namespace MediApp.Models
 {
     public class SurveyModel : IEnumerable
     {
-        public const int surveySize = 13;
-
-        
-        //public Response[] Answer = new Response[surveySize];
-
+              
         [Required]
-        public Output _output;
+        public List<Response> responses { get; set; }
 
         public SurveyModel()
+        {    }
+
+        public SurveyModel(List<Response> pArray)
         {
-            DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
-            _output = new Output();
-            _output.Answer = new Response[surveySize];
-
-            for (int i = 0; i < surveySize; i++)
-            {
-                _output.Answer[i] = new Response();
-                _output.Answer[i].Id = i;
-                _output.Answer[i].Question = new Question();
-                //Answer[i].Question = _output[i];
-            }
-           _output.Answer[0].Question.Name = "Kichanie";
-           _output.Answer[0].Question.Content = "Czy kichasz znacznie częściej niż zdarzało Ci się wcześniej?";
-           _output.Answer[1].Question.Name = "Ból gardła";
-           _output.Answer[1].Question.Content = "Czy boli Cię gardło?";
-           _output.Answer[2].Question.Name = "Osłabienie";
-           _output.Answer[2].Question.Content = "Czy czujesz się osłabiony?";
-           _output.Answer[3].Question.Name = "Bóle kostno-stawowe";
-           _output.Answer[3].Question.Content = "Czy odczuwasz bóle kostno-stawowe?";
-           _output.Answer[4].Question.Name = "Poczucie rozbicia";
-           _output.Answer[4].Question.Content = "Czy czujesz się bardziej zmęczony i osłabiony niż zazwyczaj?";
-           _output.Answer[5].Question.Name = "Ból głowy";
-           _output.Answer[5].Question.Content = "Czy odczuwasz nasilony, długotrwały ból głowy?";
-           _output.Answer[6].Question.Name = "Dreszcze";
-           _output.Answer[6].Question.Content = "Czy masz dreszcze?";
-           _output.Answer[7].Question.Name = "Długotrwały katar";
-           _output.Answer[7].Question.Content = "Czy masz katar trwający dłużej niż 2 tygodnie?";
-           _output.Answer[8].Question.Name = "Suchy kaszel";
-           _output.Answer[8].Question.Content = "Czy masz suchy kaszel?";
-           _output.Answer[9].Question.Name = "Świszczący oddech";
-           _output.Answer[9].Question.Content = "Czy masz świszczący oddech?";
-           _output.Answer[10].Question.Name = "Napady duszności";
-           _output.Answer[10].Question.Content = "Czy masz napady duszności lub mocny ucisk w klatce piersiowej, w szczególności po wysiłku?";
-           _output.Answer[11].Question.Name = "Zaczerwienione gardło";
-           _output.Answer[11].Question.Content = "Czy masz zaczerwienione lub opuchnięte gardło?";
-           _output.Answer[12].Question.Name = "Spuchnięte gardło";
-           _output.Answer[12].Question.Content = "Czy masz spuchnięte gardło, problemy z przełykaniem i męczy Cię chrypka?";       
-
-    }
-
-        public SurveyModel(Response[] pArray)
-        {
-           _output.Answer = new Response[pArray.Length];
-
-            for (int i = 0; i < pArray.Length; i++)
-            {
-                _output.Answer[i] = pArray[i];
-            }
+           responses = new List<Response>();
+           responses = pArray;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -78,23 +31,106 @@ namespace MediApp.Models
 
         public AnswerEnum GetEnumerator()
         {
-            return new AnswerEnum(_output.Answer);
+            return new AnswerEnum();
         }
 
         public class AnswerEnum : IEnumerator
         {
-            public Output _output = new Output();
+            public List<Response> res;
             int position = -1;
 
-            public AnswerEnum(Response[] list)
+            public AnswerEnum()
             {
-                _output.Answer = list;
+                res = new List<Response>();
+                Response r = new Response
+                {
+                    Id = 0,
+                    Question = new Question { Name = "Kichanie", Content = "Czy kichasz znacznie częściej niż zdarzało Ci się poprzednio?" }
+                };
+                Response r1 = new Response
+                {
+                    Id = 1,
+                    Question = new Question { Name = "Ból gardła", Content = "Czy boli Cię gardło?" }
+                };
+                Response r2 = new Response
+                {
+                    Id = 2,
+                    Question = new Question { Name = "Osłabienie", Content = "Czy czujesz się osłabiony?" }
+                };
+                Response r3 = new Response
+                {
+                    Id = 3, 
+                    Question = new Question { Name = "Bóle kostno-stawowe", Content = "Czy odczuwasz bóle kostno-stawowe?" }
+                };
+                Response r4 = new Response
+                { 
+                    Id = 4,
+                    Question = new Question { Name = "Poczucie rozbicia", Content = "Czy czujesz się bardziej zmęczony i osłabiony niż zazwyczaj?" }
+                };
+                Response r5 = new Response
+                {
+                    Id = 5,
+                    Question = new Question { Name = "Ból głowy", Content = "Czy odczuwasz nasilony, długotrwały ból głowy?" }
+                };
+                Response r6 = new Response
+                {
+                    Id = 6,
+                    Question = new Question { Name = "Dreszcze", Content = "Czy masz dreszcze?" }
+                };
+                Response r7 = new Response
+                {
+                    Id = 7,
+                    Question = new Question { Name = "Długotrwały katar", Content = "Czy masz katar trwający dłużej niż 2 tygodnie?" }
+                };
+                Response r8 = new Response
+                {
+                    Id = 8,
+                    Question = new Question { Name = "Suchy kaszel", Content = "Czy masz suchy kaszel?" }
+                };
+                Response r9 = new Response
+                {
+                    Id = 9,
+                    Question = new Question { Name = "Świszczący oddech", Content = "Czy masz świszczący oddech?" }
+                };
+                Response r10 = new Response
+                {
+                    Id = 10,
+                    Question = new Question { Name = "Zaczerwienione gardło", Content = "Czy masz zaczerwienione lub opuchnięte gardło?" }
+                };
+                Response r11 = new Response
+                {
+                    Id = 11,
+                    Question = new Question { Name = "Spuchnięte gardło", Content = "Czy masz spuchnięte gardło, problemy z przełykaniemm i męczy Cię chrypka?" }
+                };
+                Response r12 = new Response
+                {
+                    Id = 12,
+                    Question = new Question { Name = "Napady duszności", Content = "Czy masz napady duszności lub mocny ucisk w klatce piersiowej, w szczególności po wysiłku?" }
+                };
+                res.Add(r);
+                res.Add(r1);
+                res.Add(r2);
+                res.Add(r3);
+                res.Add(r4);
+                res.Add(r5);
+                res.Add(r6);
+                res.Add(r7);
+                res.Add(r8);
+                res.Add(r9);
+                res.Add(r10);
+                res.Add(r11);
+                res.Add(r12);
+            }
+
+            public AnswerEnum(List<Response> list)
+            {
+                res = list;
             }
 
             public bool MoveNext()
             {
                 position++;
-                return (position < _output.Answer.Length);
+                return (position < res.Count);
             }
 
             public void Reset()
@@ -115,7 +151,7 @@ namespace MediApp.Models
                 {
                     try
                     {
-                        return _output.Answer[position];
+                        return res[position];
                     }
                     catch (IndexOutOfRangeException)
                     {

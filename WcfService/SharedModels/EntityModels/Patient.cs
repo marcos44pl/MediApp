@@ -9,7 +9,7 @@ namespace EntityModels
     public class Patient
     {
         public int Id { get; set; }
-        public int Pesel { get; set; }
+        public string Pesel { get; set; }
         public string Sex { get; set; }
         public int Height { get; set; }
     }

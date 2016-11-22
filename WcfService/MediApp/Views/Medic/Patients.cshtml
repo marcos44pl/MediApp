@@ -1,0 +1,17 @@
+﻿@model MediApp.Models.MedicPartialModel
+
+@{
+    ViewBag.Title = "Pacjenci";
+}
+
+<h2>Dane pacjentów</h2>
+
+    <div>
+        @foreach (var item in Model)
+        {
+            <h3>Pacjent</h3>
+            <p>Pesel: @item.Pesel</p>
+            <p>Wzrost: @item.Height</p>
+            <p>Płeć: @item.Sex</p>
+        }
+    </div>
