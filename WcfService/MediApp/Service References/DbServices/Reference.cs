@@ -10,6 +10,8 @@
 
 // Original file name:
 // Generation date: 26.11.2016 18:53:31
+using System.Collections.Generic; 
+using EntityModels; 
 namespace MediApp.DbServices
 {
     

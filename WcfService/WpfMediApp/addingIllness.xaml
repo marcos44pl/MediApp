@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:WpfMediApp"
         mc:Ignorable="d"
         Title="Dodawanie choroby" Height="398" Width="400">
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label>Nazwa:</Label>
+        <TextBox Grid.Column="1" Margin="0,0,0,10" />
+        <Label Grid.Row="1">Data:</Label>
+        <DatePicker Height="25" Name="datePicker1" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="0,0,209,0">
+            <DatePicker.Background>
+                <ImageBrush/>
+            </DatePicker.Background>
+        </DatePicker>
+        <Button x:Name="button" Content="Zapisz" Grid.Column="1" HorizontalAlignment="Left" Margin="221,288,0,-259" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button_Click"/>
     </Grid>
 </Window>
