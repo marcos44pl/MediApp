@@ -93,11 +93,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addingIllness.xaml.cs">
+      <DependentUpon>addingIllness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="addingSymptoms.xaml.cs">
+      <DependentUpon>addingSymptoms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Symptoms.cs" />
+    <Compile Include="Illness.cs" />
+    <Compile Include="illnesses.xaml.cs">
+      <DependentUpon>illnesses.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
+    <Compile Include="symptoms.xaml.cs">
+      <DependentUpon>symptoms.xaml</DependentUpon>
+    </Compile>
+    <Page Include="addingIllness.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="addingSymptoms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="illnesses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +136,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="symptoms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

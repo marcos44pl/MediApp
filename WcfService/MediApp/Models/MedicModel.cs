@@ -1,7 +1,6 @@
 ﻿using EntityModels;
 using System;
 using System.Collections;
-using EntityModels;
 using System.Collections.Generic;
 using WcfControllers;
 

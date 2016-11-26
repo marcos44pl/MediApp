@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfMediApp.illnesses"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMediApp"
+        mc:Ignorable="d"
+        Title="Historia chorób" Height="400" Width="300">
+    <Grid Margin="0,0,-8,-31">
+        <ItemsControl Name="illList">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="10" Text="{Binding Text}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>

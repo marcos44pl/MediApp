@@ -16,11 +16,12 @@
         </Grid.Background>
         <Menu x:Name="menu1" HorizontalAlignment="Left" Height="650" Margin="79,10,0,0" VerticalAlignment="Top" Width="800" Background="Black" Opacity="0.75" Grid.ColumnSpan="2">
             <Grid Height="749" Width="1006">
-                <Label x:Name="label" Content="MediApp" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Width="280" Height="102" FontSize="80" FontFamily="Gabriola" FontWeight="Bold" RenderTransformOrigin="0.65,1.127" Foreground="White" Opacity="0.8" FlowDirection="RightToLeft" Margin="430,543,0,0"/>
-                <Button x:Name="button" Content="Wprowadź &#xD;&#xA;   objawy" Background="#FFBB0000" Click="button_Click" FontSize="40" FontFamily="Sitka Display" FontWeight="Bold" Margin="10,10,796,619" Width="200" Height="120"/>
-                <Button x:Name="button_Copy" Content="Wprowadź &#xA;  chorobę" Background="#FFBB0000" Click="button_Click" FontSize="40" FontFamily="Sitka Display" FontWeight="Bold" Margin="10,135,796,494" Width="200" Height="120"/>
-                <Button x:Name="button_Copy1" Content="  Lista &#xD;&#xA;chorób" Click="button_Click" FontSize="40" FontFamily="Sitka Display" FontWeight="Bold" Background="#FFBB0000" Margin="10,260,796,369" Width="200" Height="120"/>
+                <Label x:Name="label" Content="MediApp" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Width="280" Height="102" FontSize="80" FontFamily="Gabriola" RenderTransformOrigin="0.65,1.127" Foreground="White" Opacity="0.8" FlowDirection="RightToLeft" Margin="430,543,0,0"/>
+                <Button x:Name="button4" Content="WPROWADŹ OBJAWY" Background="#00BB0000" Click="button4_Click" FontSize="34.667" FontFamily="Yu Gothic UI Light" FontWeight="Bold" Margin="10,454,0,175" Height="120" BorderBrush="#00707070" Foreground="White" HorizontalAlignment="Left"/>
+                <Button x:Name="button3" Content="DODAJ CHOROBĘ" Background="#00BB0000" Click="button3_Click" FontSize="34.667" FontFamily="Yu Gothic Light" FontWeight="Bold" Margin="10,322,0,307" Height="120" Foreground="White" BorderBrush="#00707070" HorizontalAlignment="Left"/>
+                <Button x:Name="button2" Content="LISTA OBJAWÓW" Click="button2_Click" FontSize="34.667" FontFamily="Yu Gothic Light" FontWeight="Bold" Background="#00BB0000" Margin="10,188,0,438" BorderBrush="#00707070" Foreground="White" HorizontalAlignment="Left"/>
                 <Image x:Name="image" Source="symbol.png" Margin="688,505,218,104" Width="100"/>
+                <Button x:Name="button1" Content="LISTA CHORÓB" Click="button1_Click" FontSize="34.667" FontFamily="Yu Gothic UI Light" Margin="10,58,0,571" Background="#00000000" Foreground="White" Opacity="0.8" IsCancel="True" BorderBrush="#00707070" HorizontalAlignment="Left"/>
             </Grid>
         </Menu>
 
