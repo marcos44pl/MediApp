@@ -20,19 +20,25 @@ namespace WcfService.DbContext
                     var users = db.Set<User>();
                     User u = new User { Email = "abc@rak.pl" };
                     User u1 = new User { Email = "efg@hiv.pl" };
+
+                    string str = "43F1EFECD33031B0CCD142B1C5CCCC44EA19AD3E7A947965C5B0C16A632B5D7B"; //h: marcos
+                    byte[] bytes = new byte[str.Length * sizeof(char)];
+                    Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+                    User u2 = new User { Email = "lekarz@lekarz.pl", Pass = bytes };
                     users.Add(u);
                     users.Add(u1);
-
+                    users.Add(u2);
                     db.SaveChanges();
                 
                     var roles = db.Set<Role>();
-                    Role r = new Role { Name = RolesKind.PATIENT};
-                    Role r1 = new Role { Name = RolesKind.MEDIC };
-                    Role r3 = new Role { Name = RolesKind.ADMIN };
-
+                    Role r = new Role { Name = RolesKind.PATIENT, Users = new List<User>{ u,u1} };
+                    r.Users.Add(u);
+                    r.Users.Add(u1);
+                    Role r1 = new Role { Name = RolesKind.MEDIC, Users = new List<User> { u2 } };
+                    Role r2 = new Role { Name = RolesKind.ADMIN };
                     roles.Add(r);
                     roles.Add(r1);
-                    roles.Add(r3);
+                    roles.Add(r2);
 
                     db.SaveChanges();
 
