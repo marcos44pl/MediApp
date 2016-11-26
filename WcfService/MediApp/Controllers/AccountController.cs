@@ -70,7 +70,7 @@ namespace MediApp.Controllers
                                                   Encoding.ASCII.GetByteCount(model.Password));
 
                
-                WcfController.createPatient(new EntityModels.User{ Pass = crypto,
+                WcfController.createPatient(new EntityModels.User{ Pass = crypto, Pesel = model.Pesel,
                     Email = model.Email, Surname = model.SurName,FstName = model.FirstName });
 
                 return RedirectToAction("Index", "Home");

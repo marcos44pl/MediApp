@@ -78,7 +78,10 @@ namespace MediApp.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
+        [Required]
+        [StringLength(11, ErrorMessage = "Pesel nieprawidłowy",MinimumLength = 11)
+        [Display(Name = "Pesel")]
+        public string Pesel { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Hasło musi zawierać minimum {2} znaków", MinimumLength = 6)]
         [DataType(DataType.Password)]

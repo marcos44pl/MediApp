@@ -96,7 +96,7 @@ namespace MediApp.Controllers
         {
             var outputWcf = new DbServices.Output
             {
-                Answer = output.Answer
+               // Answer = output.Answer
             };
             try
             {
