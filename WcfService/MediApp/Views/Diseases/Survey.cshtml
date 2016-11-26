@@ -18,11 +18,11 @@
                     <div class="form-group">
                         <div class="col-md-10">
                             @Html.LabelFor(m => m.responses[item.Id].Chosen, "Tak", new { @class = "col-md-2 control-label",  })
-                            @Html.RadioButtonFor(m => m.responses[item.Id].Chosen, new { @class = "form-control" })
+                            @Html.RadioButtonFor(m => m.responses[item.Id].Chosen, true, new { id = "true",  @class = "form-control" })
                         </div>
                         <div class="col-md-10">
                             @Html.LabelFor(m => m.responses[item.Id].Chosen, "Nie", new { @class = "col-md-2 control-label" })
-                            @Html.RadioButtonFor(m => m.responses[item.Id].Chosen, new { @class = "form-control" })
+                            @Html.RadioButtonFor(m => m.responses[item.Id].Chosen, false, new { id = "false", @checked = true, @class = "form-control" })
                         </div>
                      </div>
                </li>
