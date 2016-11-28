@@ -25,10 +25,25 @@ namespace WpfMediApp
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
-
+            illnesses ill = new illnesses();
+            ill.Show();
         }
-        
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            symptoms sym = new symptoms();
+            sym.Show();
+        }
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            addingIllness addIll = new addingIllness();
+            addIll.Show();
+        }
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            addingSymptoms addSym = new addingSymptoms();
+            addSym.Show();
+        }
     }
 }
