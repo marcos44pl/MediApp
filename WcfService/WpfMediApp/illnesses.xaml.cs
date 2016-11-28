@@ -19,17 +19,19 @@ namespace WpfMediApp
     /// </summary>
     public partial class illnesses : Window
     {
-        public List<Illness> myIllnesses;
+        public static List<Illness> myIllnesses;
 
         public illnesses()
         {
             InitializeComponent();
-
-            myIllnesses = new List<Illness>();
-            DateTime dt1 = new DateTime(2015, 10, 5);
-            DateTime dt2 = new DateTime(2016, 4, 2);
-            myIllnesses.Add(new Illness("grypa", dt1));
-            myIllnesses.Add(new Illness ("ospa", dt2));
+            if (myIllnesses == null)
+            {
+                myIllnesses = new List<Illness>();
+                DateTime dt1 = new DateTime(2015, 10, 5);
+                DateTime dt2 = new DateTime(2016, 4, 2);
+                myIllnesses.Add(new Illness("grypa", dt1));
+                myIllnesses.Add(new Illness ("ospa", dt2));
+            }
             illList.ItemsSource = myIllnesses;
         }
     }

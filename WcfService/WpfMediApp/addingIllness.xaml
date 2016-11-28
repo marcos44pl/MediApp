@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label>Nazwa:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
+        <TextBox Name="TBIllness" Grid.Column="1" Margin="0,0,0,10" />
         <Label Grid.Row="1">Data:</Label>
         <DatePicker Height="25" Name="datePicker1" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="0,0,209,0">
             <DatePicker.Background>

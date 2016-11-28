@@ -26,7 +26,15 @@ namespace WpfMediApp
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (TBIllness.Text.CompareTo("") != 0 && datePicker1.Text.CompareTo("") != 0)
+            {
+                if (illnesses.myIllnesses == null)
+                {
+                    illnesses.myIllnesses = new List<Illness>();
+                }
+                illnesses.myIllnesses.Add(new Illness(TBIllness.Text, datePicker1.DisplayDate));
+                Close();
+            }
         }
     }
 }

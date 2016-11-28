@@ -19,15 +19,17 @@ namespace WpfMediApp
     /// </summary>
     public partial class symptoms : Window
     {
-        public List<Symptoms> mySymptoms;
+        public static List<Symptoms> mySymptoms;
         public symptoms()
         {
             InitializeComponent();
-
-            mySymptoms = new List<Symptoms>();
-            BloodPressure bp = new BloodPressure { Systolic = 120, Diastolic = 80 };
-            mySymptoms.Add(new Symptoms(38.5, bp));
-            mySymptoms.Add(new Symptoms(36.2, bp));
+            if (mySymptoms == null)
+            {
+                mySymptoms = new List<Symptoms>();
+                BloodPressure bp = new BloodPressure { Systolic = 120, Diastolic = 80 };
+                mySymptoms.Add(new Symptoms(38.5, bp));
+                mySymptoms.Add(new Symptoms(36.2, bp));
+            }
             symList.ItemsSource = mySymptoms;
         }
     }
