@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using EntityModels;
 using WcfControllers;
+using MediApp.Models;
 namespace MediApp.Controllers
 {   
     public static class WcfController
@@ -60,12 +61,16 @@ namespace MediApp.Controllers
                 FstName = user.FstName,
                 Surname = user.Surname,
                 Email = user.Email,
-                Pass = user.Pass,  
+                Pass = user.Pass, 
+                Pesel = user.Pesel, 
                 Roles = { role }             
             };
+            var patient = new DbServices.Patient();
+            patient.Pesel = user.Pesel;
 
             try
             {
+                db.AddToTablePatient(patient);
                 db.AddRelatedObject(role, "Users", userWcf);
                 DataServiceResponse response = db.SaveChanges();
                 foreach (ChangeOperationResponse change in response)
@@ -96,7 +101,7 @@ namespace MediApp.Controllers
         {
             var outputWcf = new DbServices.Output
             {
-               // Answer = output.Answer
+               
             };
             try
             {
@@ -124,6 +129,93 @@ namespace MediApp.Controllers
                 throw new ApplicationException(
                     "An error occurred when saving changes.", ex);
             }
+        }
+        public static PatientFull getPatient(int id)
+        {
+            var patient = db.TablePatient.Where(p => p.Id == id).First();
+            var user = db.TableUser.Where(p => p.Pesel == patient.Pesel).First();
+            var pFull = new PatientFull
+            {
+                Id = id,
+                Pesel = patient.Pesel,
+                Sex = patient.Sex,
+                Email = user.Email,
+                FirstName = user.FstName,
+                SurnName = user.Surname,
+                Height = patient.Height,
+            };
+            return pFull;
+        }
+        public static IEnumerable<IllnessModel> getIllness(int id)
+        {
+            var illness = db.TablePatientWasSick.Expand("Illness,Illness").Where(i => i.PatientId == id);
+
+            List<IllnessModel> models = new List<IllnessModel>();
+            foreach(var i in illness)
+            {
+                models.Add(new IllnessModel {
+                    Date = i.Date,
+                    Description = i.Description,
+                    Name = i.Illness.Name,
+                    IdPatient = id });
+            }
+
+
+            return models.AsEnumerable();
+        }
+        public static List<PatientFull> getAllPatients()
+        {
+            var patients = db.TablePatient.ToList();
+            var users = db.TableUser.ToList();
+            var result = from patient in patients
+                        join usr in users on patient.Pesel equals usr.Pesel
+                        select new { Key = usr,  Value = patient };
+
+            List<PatientFull> all = new List<PatientFull>();
+
+            foreach(var a in result)
+            {
+                all.Add(new PatientFull
+                {
+                    Id = a.Value.Id,
+                    Email = a.Key.Email,
+                    FirstName = a.Key.FstName,
+                    SurnName = a.Key.Surname,
+                    Height = a.Value.Height,
+                    Sex = a.Value.Sex,
+                    Pesel = a.Value.Pesel
+                });
+            }
+            return all;
+        }
+        public static void addIlnnessToDb(IllnessModel illness)
+        {
+            var illDb = db.TableIllness.Where(i => i.Name == illness.Name).ToList();
+
+            var ilnessDb = new DbServices.Illness();
+
+            if (illDb.Count == 0)
+            {
+                ilnessDb.Name = illness.Name;
+                db.AddToTableIllness(ilnessDb);
+                db.SaveChanges();
+            }
+            else
+            {
+                ilnessDb = illDb.First();
+            }
+
+            var pWasSick = new DbServices.PatientWasSick
+            {
+                Date = illness.Date,
+                Description = illness.Description,
+                PatientId = illness.IdPatient,
+                Illness = ilnessDb,
+                IllnessId = ilnessDb.Id
+            };
+            db.AddToTablePatientWasSick(pWasSick);
+            db.SetLink(pWasSick, "Illness", ilnessDb);
+            db.SaveChanges();
         }
     }
 }

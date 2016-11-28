@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MediApp.Models.IllnessModel>
+  
+<h4>Choroby pacjenta:</h4>
+<table class="table">
+    <tr>
+        <th>
+            Data choroby:
+        </th>
+        <th>
+            Nazwa choroby:
+        </th>
+        <th>
+            Opis:
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+    </tr>
+}
+</table>

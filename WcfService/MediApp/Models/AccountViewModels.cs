@@ -79,7 +79,7 @@ namespace MediApp.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
         [Required]
-        [StringLength(11, ErrorMessage = "Pesel nieprawidłowy",MinimumLength = 11)
+        [StringLength(11, ErrorMessage = "Pesel nieprawidłowy",MinimumLength = 11)]
         [Display(Name = "Pesel")]
         public string Pesel { get; set; }
         [Required]

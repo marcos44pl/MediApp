@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("O nas", "About", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                      @{ Html.RenderAction("_PatientPartial", "Shared"); }
+                     @{ Html.RenderAction("_MedicPartial", "Shared"); }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

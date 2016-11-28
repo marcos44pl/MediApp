@@ -1,0 +1,88 @@
+﻿@model MediApp.Models.PatientFull
+
+@{
+    ViewBag.Title = "PatientDetails";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    <h4>Pacjent:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurnName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurnName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pesel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+    </dl>
+</div>
+@{ Html.RenderAction("PatientsIlnessPartial", Model.Id); }
+
+<p>
+    @Html.ActionLink(
+    "Dodaj chorobę",                                        
+    "CreateIllness",                                  
+    "Medic",                                        
+    new
+    {                                                  
+        id = Model.Id
+    },
+    null                                                 
+)
+</p>
+
+<p>
+    @Html.ActionLink("Powrót do listy", "Patients")
+</p>
