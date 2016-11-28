@@ -12,7 +12,7 @@ namespace WcfControllers
         public static string TableUser = "TableUser";
         public static string TablePatient = "TablePatient";
         public static string TableMeasure = "TableLifeFuncMeasure";
-
+        public static string GetAllPatient = "GetAllPatient";
         public static string getUserUrl(string email)
         {
             return (WcfAdress + string.Format("/GetUser?email='{0}'", email));

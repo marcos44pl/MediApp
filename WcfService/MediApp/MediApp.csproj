@@ -282,8 +282,11 @@
     <Content Include="Views\Shared\_PatientPartial.cshtml" />
     <Content Include="Views\Patient\Index.cshtml" />
     <Content Include="Views\Shared\_MedicPartial.cshtml" />
-    <Content Include="Views\Medic\Patients.cshtml" />
     <None Include="Service References\DbServices\service.edmx" />
+    <Content Include="Views\Medic\Patients.cshtml" />
+    <Content Include="Views\Medic\PatientDetails.cshtml" />
+    <Content Include="Views\Medic\PatientsIlnessPartial.cshtml" />
+    <Content Include="Views\Medic\CreateIllness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\App_Data\" />

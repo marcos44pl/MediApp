@@ -18,6 +18,6 @@ namespace EntityModels
     public class Output
     {
         public int Id { get; set; }
-        public List<Response> Answer { get; set; }
+        public virtual List<Response> Answer { get; set; }
     }
 }

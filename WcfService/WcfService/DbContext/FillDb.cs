@@ -6,6 +6,8 @@ using EntityModels;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WcfService.DbContext
 {
@@ -21,9 +23,10 @@ namespace WcfService.DbContext
                     User u = new User { Email = "abc@rak.pl" };
                     User u1 = new User { Email = "efg@hiv.pl" };
 
-                    string str = "43F1EFECD33031B0CCD142B1C5CCCC44EA19AD3E7A947965C5B0C16A632B5D7B"; //h: marcos
-                    byte[] bytes = new byte[str.Length * sizeof(char)];
-                    Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+                    string pass = "lekarz";
+                    SHA256Managed crypt = new SHA256Managed();
+                    byte[] bytes = crypt.ComputeHash(Encoding.ASCII.GetBytes(pass), 0,
+                                   Encoding.ASCII.GetByteCount(pass));
                     User u2 = new User { Email = "lekarz@lekarz.pl", Pass = bytes };
                     users.Add(u);
                     users.Add(u1);

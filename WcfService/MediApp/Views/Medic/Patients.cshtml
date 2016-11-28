@@ -1,17 +1,64 @@
-﻿@model MediApp.Models.MedicPartialModel
+﻿@model IEnumerable<MediApp.Models.PatientFull>
 
 @{
-    ViewBag.Title = "Pacjenci";
+    ViewBag.Title = "View";
 }
 
-<h2>Dane pacjentów</h2>
+<h2>Pacjenci:</h2>
 
-    <div>
-        @foreach (var item in Model)
-        {
-            <h3>Pacjent</h3>
-            <p>Pesel: @item.Pesel</p>
-            <p>Wzrost: @item.Height</p>
-            <p>Płeć: @item.Sex</p>
-        }
-    </div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurnName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SurnName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pesel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.ActionLink("Szczegóły", "PatientDetails", new {  id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
