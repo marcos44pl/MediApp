@@ -127,7 +127,7 @@ namespace MediApp.Controllers
             catch (DataServiceRequestException ex)
             {
                 throw new ApplicationException(
-                    "An error occurred when saving changes.", ex);
+                    "Wystąpił błąd podczas zapisu.", ex);
             }
         }
         public static PatientFull getPatient(int id)
