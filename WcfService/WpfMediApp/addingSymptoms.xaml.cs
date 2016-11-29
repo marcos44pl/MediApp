@@ -23,6 +23,7 @@ namespace WpfMediApp
         public addingSymptoms()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

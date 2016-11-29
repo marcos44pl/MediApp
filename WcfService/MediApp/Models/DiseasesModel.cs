@@ -42,10 +42,12 @@ namespace MediApp.Models
 
             public AnswerEnum()
             {
+                int i = 0;
                 res = new List<Response>();
                 foreach (DbServices.Question q in db.TableQuestion)
                 {
-                    res.Add(new Response { Id = 0, Question = new Question { Id = q.Id, Name = q.Name, Content = q.Content } });
+                    res.Add(new Response { Id = i, Question = new Question { Id = i, Name = q.Name, Content = q.Content } });
+                    i++;
                 }
             }
 

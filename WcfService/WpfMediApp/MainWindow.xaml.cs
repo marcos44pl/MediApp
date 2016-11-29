@@ -23,6 +23,7 @@ namespace WpfMediApp
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -44,6 +45,11 @@ namespace WpfMediApp
         {
             addingSymptoms addSym = new addingSymptoms();
             addSym.Show();
+        }
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            login log = new login();
+            log.Show();
         }
     }
 }

@@ -9,8 +9,8 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 22.11.2016 22:46:21
-namespace WpfMediApp.ServiceReference
+// Generation date: 28.11.2016 23:11:44
+namespace WpfMediApp.DbServices
 {
     
     /// <summary>
@@ -39,7 +39,7 @@ namespace WpfMediApp.ServiceReference
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
-            global::System.Type resolvedType = this.DefaultResolveType(typeName, "WcfService.DbContext", "WpfMediApp.ServiceReference");
+            global::System.Type resolvedType = this.DefaultResolveType(typeName, "WcfService.DbContext", "WpfMediApp.DbServices");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -54,7 +54,7 @@ namespace WpfMediApp.ServiceReference
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected string ResolveNameFromType(global::System.Type clientType)
         {
-            if (clientType.Namespace.Equals("WpfMediApp.ServiceReference", global::System.StringComparison.Ordinal))
+            if (clientType.Namespace.Equals("WpfMediApp.DbServices", global::System.StringComparison.Ordinal))
             {
                 return string.Concat("WcfService.DbContext.", clientType.Name);
             }

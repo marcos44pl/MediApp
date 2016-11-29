@@ -23,6 +23,7 @@ namespace WpfMediApp
         public symptoms()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             if (mySymptoms == null)
             {
                 mySymptoms = new List<Symptoms>();

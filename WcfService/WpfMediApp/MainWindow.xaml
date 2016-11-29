@@ -22,6 +22,7 @@
                 <Button x:Name="button2" Content="LISTA OBJAWÓW" Click="button2_Click" FontSize="34.667" FontFamily="Yu Gothic Light" FontWeight="Bold" Background="#00BB0000" Margin="10,188,0,438" BorderBrush="#00707070" Foreground="White" HorizontalAlignment="Left"/>
                 <Image x:Name="image" Source="symbol.png" Margin="688,505,218,104" Width="100"/>
                 <Button x:Name="button1" Content="LISTA CHORÓB" Click="button1_Click" FontSize="34.667" FontFamily="Yu Gothic UI Light" Margin="10,58,0,571" Background="#00000000" Foreground="White" Opacity="0.8" IsCancel="True" BorderBrush="#00707070" HorizontalAlignment="Left"/>
+                <Button x:Name="login_button" x:FieldModifier="public" Content="Zaloguj się" Click="button5_Click" FontSize="29.333" FontFamily="Yu Gothic UI Light" Background="#00000000" Foreground="White" Opacity="0.8" IsCancel="True" BorderBrush="#00707070" HorizontalAlignment="Left" Margin="618,0,0,682" Width="170" Visibility="{Binding Path=ButtonVisible}"/>
             </Grid>
         </Menu>
 
