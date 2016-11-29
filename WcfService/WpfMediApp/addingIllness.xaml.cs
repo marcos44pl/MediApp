@@ -32,7 +32,11 @@ namespace WpfMediApp
         {
             if (TBIllness.Text.CompareTo("") != 0 && datePicker1.Text.CompareTo("") != 0)
             {
-                Illness illness = new Illness(TBIllness.Text, datePicker1.DisplayDate);
+                int day = int.Parse(datePicker1.Text.Substring(0, 2));
+                int month = int.Parse(datePicker1.Text.Substring(3, 2));
+                int year = int.Parse(datePicker1.Text.Substring(6, 4));
+                DateTime dt = new DateTime(year, month, day);
+                Illness illness = new Illness(TBIllness.Text, dt);
                 if (illnesses.myIllnesses == null)
                 {
                     illnesses.myIllnesses = new List<Illness>();

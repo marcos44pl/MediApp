@@ -23,6 +23,7 @@ namespace WpfMediApp
     {
         static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
         public static List<Illness> myIllnesses;
+        public static bool downloadedIllnesses = false;
 
         public illnesses()
         {
@@ -31,12 +32,8 @@ namespace WpfMediApp
             if (myIllnesses == null)
             {
                 myIllnesses = new List<Illness>();
-                DateTime dt1 = new DateTime(2015, 10, 5);
-                DateTime dt2 = new DateTime(2016, 4, 2);
-                myIllnesses.Add(new Illness("grypa", dt1));
-                myIllnesses.Add(new Illness ("ospa", dt2));
             }
-            if (UserPersister.User != null)
+            if (UserPersister.User != null && !downloadedIllnesses)
             {
                 var illness = db.TablePatientWasSick.Expand("Illness,Illness").Where(i => i.PatientId == UserPersister.User.Id);
 
@@ -47,18 +44,7 @@ namespace WpfMediApp
                        i.Illness.Name, i.Date
                     ));
                 }
-
-
-                /*var patientDb = db.TablePatientWasSick.Where(i => i.Patient.Pesel == UserPersister.User.Pesel).ToList();
-                List<DbServices.Illness> dbIllnesses = new List<DbServices.Illness>();
-                foreach (DbServices.PatientWasSick p in patientDb)
-                {
-                    dbIllnesses = db.TableIllness.Where(i => i.Id == p.IllnessId).ToList();
-
-                    foreach (DbServices.Illness dbill in dbIllnesses) {
-                        myIllnesses.Add(new Illness (dbill.Name, DateTime.Now));
-                    }
-                }*/
+                downloadedIllnesses = true;
             }
             illList.ItemsSource = myIllnesses;
         }

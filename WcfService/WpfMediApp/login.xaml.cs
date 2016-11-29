@@ -38,7 +38,7 @@ namespace WpfMediApp
                 errormessage.Text = "Wprowadź email.";
                 textBoxEmail.Focus();
             }
-            else if (!Regex.IsMatch(textBoxEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            else if (!Regex.IsMatch(textBoxEmail.Text, @"^[a-zA-Z0-9][\w\.-]*@[a-zA-Z0-9][\w\.-]*\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
                 errormessage.Text = "Wprowadź poprawny email.";
                 textBoxEmail.Select(0, textBoxEmail.Text.Length);

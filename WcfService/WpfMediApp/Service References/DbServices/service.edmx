@@ -35,6 +35,7 @@
         <Property Name="LowPressure" Type="Edm.Int32" Nullable="false" />
         <Property Name="HighPressure" Type="Edm.Int32" Nullable="false" />
         <Property Name="Pulse" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Date" Type="Edm.DateTime" Nullable="false" />
         <Property Name="PatientId" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Patient" Relationship="WcfService.DbContext.LifeFuncMeasure_Patient" ToRole="LifeFuncMeasure_Patient_Target" FromRole="LifeFuncMeasure_Patient_Source" />
       </EntityType>
@@ -177,10 +178,20 @@
         <EntitySet Name="TableQuestion" EntityType="WcfService.DbContext.Question" />
         <EntitySet Name="TableRole" EntityType="WcfService.DbContext.Role" />
         <EntitySet Name="TableUser" EntityType="WcfService.DbContext.User" />
-        <FunctionImport Name="GetIllness" ReturnType="Collection(WcfService.DbContext.Illness)" EntitySet="TableIllness" m:HttpMethod="GET" />
-        <FunctionImport Name="GetPatient" ReturnType="Collection(WcfService.DbContext.Patient)" EntitySet="TablePatient" m:HttpMethod="GET" />
         <FunctionImport Name="GetUser" ReturnType="Collection(WcfService.DbContext.User)" EntitySet="TableUser" m:HttpMethod="GET">
           <Parameter Name="email" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetPatient" ReturnType="Collection(WcfService.DbContext.Patient)" EntitySet="TablePatient" m:HttpMethod="GET">
+          <Parameter Name="pesel" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetRole" ReturnType="Collection(WcfService.DbContext.Role)" EntitySet="TableRole" m:HttpMethod="GET">
+          <Parameter Name="role" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="GetUserRole" ReturnType="Collection(WcfService.DbContext.Role)" EntitySet="TableRole" m:HttpMethod="GET">
+          <Parameter Name="userId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="GetPatientMeasures" ReturnType="Collection(WcfService.DbContext.LifeFuncMeasure)" EntitySet="TableLifeFuncMeasure" m:HttpMethod="GET">
+          <Parameter Name="pesel" Type="Edm.String" />
         </FunctionImport>
         <FunctionImport Name="GetSymptom" ReturnType="Collection(WcfService.DbContext.Symptom)" EntitySet="TableSymptom" m:HttpMethod="GET" />
         <FunctionImport Name="GetQuestion" ReturnType="Collection(WcfService.DbContext.Question)" EntitySet="TableQuestion" m:HttpMethod="GET" />
