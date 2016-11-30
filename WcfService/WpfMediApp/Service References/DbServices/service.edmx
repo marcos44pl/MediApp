@@ -60,6 +60,7 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Date" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
         <Property Name="PatientId" Type="Edm.Int32" Nullable="false" />
         <Property Name="IllnessId" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Illness" Relationship="WcfService.DbContext.PatientWasSick_Illness" ToRole="PatientWasSick_Illness_Target" FromRole="PatientWasSick_Illness_Source" />

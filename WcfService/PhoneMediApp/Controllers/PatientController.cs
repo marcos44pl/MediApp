@@ -15,9 +15,8 @@ namespace PhoneMediApp.Controllers
             WcfRestController<Patient> cont = new WcfRestController<Patient>();
             WcfRestController<LifeFuncMeasure> contMeas = new WcfRestController<LifeFuncMeasure> ();
             List<Patient> list = await cont.getObjects(WcfConfig.getPatient(pesel));
-            measure.Patient = list.FirstOrDefault();
+            measure.PatientId = list.First().Id;
             await contMeas.insertObject(measure, WcfConfig.TableMeasure);
         }
-
     }
 }
