@@ -16,13 +16,15 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label>Nazwa:</Label>
-        <TextBox Name="TBIllness" Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="1">Data:</Label>
-        <DatePicker Height="25" Name="datePicker1" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="0,0,209,0">
+        <TextBox Name="TBIllness" Grid.Column="1" Margin="0,5" />
+        <Label Grid.Row="1" Margin="0,3,0,50">Data:</Label>
+        <DatePicker Height="25" Name="datePicker1" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="0,5,209,0">
             <DatePicker.Background>
                 <ImageBrush/>
             </DatePicker.Background>
         </DatePicker>
         <Button x:Name="button" Content="Zapisz" Grid.Column="1" HorizontalAlignment="Left" Margin="221,288,0,-259" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Label Grid.Row="1" Margin="0,35,0,24" Content="Opis:" RenderTransformOrigin="0.5,2.148"/>
+        <TextBox x:Name="TBDesc" Grid.Column="1" HorizontalAlignment="Left" Height="101" Margin="0,39,0,-72" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="324"/>
     </Grid>
 </Window>

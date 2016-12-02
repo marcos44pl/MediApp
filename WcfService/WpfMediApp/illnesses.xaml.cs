@@ -41,7 +41,7 @@ namespace WpfMediApp
                 {
                     myIllnesses.Add(new Illness
                     (
-                       i.Illness.Name, i.Date
+                       i.Illness.Name, i.Date, i.Description
                     ));
                 }
                 downloadedIllnesses = true;

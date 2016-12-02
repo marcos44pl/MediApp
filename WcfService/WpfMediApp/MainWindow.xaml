@@ -14,7 +14,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="background.jpg"/>
         </Grid.Background>
-        <Menu x:Name="menu1" HorizontalAlignment="Left" Height="650" Margin="79,10,0,0" VerticalAlignment="Top" Width="800" Background="Black" Opacity="0.75" Grid.ColumnSpan="2">
+        <Canvas x:Name="menu1" HorizontalAlignment="Left" Height="650" Margin="79,10,0,0" VerticalAlignment="Top" Width="800" Background="Black" Opacity="0.75" Grid.ColumnSpan="2">
             <Grid Height="749" Width="1006">
                 <Label x:Name="label" Content="MediApp" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Width="280" Height="102" FontSize="80" FontFamily="Gabriola" RenderTransformOrigin="0.65,1.127" Foreground="White" Opacity="0.8" FlowDirection="RightToLeft" Margin="430,543,0,0"/>
                 <Button x:Name="button4" Content="WPROWADŹ OBJAWY" Background="#00BB0000" Click="button4_Click" FontSize="34.667" FontFamily="Yu Gothic UI Light" FontWeight="Bold" Margin="10,454,0,175" Height="120" BorderBrush="#00707070" Foreground="White" HorizontalAlignment="Left"/>
@@ -24,7 +24,7 @@
                 <Button x:Name="button1" Content="LISTA CHORÓB" Click="button1_Click" FontSize="34.667" FontFamily="Yu Gothic UI Light" Margin="10,58,0,571" Background="#00000000" Foreground="White" Opacity="0.8" IsCancel="True" BorderBrush="#00707070" HorizontalAlignment="Left"/>
                 <Button x:Name="login_button" x:FieldModifier="public" Content="Zaloguj się" Click="button5_Click" FontSize="29.333" FontFamily="Yu Gothic UI Light" Background="#00000000" Foreground="White" Opacity="0.8" IsCancel="True" BorderBrush="#00707070" HorizontalAlignment="Left" Margin="618,0,0,682" Width="170" Visibility="{Binding Path=ButtonVisible}"/>
             </Grid>
-        </Menu>
+        </Canvas>
 
     </Grid>
 </Window>

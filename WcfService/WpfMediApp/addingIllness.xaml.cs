@@ -36,7 +36,7 @@ namespace WpfMediApp
                 int month = int.Parse(datePicker1.Text.Substring(3, 2));
                 int year = int.Parse(datePicker1.Text.Substring(6, 4));
                 DateTime dt = new DateTime(year, month, day);
-                Illness illness = new Illness(TBIllness.Text, dt);
+                Illness illness = new Illness(TBIllness.Text, dt, TBDesc.Text);
                 if (illnesses.myIllnesses == null)
                 {
                     illnesses.myIllnesses = new List<Illness>();
@@ -63,7 +63,8 @@ namespace WpfMediApp
                         Date = illness.Date,
                         Illness = ilnessDb,
                         IllnessId = ilnessDb.Id,
-                        PatientId = patientDb.First().Id
+                        PatientId = patientDb.First().Id,
+                        Description = illness.Description
                     };
                     db.AddToTablePatientWasSick(pWasSick);
                     db.SetLink(pWasSick, "Illness", ilnessDb);
