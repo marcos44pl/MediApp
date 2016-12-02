@@ -288,6 +288,7 @@
     <Content Include="Views\Medic\PatientDetails.cshtml" />
     <Content Include="Views\Medic\PatientsIlnessPartial.cshtml" />
     <Content Include="Views\Medic\CreateIllness.cshtml" />
+    <Content Include="Views\Medic\MeasuresPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\App_Data\" />

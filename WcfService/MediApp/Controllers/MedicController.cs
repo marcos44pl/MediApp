@@ -30,6 +30,12 @@ namespace MediApp.Controllers
             return View(WcfController.getPatient(id));
         }
         [MediAuthorize(Roles = RolesKind.MEDIC)]
+        public ActionResult MeasuresPartial(int id)
+        {
+            ViewBag.Message = "Pomiary pacjenta:";
+            return PartialView(WcfController.getMeasures(id));
+        }
+        [MediAuthorize(Roles = RolesKind.MEDIC)]
         public ActionResult PatientsIlnessPartial(int id)
         {
             ViewBag.Message = "Choroby pacjenta:";

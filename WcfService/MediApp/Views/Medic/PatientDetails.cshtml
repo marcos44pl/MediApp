@@ -83,6 +83,8 @@
 )
 </p>
 
+@{ Html.RenderAction("MeasuresPartial", Model.Id); }
+
 <p>
     @Html.ActionLink("Powrót do listy", "Patients")
 </p>

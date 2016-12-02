@@ -164,6 +164,29 @@ namespace MediApp.Controllers
 
             return models.AsEnumerable();
         }
+
+        public static IEnumerable<DbServices.LifeFuncMeasure> getMeasures(int id)
+        {
+            var measures = db.TableLifeFuncMeasure.Where(m => m.PatientId == id);
+
+           // var list = new List<LifeFuncMeasure>();
+
+          /*  foreach (var it in measures)
+            {
+                list.Add(new LifeFuncMeasure
+                {
+                    Date = it.Date,
+                    HighPressure = it.HighPressure,
+                    LowPressure = it.LowPressure,
+                    Id = it.Id,
+                    Pulse = it.Pulse,
+                    Temp = it.Temp
+                });
+            }*/
+
+            return measures.AsEnumerable();
+        }
+
         public static List<PatientFull> getAllPatients()
         {
             var patients = db.TablePatient.ToList();
