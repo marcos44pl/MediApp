@@ -43,8 +43,8 @@ namespace WpfMediApp
                 }
                 if (UserPersister.User != null)
                 {
+                    var patientDb = db.TablePatient.Where(i => i.Pesel == UserPersister.User.Pesel);
                     var illDb = db.TableIllness.Where(i => i.Name == illness.Name).ToList();
-
                     var ilnessDb = new DbServices.Illness();
 
                     if (illDb.Count == 0)
@@ -63,7 +63,7 @@ namespace WpfMediApp
                         Date = illness.Date,
                         Illness = ilnessDb,
                         IllnessId = ilnessDb.Id,
-                        PatientId = UserPersister.User.Id
+                        PatientId = patientDb.First().Id
                     };
                     db.AddToTablePatientWasSick(pWasSick);
                     db.SetLink(pWasSick, "Illness", ilnessDb);

@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMediApp"
         mc:Ignorable="d"
-        Title="Historia chorób" Height="400" Width="300">
+        Title="Historia chorób" Height="350" Width="300">
     <Grid Margin="0,0,-8,-31">
         <ItemsControl Name="illList">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Margin="10" Text="{Binding Text}" />
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <TextBox Margin="10" Text="{Binding Text}"/>
+                    </ScrollViewer>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
