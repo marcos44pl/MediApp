@@ -13,14 +13,5 @@ namespace MediApp.Models
         public bool IsPatient { get; set; }
     }
 
-    public class IllnessModel
-    {
-        public int                    IdPatient { get; set; }
-        [Display(Name = "Nazwa: ")]
-        public string                 Name { get; set; }
-        [Display(Name = "Opis choroby: ")]
-        public string                 Description { get; set; }
-        [Display(Name = "Data: ")]
-        public DateTime               Date { get; set; }
-    }
+
 }

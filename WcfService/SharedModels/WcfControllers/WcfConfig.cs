@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace WcfControllers
+namespace ComunicationControllers
 {
     public class WcfConfig
     {
@@ -35,6 +35,19 @@ namespace WcfControllers
             return (string.Format("GetUserRole?userid={0}", id));
 
         }
+    }
+
+    public class WebApiConfig
+    {
+        public static int WebApiPort = 5335;
+        public static string WebApiName = "api";
+        public static string WebApiAdress = string.Format(@"http://localhost:{0}/{1}/", WebApiPort, WebApiName);
+        public static string IllnessControllerName = "Illness";
+        public static string GetIlnness(int id)
+        {
+            return WebApiAdress + IllnessControllerName + string.Format(@"/{0}", id);
+        }
+
     }
 
 }

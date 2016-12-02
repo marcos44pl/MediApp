@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using EntityModels;
-using WcfControllers;
+using ComunicationControllers;
 
 namespace MediApp.Security
 {

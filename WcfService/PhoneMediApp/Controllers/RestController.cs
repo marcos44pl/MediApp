@@ -4,14 +4,14 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using WcfControllers;
+using ComunicationControllers;
 using System.Net.Http;
 using System.Text;
 using Windows.UI.Popups;
 
 namespace PhoneMediApp.Controllers
 {
-    public class WcfRestController<T>
+    public class RestController<T>
     {
         internal class ODataResponse<Y>
         {
@@ -25,6 +25,34 @@ namespace PhoneMediApp.Controllers
             [JsonProperty("odata.metadata")]
             public string Metadata { get; set; }
             public Y Value { get; set; }
+        }
+        public async Task<IEnumerable<T>> getObjectsApi(string uri)
+        {
+            try
+            {
+                HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+                request.Accept = "application/json";
+                using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception(String.Format(
+                        "Server error (HTTP {0}: {1}).",
+                        response.StatusCode,
+                        response.StatusDescription));
+
+                    var resStream = response.GetResponseStream();
+                    var stri = new StreamReader(resStream);
+                    var json = stri.ReadToEnd();
+                    var result = JsonConvert.DeserializeObject<IEnumerable<T>>(json);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msg = new MessageDialog(ex.Message);
+                await msg.ShowAsync();
+            }
+            return new List<T>();
         }
 
         public async Task<List<T>> getObjects(string uri)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityModels;
-using WcfControllers;
+using ComunicationControllers;
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
@@ -16,7 +16,7 @@ namespace PhoneMediApp.Controllers
     {
         static public async Task<bool> authenticateUser(string email,string password)
         {
-            WcfRestController<User> controller = new WcfRestController<User>();
+            RestController<User> controller = new RestController<User>();
             var list = await controller.getObjects(WcfConfig.getUserUrl(email));
 
             if (list.Count == 0)
@@ -40,14 +40,14 @@ namespace PhoneMediApp.Controllers
 
         static public async Task<bool> createUser(User user, string password)
         {
-            WcfRestController<User> userController = new WcfRestController<User>();
+            RestController<User> userController = new RestController<User>();
              var list = await userController.getObjects(WcfConfig.getUserUrl(user.Email));
 
             if (list.Count != 0)
                 return false;
 
-            WcfRestController<Role> roleController = new WcfRestController<Role>();
-            WcfRestController<Patient> patientController = new WcfRestController<Patient> ();
+            RestController<Role> roleController = new RestController<Role>();
+            RestController<Patient> patientController = new RestController<Patient> ();
 
             List<Role> roles = await roleController.getObjects(WcfConfig.getRole(RolesKind.PATIENT));
             user.Roles = roles;

@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using WcfControllers;
+using ComunicationControllers;
 using System.ComponentModel.DataAnnotations;
 
 namespace MediApp.Models

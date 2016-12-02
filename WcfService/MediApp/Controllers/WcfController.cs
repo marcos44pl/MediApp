@@ -4,7 +4,7 @@ using System.Data.Services.Client;
 using System.Linq;
 using System.Web;
 using EntityModels;
-using WcfControllers;
+using ComunicationControllers;
 using MediApp.Models;
 namespace MediApp.Controllers
 {   
@@ -146,14 +146,15 @@ namespace MediApp.Controllers
             };
             return pFull;
         }
-        public static IEnumerable<IllnessModel> getIllness(int id)
+        public static IEnumerable<SharedModels.IllnessModel> getIllness(int id)
         {
             var illness = db.TablePatientWasSick.Expand("Illness,Illness").Where(i => i.PatientId == id);
 
-            List<IllnessModel> models = new List<IllnessModel>();
+            var models = new List<SharedModels.IllnessModel>();
             foreach(var i in illness)
             {
-                models.Add(new IllnessModel {
+                models.Add(new SharedModels.IllnessModel
+                {
                     Date = i.Date,
                     Description = i.Description,
                     Name = i.Illness.Name,
@@ -163,6 +164,29 @@ namespace MediApp.Controllers
 
             return models.AsEnumerable();
         }
+
+        public static IEnumerable<DbServices.LifeFuncMeasure> getMeasures(int id)
+        {
+            var measures = db.TableLifeFuncMeasure.Where(m => m.PatientId == id);
+
+           // var list = new List<LifeFuncMeasure>();
+
+          /*  foreach (var it in measures)
+            {
+                list.Add(new LifeFuncMeasure
+                {
+                    Date = it.Date,
+                    HighPressure = it.HighPressure,
+                    LowPressure = it.LowPressure,
+                    Id = it.Id,
+                    Pulse = it.Pulse,
+                    Temp = it.Temp
+                });
+            }*/
+
+            return measures.AsEnumerable();
+        }
+
         public static List<PatientFull> getAllPatients()
         {
             var patients = db.TablePatient.ToList();
@@ -188,7 +212,7 @@ namespace MediApp.Controllers
             }
             return all;
         }
-        public static void addIlnnessToDb(IllnessModel illness)
+        public static void addIlnnessToDb(SharedModels.IllnessModel illness)
         {
             var illDb = db.TableIllness.Where(i => i.Name == illness.Name).ToList();
 

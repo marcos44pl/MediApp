@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MediApp.DbServices.LifeFuncMeasure>
+
+<h4>Pomiary Pacjenta</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            Temperatura
+        </th>
+        <th>
+            Dolne ciśnienie
+        </th>
+        <th>
+            Górne ciśnienie
+        </th>
+        <th>
+            Puls
+        </th>
+        <th>
+            Data pomiaru
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Temp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LowPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pulse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+    </tr>
+}
+</table>

@@ -30,6 +30,12 @@ namespace MediApp.Controllers
             return View(WcfController.getPatient(id));
         }
         [MediAuthorize(Roles = RolesKind.MEDIC)]
+        public ActionResult MeasuresPartial(int id)
+        {
+            ViewBag.Message = "Pomiary pacjenta:";
+            return PartialView(WcfController.getMeasures(id));
+        }
+        [MediAuthorize(Roles = RolesKind.MEDIC)]
         public ActionResult PatientsIlnessPartial(int id)
         {
             ViewBag.Message = "Choroby pacjenta:";
@@ -38,11 +44,11 @@ namespace MediApp.Controllers
         [MediAuthorize(Roles = RolesKind.MEDIC)]
         public ActionResult CreateIllness(int id)
         {
-            IllnessModel model = new IllnessModel { IdPatient = id };
+            var model = new SharedModels.IllnessModel { IdPatient = id };
             return View(model);
         }
         [MediAuthorize(Roles = RolesKind.MEDIC)]
-        public ActionResult CreateIllnessResult(IllnessModel illModel)
+        public ActionResult CreateIllnessResult(SharedModels.IllnessModel illModel)
         {
             illModel.Date = DateTime.Now;
           //  illModel.IdPatient = id;

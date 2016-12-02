@@ -199,6 +199,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DiseasesController.cs" />
+    <Compile Include="Controllers\IllnessController.cs" />
     <Compile Include="Controllers\MedicController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
@@ -287,6 +288,7 @@
     <Content Include="Views\Medic\PatientDetails.cshtml" />
     <Content Include="Views\Medic\PatientsIlnessPartial.cshtml" />
     <Content Include="Views\Medic\CreateIllness.cshtml" />
+    <Content Include="Views\Medic\MeasuresPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\App_Data\" />

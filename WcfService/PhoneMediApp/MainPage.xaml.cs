@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using PhoneMediApp.Views;
 using EntityModels;
+using SharedModels;
 // The Pivot Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
 
 namespace PhoneMediApp
@@ -27,7 +28,6 @@ namespace PhoneMediApp
     public sealed partial class MainPage : Page
     {
         private readonly string MeasurePivot =   "pomiar";
-        private readonly string InterviewPivot = "badanie";
         private readonly string IllnessPivot =   "choroby";
 
         private readonly NavigationHelper navigationHelper;
@@ -114,14 +114,26 @@ namespace PhoneMediApp
                 throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
             }
         }
-
+        private void Illness_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // Navigate to the appropriate destination page, configuring the new page
+            // by passing required information as a navigation parameter
+            var itemId = ((IllnessModel)e.ClickedItem).Date;
+            if (!Frame.Navigate(typeof(IllnessDetailsPage), itemId))
+            {
+                throw new Exception(this.resourceLoader.GetString("NavigationFailedExceptionMessage"));
+            }
+        }
         /// <summary>
         /// Loads the content for the second pivot item when it is scrolled into view.
         /// </summary>
-        private void SecondPivot_Loaded(object sender, RoutedEventArgs e)
+        private async void choroby_Loaded(object sender, RoutedEventArgs e)
         {
-
+            var historyData = await DataSources.GetHistoryAsync();
+            modelManager[IllnessPivot] = historyData;
+            Choroby.ItemsSource = historyData;
         }
+
 
         #region NavigationHelper registration
 
@@ -149,5 +161,6 @@ namespace PhoneMediApp
         }
 
         #endregion
+
     }
 }
