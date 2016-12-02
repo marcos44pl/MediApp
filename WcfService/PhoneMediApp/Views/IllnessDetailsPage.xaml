@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="PhoneMediApp.Views.IllnessDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneMediApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock Text="Data:" FontSize="30" Margin="83,257,248,328"/>
+        <TextBlock Text="Nazwa:" FontSize="30" Margin="59,184,248,403"/>
+        <TextBlock Text="Opis choroby:" FontSize="30" Margin="104,366,106,227"/>
+        <TextBlock x:Name="name" HorizontalAlignment="Left" Margin="189,184,0,0" TextWrapping="Wrap"  FontSize="30"  FontWeight="Bold"  VerticalAlignment="Top" Height="37" Width="169"/>
+        <TextBlock x:Name="date" Text="" FontSize="30" Margin="189,257,42,336"/>
+
+        <AppBarButton  x:Name="button" Icon="Back" Margin="-11,27,0,0" Click="button_Click"/>
+        <TextBlock x:Name="decription" HorizontalAlignment="Left" TextAlignment="Justify" Margin="59,418,0,0" TextWrapping="Wrap"  FontSize="22"  VerticalAlignment="Top" Height="185" Width="299"/>
+    </Grid>
+</Page>

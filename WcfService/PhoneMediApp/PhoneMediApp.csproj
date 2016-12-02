@@ -98,6 +98,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\IllnessDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MeasurePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,7 +136,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\WcfRestController.cs" />
+    <Compile Include="Controllers\RestController.cs" />
+    <Compile Include="Views\IllnessDetailsPage.xaml.cs">
+      <DependentUpon>IllnessDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MeasurePage.xaml.cs">
       <DependentUpon>MeasurePage.xaml</DependentUpon>
     </Compile>

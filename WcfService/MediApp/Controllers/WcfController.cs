@@ -4,7 +4,7 @@ using System.Data.Services.Client;
 using System.Linq;
 using System.Web;
 using EntityModels;
-using WcfControllers;
+using ComunicationControllers;
 using MediApp.Models;
 namespace MediApp.Controllers
 {   
@@ -146,14 +146,15 @@ namespace MediApp.Controllers
             };
             return pFull;
         }
-        public static IEnumerable<IllnessModel> getIllness(int id)
+        public static IEnumerable<SharedModels.IllnessModel> getIllness(int id)
         {
             var illness = db.TablePatientWasSick.Expand("Illness,Illness").Where(i => i.PatientId == id);
 
-            List<IllnessModel> models = new List<IllnessModel>();
+            var models = new List<SharedModels.IllnessModel>();
             foreach(var i in illness)
             {
-                models.Add(new IllnessModel {
+                models.Add(new SharedModels.IllnessModel
+                {
                     Date = i.Date,
                     Description = i.Description,
                     Name = i.Illness.Name,
@@ -188,7 +189,7 @@ namespace MediApp.Controllers
             }
             return all;
         }
-        public static void addIlnnessToDb(IllnessModel illness)
+        public static void addIlnnessToDb(SharedModels.IllnessModel illness)
         {
             var illDb = db.TableIllness.Where(i => i.Name == illness.Name).ToList();
 
