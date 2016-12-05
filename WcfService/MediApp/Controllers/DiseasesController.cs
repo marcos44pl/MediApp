@@ -1,4 +1,7 @@
-﻿using MediApp.Models;
+﻿using ComunicationControllers;
+using EntityModels;
+using MediApp.Models;
+using MediApp.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,7 @@ namespace MediApp.Controllers
 {
     public class DiseasesController : Controller
     {
+        static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
         // GET: Diseases
         public ActionResult Index()
         {
@@ -36,7 +40,17 @@ namespace MediApp.Controllers
         public ActionResult DiseasesHistory()
         {
             ViewBag.Message = "Historia przebytych chorób";
+
             return View();
+        }
+
+        [MediAuthorize(Roles = RolesKind.PATIENT)]
+        public ActionResult Illnesses()
+        {
+            ViewBag.Message = "Historia chorób";
+            var pat = db.TablePatient.Where(e => e.Pesel == SessionPersister.User.Pesel);
+            int id = pat.First().Id;
+            return View(WcfController.getIllness(id).AsEnumerable());
         }
     }
 }

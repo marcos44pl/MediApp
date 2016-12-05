@@ -11,13 +11,15 @@ namespace WpfMediApp
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
+        public string Description { get; set; }
         public string Text { get; set; }
 
-        public Illness(string a, DateTime b)
+        public Illness(string name, DateTime date, string descrip)
         {
-            Name = a;
-            Date = b;
-            Text = "Choroba \nnazwa: " + a.ToString() + "\npoczątek choroby: " + b.ToLongDateString();
+            Name = name;
+            Date = date;
+            Description = descrip;
+            Text = "Choroba \nnazwa: " + name.ToString() + "\npoczątek choroby: " + date.ToLongDateString() + "\nopis: " + descrip;
         }
     }
 }
