@@ -11,18 +11,18 @@ namespace MediApp.Models
 {
     public class SurveyModel : IEnumerable
     {
-       static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
+        static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
 
         [Required]
         public List<Response> responses { get; set; }
 
         public SurveyModel()
-        {    }
+        { }
 
         public SurveyModel(List<Response> pArray)
         {
-           responses = new List<Response>();
-           responses = pArray;
+            responses = new List<Response>();
+            responses = pArray;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -93,9 +93,21 @@ namespace MediApp.Models
 
     public class DiseasesHistoryModel
     {
-        public string Disease { get; set; }
-        public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
+        static DbServices.PatientsContext db = new DbServices.PatientsContext(WcfConfig.WcfUri);
+        public List<Illness> diseases { get; set; }
         public string Medicine { get; set; }
+
+        public DiseasesHistoryModel() { }
+                
+    }
+    public class IllnessFull
+    {
+        public int Id { get; set; }
+        [Display(Name = "Nazwa choroby: ")]
+        public string Name { get; set; }
+        [Display(Name = "Data rozpoczęcia: ")]
+        public DateTime Date { get; set; }
+        [Display(Name = "Opis: ")]
+        public string Description { get; set; }
     }
 }

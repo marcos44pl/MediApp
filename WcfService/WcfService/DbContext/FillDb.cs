@@ -53,13 +53,13 @@ namespace WcfService.DbContext
 
                     db.SaveChanges();
 
-                    Illness i1 = new Illness { Name = "Grypa" };
-                    Illness i2 = new Illness { Name = "Astma" };
-                    Illness i3 = new Illness { Name = "Angina" };
-                    Illness i4 = new Illness { Name = "Nieżyt nosa" };
-                    Illness i5 = new Illness { Name = "Przewlekłe zapalenie krtani" };
-                    Illness i6 = new Illness { Name = "Zapalenie oskrzeli" };
-                    Illness i7 = new Illness { Name = "Katar sienny" };
+                    Illness i1 = new Illness { Name = "Grypa", Date = new DateTime(2015, 10, 9), Description = "grypa" };
+                    Illness i2 = new Illness { Name = "Astma", Date = new DateTime(2016, 11, 19), Description = "astma" };
+                    Illness i3 = new Illness { Name = "Angina", Date = new DateTime(2015, 1, 30), Description = "angina" };
+                    Illness i4 = new Illness { Name = "Nieżyt nosa", Date = new DateTime(2015, 2, 3), Description = "katar" };
+                    Illness i5 = new Illness { Name = "Przewlekłe zapalenie krtani", Date = new DateTime(2015, 3, 5), Description = "krtań" };
+                    Illness i6 = new Illness { Name = "Zapalenie oskrzeli", Date = new DateTime(2015, 1, 1), Description = "oskrzela" };
+                    Illness i7 = new Illness { Name = "Katar sienny", Date = new DateTime(2015, 7, 24), Description = "katar" };
 
                     var illness = db.Set<Illness>();
                     illness.Add(i1);
