@@ -41,16 +41,16 @@ namespace MediApp.Controllers
         {
             ViewBag.Message = "Historia przebytych chorób";
 
-            return View();
+            return View(new IllnessFull());
         }
 
         [MediAuthorize(Roles = RolesKind.PATIENT)]
-        public ActionResult Illnesses()
+        public ActionResult Illnesses(int id)
         {
             ViewBag.Message = "Historia chorób";
-            var pat = db.TablePatient.Where(e => e.Pesel == SessionPersister.User.Pesel);
-            int id = pat.First().Id;
-            return View(WcfController.getIllness(id).AsEnumerable());
+            //var pat = db.TablePatient.Where(e => e.Pesel == SessionPersister.User.Pesel);
+            //int id = pat.First().Id;
+            return View(WcfController.getIllnesses(id).AsEnumerable());
         }
     }
 }

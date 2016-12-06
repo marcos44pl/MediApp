@@ -22,7 +22,22 @@ namespace MediApp.Models
         public SurveyModel(List<Response> pArray)
         {
             responses = new List<Response>();
-            responses = pArray;
+            if (!checkIfNotEmpty(pArray))
+            {
+                responses = pArray;
+            }           
+        }
+
+        public bool checkIfNotEmpty(List<Response> pArray)
+        {
+            foreach (Response r in pArray)
+            {
+                if (r.Question == null || r.Question.Content == null)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -109,5 +124,6 @@ namespace MediApp.Models
         public DateTime Date { get; set; }
         [Display(Name = "Opis: ")]
         public string Description { get; set; }
+        public int PatientId { get; set; }
     }
 }

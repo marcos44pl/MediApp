@@ -1,4 +1,4 @@
-﻿@model MediApp.Models.IllnessFull
+﻿@model IEnumerable<MediApp.Models.IllnessFull>
 
 @{
     ViewBag.Title = "Historia chorób";
@@ -17,5 +17,20 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
+        <th></th>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+        </tr>
+    }
 </table>

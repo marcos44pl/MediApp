@@ -9,9 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 28.11.2016 17:48:41
-using System.Collections.Generic; 
-using EntityModels; 
+// Generation date: 05.12.2016 15:58:52
 namespace MediApp.DbServices
 {
     
@@ -326,158 +324,160 @@ namespace MediApp.DbServices
                 "ame=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" x" +
                 "mlns:p6=\"http://schemas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Na" +
                 "me=\"Name\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /" +
-                "></EntityType><EntityType Name=\"IllnessHasSymptom\"><Key><PropertyRef Name=\"Illne" +
-                "ssHasSymptomId\" /></Key><Property Name=\"IllnessHasSymptomId\" Type=\"Edm.Int32\" Nu" +
-                "llable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.micr" +
-                "osoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Priority\" Type=\"Edm.Int3" +
-                "2\" Nullable=\"false\" /><Property Name=\"IllnessId\" Type=\"Edm.Int32\" Nullable=\"fals" +
-                "e\" /><Property Name=\"SymptomId\" Type=\"Edm.Int32\" Nullable=\"false\" /><NavigationP" +
-                "roperty Name=\"Illness\" Relationship=\"WcfService.DbContext.IllnessHasSymptom_Illn" +
-                "ess\" ToRole=\"IllnessHasSymptom_Illness_Target\" FromRole=\"IllnessHasSymptom_Illne" +
-                "ss_Source\" /><NavigationProperty Name=\"Symptom\" Relationship=\"WcfService.DbConte" +
-                "xt.IllnessHasSymptom_Symptom\" ToRole=\"IllnessHasSymptom_Symptom_Target\" FromRole" +
-                "=\"IllnessHasSymptom_Symptom_Source\" /></EntityType><EntityType Name=\"Symptom\"><K" +
-                "ey><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=" +
-                "\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsoft.c" +
-                "om/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Type=\"Edm.String\" MaxLeng" +
-                "th=\"Max\" FixedLength=\"false\" Unicode=\"true\" /></EntityType><EntityType Name=\"Lif" +
-                "eFuncMeasure\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm." +
-                "Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://sch" +
-                "emas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Temp\" Type=\"Edm" +
-                ".Double\" Nullable=\"false\" /><Property Name=\"LowPressure\" Type=\"Edm.Int32\" Nullab" +
-                "le=\"false\" /><Property Name=\"HighPressure\" Type=\"Edm.Int32\" Nullable=\"false\" /><" +
-                "Property Name=\"Pulse\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Date\" " +
-                "Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"PatientId\" Type=\"Edm.Int3" +
-                "2\" Nullable=\"false\" /><NavigationProperty Name=\"Patient\" Relationship=\"WcfServic" +
-                "e.DbContext.LifeFuncMeasure_Patient\" ToRole=\"LifeFuncMeasure_Patient_Target\" Fro" +
-                "mRole=\"LifeFuncMeasure_Patient_Source\" /></EntityType><EntityType Name=\"Patient\"" +
-                "><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullab" +
-                "le=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsof" +
-                "t.com/ado/2009/02/edm/annotation\" /><Property Name=\"Pesel\" Type=\"Edm.String\" Max" +
-                "Length=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Sex\" Type=\"Edm" +
-                ".String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"He" +
-                "ight\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"Output\"" +
-                "><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullab" +
-                "le=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsof" +
-                "t.com/ado/2009/02/edm/annotation\" /></EntityType><EntityType Name=\"PatientWasSic" +
-                "k\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Null" +
-                "able=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.micros" +
-                "oft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Date\" Type=\"Edm.DateTime\" " +
-                "Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" MaxLength=\"Max" +
-                "\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"PatientId\" Type=\"Edm.Int3" +
-                "2\" Nullable=\"false\" /><Property Name=\"IllnessId\" Type=\"Edm.Int32\" Nullable=\"fals" +
-                "e\" /><NavigationProperty Name=\"Illness\" Relationship=\"WcfService.DbContext.Patie" +
-                "ntWasSick_Illness\" ToRole=\"PatientWasSick_Illness_Target\" FromRole=\"PatientWasSi" +
-                "ck_Illness_Source\" /><NavigationProperty Name=\"Patient\" Relationship=\"WcfService" +
-                ".DbContext.PatientWasSick_Patient\" ToRole=\"PatientWasSick_Patient_Target\" FromRo" +
-                "le=\"PatientWasSick_Patient_Source\" /></EntityType><EntityType Name=\"Question\"><K" +
-                "ey><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=" +
-                "\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsoft.c" +
-                "om/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Type=\"Edm.String\" MaxLeng" +
-                "th=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Content\" Type=\"Edm" +
-                ".String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /></EntityType><Enti" +
-                "tyType Name=\"Role\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=" +
-                "\"Edm.Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http:" +
-                "//schemas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Type" +
-                "=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><NavigationPr" +
-                "operty Name=\"Users\" Relationship=\"WcfService.DbContext.User_Roles\" ToRole=\"User_" +
-                "Roles_Source\" FromRole=\"User_Roles_Target\" /></EntityType><EntityType Name=\"User" +
+                "><Property Name=\"Description\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"fal" +
+                "se\" Unicode=\"true\" /><Property Name=\"Date\" Type=\"Edm.DateTime\" Nullable=\"false\" " +
+                "/></EntityType><EntityType Name=\"IllnessHasSymptom\"><Key><PropertyRef Name=\"Illn" +
+                "essHasSymptomId\" /></Key><Property Name=\"IllnessHasSymptomId\" Type=\"Edm.Int32\" N" +
+                "ullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.mic" +
+                "rosoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Priority\" Type=\"Edm.Int" +
+                "32\" Nullable=\"false\" /><Property Name=\"IllnessId\" Type=\"Edm.Int32\" Nullable=\"fal" +
+                "se\" /><Property Name=\"SymptomId\" Type=\"Edm.Int32\" Nullable=\"false\" /><Navigation" +
+                "Property Name=\"Illness\" Relationship=\"WcfService.DbContext.IllnessHasSymptom_Ill" +
+                "ness\" ToRole=\"IllnessHasSymptom_Illness_Target\" FromRole=\"IllnessHasSymptom_Illn" +
+                "ess_Source\" /><NavigationProperty Name=\"Symptom\" Relationship=\"WcfService.DbCont" +
+                "ext.IllnessHasSymptom_Symptom\" ToRole=\"IllnessHasSymptom_Symptom_Target\" FromRol" +
+                "e=\"IllnessHasSymptom_Symptom_Source\" /></EntityType><EntityType Name=\"Symptom\"><" +
+                "Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable" +
+                "=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsoft." +
+                "com/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Type=\"Edm.String\" MaxLen" +
+                "gth=\"Max\" FixedLength=\"false\" Unicode=\"true\" /></EntityType><EntityType Name=\"Li" +
+                "feFuncMeasure\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm" +
+                ".Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://sc" +
+                "hemas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Temp\" Type=\"Ed" +
+                "m.Double\" Nullable=\"false\" /><Property Name=\"LowPressure\" Type=\"Edm.Int32\" Nulla" +
+                "ble=\"false\" /><Property Name=\"HighPressure\" Type=\"Edm.Int32\" Nullable=\"false\" />" +
+                "<Property Name=\"Pulse\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Date\"" +
+                " Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"PatientId\" Type=\"Edm.Int" +
+                "32\" Nullable=\"false\" /><NavigationProperty Name=\"Patient\" Relationship=\"WcfServi" +
+                "ce.DbContext.LifeFuncMeasure_Patient\" ToRole=\"LifeFuncMeasure_Patient_Target\" Fr" +
+                "omRole=\"LifeFuncMeasure_Patient_Source\" /></EntityType><EntityType Name=\"Patient" +
                 "\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nulla" +
                 "ble=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microso" +
-                "ft.com/ado/2009/02/edm/annotation\" /><Property Name=\"FstName\" Type=\"Edm.String\" " +
-                "MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Surname\" Ty" +
-                "pe=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property N" +
-                "ame=\"Pesel\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\"" +
-                " /><Property Name=\"Email\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" " +
-                "Unicode=\"true\" /><Property Name=\"Pass\" Type=\"Edm.Binary\" MaxLength=\"Max\" FixedLe" +
-                "ngth=\"false\" /><NavigationProperty Name=\"Roles\" Relationship=\"WcfService.DbConte" +
-                "xt.User_Roles\" ToRole=\"User_Roles_Target\" FromRole=\"User_Roles_Source\" /></Entit" +
-                "yType><Association Name=\"IllnessHasSymptom_Illness\"><End Type=\"WcfService.DbCont" +
-                "ext.Illness\" Role=\"IllnessHasSymptom_Illness_Target\" Multiplicity=\"1\"><OnDelete " +
-                "Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.IllnessHasSymptom\" Role" +
-                "=\"IllnessHasSymptom_Illness_Source\" Multiplicity=\"*\" /><ReferentialConstraint><P" +
-                "rincipal Role=\"IllnessHasSymptom_Illness_Target\"><PropertyRef Name=\"Id\" /></Prin" +
-                "cipal><Dependent Role=\"IllnessHasSymptom_Illness_Source\"><PropertyRef Name=\"Illn" +
-                "essId\" /></Dependent></ReferentialConstraint></Association><Association Name=\"Il" +
-                "lnessHasSymptom_Symptom\"><End Type=\"WcfService.DbContext.Symptom\" Role=\"IllnessH" +
-                "asSymptom_Symptom_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><E" +
-                "nd Type=\"WcfService.DbContext.IllnessHasSymptom\" Role=\"IllnessHasSymptom_Symptom" +
-                "_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"IllnessHasSy" +
-                "mptom_Symptom_Target\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"Illn" +
-                "essHasSymptom_Symptom_Source\"><PropertyRef Name=\"SymptomId\" /></Dependent></Refe" +
-                "rentialConstraint></Association><Association Name=\"LifeFuncMeasure_Patient\"><End" +
-                " Type=\"WcfService.DbContext.Patient\" Role=\"LifeFuncMeasure_Patient_Target\" Multi" +
-                "plicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.L" +
-                "ifeFuncMeasure\" Role=\"LifeFuncMeasure_Patient_Source\" Multiplicity=\"*\" /><Refere" +
-                "ntialConstraint><Principal Role=\"LifeFuncMeasure_Patient_Target\"><PropertyRef Na" +
-                "me=\"Id\" /></Principal><Dependent Role=\"LifeFuncMeasure_Patient_Source\"><Property" +
-                "Ref Name=\"PatientId\" /></Dependent></ReferentialConstraint>";
+                "ft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Pesel\" Type=\"Edm.String\" Ma" +
+                "xLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Sex\" Type=\"Ed" +
+                "m.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"H" +
+                "eight\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"Output" +
+                "\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nulla" +
+                "ble=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microso" +
+                "ft.com/ado/2009/02/edm/annotation\" /></EntityType><EntityType Name=\"PatientWasSi" +
+                "ck\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nul" +
+                "lable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.micro" +
+                "soft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Date\" Type=\"Edm.DateTime\"" +
+                " Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" MaxLength=\"Ma" +
+                "x\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"PatientId\" Type=\"Edm.Int" +
+                "32\" Nullable=\"false\" /><Property Name=\"IllnessId\" Type=\"Edm.Int32\" Nullable=\"fal" +
+                "se\" /><NavigationProperty Name=\"Illness\" Relationship=\"WcfService.DbContext.Pati" +
+                "entWasSick_Illness\" ToRole=\"PatientWasSick_Illness_Target\" FromRole=\"PatientWasS" +
+                "ick_Illness_Source\" /><NavigationProperty Name=\"Patient\" Relationship=\"WcfServic" +
+                "e.DbContext.PatientWasSick_Patient\" ToRole=\"PatientWasSick_Patient_Target\" FromR" +
+                "ole=\"PatientWasSick_Patient_Source\" /></EntityType><EntityType Name=\"Question\"><" +
+                "Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable" +
+                "=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.microsoft." +
+                "com/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Type=\"Edm.String\" MaxLen" +
+                "gth=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Content\" Type=\"Ed" +
+                "m.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /></EntityType><Ent" +
+                "ityType Name=\"Role\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type" +
+                "=\"Edm.Int32\" Nullable=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http" +
+                "://schemas.microsoft.com/ado/2009/02/edm/annotation\" /><Property Name=\"Name\" Typ" +
+                "e=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><NavigationP" +
+                "roperty Name=\"Users\" Relationship=\"WcfService.DbContext.User_Roles\" ToRole=\"User" +
+                "_Roles_Source\" FromRole=\"User_Roles_Target\" /></EntityType><EntityType Name=\"Use" +
+                "r\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Null" +
+                "able=\"false\" p6:StoreGeneratedPattern=\"Identity\" xmlns:p6=\"http://schemas.micros" +
+                "oft.com/ado/2009/02/edm/annotation\" /><Property Name=\"FstName\" Type=\"Edm.String\"" +
+                " MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property Name=\"Surname\" T" +
+                "ype=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true\" /><Property " +
+                "Name=\"Pesel\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\" Unicode=\"true" +
+                "\" /><Property Name=\"Email\" Type=\"Edm.String\" MaxLength=\"Max\" FixedLength=\"false\"" +
+                " Unicode=\"true\" /><Property Name=\"Pass\" Type=\"Edm.Binary\" MaxLength=\"Max\" FixedL" +
+                "ength=\"false\" /><NavigationProperty Name=\"Roles\" Relationship=\"WcfService.DbCont" +
+                "ext.User_Roles\" ToRole=\"User_Roles_Target\" FromRole=\"User_Roles_Source\" /></Enti" +
+                "tyType><Association Name=\"IllnessHasSymptom_Illness\"><End Type=\"WcfService.DbCon" +
+                "text.Illness\" Role=\"IllnessHasSymptom_Illness_Target\" Multiplicity=\"1\"><OnDelete" +
+                " Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.IllnessHasSymptom\" Rol" +
+                "e=\"IllnessHasSymptom_Illness_Source\" Multiplicity=\"*\" /><ReferentialConstraint><" +
+                "Principal Role=\"IllnessHasSymptom_Illness_Target\"><PropertyRef Name=\"Id\" /></Pri" +
+                "ncipal><Dependent Role=\"IllnessHasSymptom_Illness_Source\"><PropertyRef Name=\"Ill" +
+                "nessId\" /></Dependent></ReferentialConstraint></Association><Association Name=\"I" +
+                "llnessHasSymptom_Symptom\"><End Type=\"WcfService.DbContext.Symptom\" Role=\"Illness" +
+                "HasSymptom_Symptom_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><" +
+                "End Type=\"WcfService.DbContext.IllnessHasSymptom\" Role=\"IllnessHasSymptom_Sympto" +
+                "m_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"IllnessHasS" +
+                "ymptom_Symptom_Target\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"Ill" +
+                "nessHasSymptom_Symptom_Source\"><PropertyRef Name=\"SymptomId\" /></Dependent></Ref" +
+                "erentialConstraint></Association><Association Name=\"LifeFuncMeasure_Patient\"><En" +
+                "d Type=\"WcfService.DbContext.Patient\" Role=\"LifeFuncMeasure_Patient_Target\" Mult" +
+                "iplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext." +
+                "LifeFuncMeasure\" Role=\"LifeFuncMeasure_Patient_Source\" Multiplicity=\"*\" /><Refer" +
+                "entialConstraint><Principal Role=\"LifeFuncMeasure_Patient_T";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = "</Association><Association Name=\"PatientWasSick_Illness\"><End Type=\"WcfService.Db" +
-                "Context.Illness\" Role=\"PatientWasSick_Illness_Target\" Multiplicity=\"1\"><OnDelete" +
-                " Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.PatientWasSick\" Role=\"" +
-                "PatientWasSick_Illness_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Princi" +
-                "pal Role=\"PatientWasSick_Illness_Target\"><PropertyRef Name=\"Id\" /></Principal><D" +
-                "ependent Role=\"PatientWasSick_Illness_Source\"><PropertyRef Name=\"IllnessId\" /></" +
-                "Dependent></ReferentialConstraint></Association><Association Name=\"PatientWasSic" +
-                "k_Patient\"><End Type=\"WcfService.DbContext.Patient\" Role=\"PatientWasSick_Patient" +
-                "_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfServi" +
-                "ce.DbContext.PatientWasSick\" Role=\"PatientWasSick_Patient_Source\" Multiplicity=\"" +
-                "*\" /><ReferentialConstraint><Principal Role=\"PatientWasSick_Patient_Target\"><Pro" +
-                "pertyRef Name=\"Id\" /></Principal><Dependent Role=\"PatientWasSick_Patient_Source\"" +
-                "><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialConstraint></Associati" +
-                "on><Association Name=\"User_Roles\"><End Type=\"WcfService.DbContext.User\" Role=\"Us" +
-                "er_Roles_Source\" Multiplicity=\"*\" /><End Type=\"WcfService.DbContext.Role\" Role=\"" +
-                "User_Roles_Target\" Multiplicity=\"*\" /></Association><EntityContainer Name=\"Patie" +
-                "ntsContext\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"TableIllness\" Ent" +
-                "ityType=\"WcfService.DbContext.Illness\" /><EntitySet Name=\"TableIllnessHasSymptom" +
-                "\" EntityType=\"WcfService.DbContext.IllnessHasSymptom\" /><EntitySet Name=\"TableSy" +
-                "mptom\" EntityType=\"WcfService.DbContext.Symptom\" /><EntitySet Name=\"TableLifeFun" +
-                "cMeasure\" EntityType=\"WcfService.DbContext.LifeFuncMeasure\" /><EntitySet Name=\"T" +
-                "ablePatient\" EntityType=\"WcfService.DbContext.Patient\" /><EntitySet Name=\"TableO" +
-                "utput\" EntityType=\"WcfService.DbContext.Output\" /><EntitySet Name=\"TablePatientW" +
-                "asSick\" EntityType=\"WcfService.DbContext.PatientWasSick\" /><EntitySet Name=\"Tabl" +
-                "eQuestion\" EntityType=\"WcfService.DbContext.Question\" /><EntitySet Name=\"TableRo" +
-                "le\" EntityType=\"WcfService.DbContext.Role\" /><EntitySet Name=\"TableUser\" EntityT" +
-                "ype=\"WcfService.DbContext.User\" /><FunctionImport Name=\"GetUser\" ReturnType=\"Col" +
-                "lection(WcfService.DbContext.User)\" EntitySet=\"TableUser\" m:HttpMethod=\"GET\"><Pa" +
-                "rameter Name=\"email\" Type=\"Edm.String\" /></FunctionImport><FunctionImport Name=\"" +
-                "GetPatient\" ReturnType=\"Collection(WcfService.DbContext.Patient)\" EntitySet=\"Tab" +
-                "lePatient\" m:HttpMethod=\"GET\"><Parameter Name=\"pesel\" Type=\"Edm.String\" /></Func" +
-                "tionImport><FunctionImport Name=\"GetRole\" ReturnType=\"Collection(WcfService.DbCo" +
-                "ntext.Role)\" EntitySet=\"TableRole\" m:HttpMethod=\"GET\"><Parameter Name=\"role\" Typ" +
-                "e=\"Edm.String\" /></FunctionImport><FunctionImport Name=\"GetUserRole\" ReturnType=" +
-                "\"Collection(WcfService.DbContext.Role)\" EntitySet=\"TableRole\" m:HttpMethod=\"GET\"" +
-                "><Parameter Name=\"userId\" Type=\"Edm.Int32\" Nullable=\"false\" /></FunctionImport><" +
-                "FunctionImport Name=\"GetPatientMeasures\" ReturnType=\"Collection(WcfService.DbCon" +
-                "text.LifeFuncMeasure)\" EntitySet=\"TableLifeFuncMeasure\" m:HttpMethod=\"GET\"><Para" +
-                "meter Name=\"pesel\" Type=\"Edm.String\" /></FunctionImport><FunctionImport Name=\"Ge" +
-                "tSymptom\" ReturnType=\"Collection(WcfService.DbContext.Symptom)\" EntitySet=\"Table" +
-                "Symptom\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"GetQuestion\" ReturnType=\"Col" +
-                "lection(WcfService.DbContext.Question)\" EntitySet=\"TableQuestion\" m:HttpMethod=\"" +
-                "GET\" /><FunctionImport Name=\"GetOutput\" ReturnType=\"Collection(WcfService.DbCont" +
-                "ext.Output)\" EntitySet=\"TableOutput\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"" +
-                "fill\" m:HttpMethod=\"GET\" /><AssociationSet Name=\"IllnessHasSymptom_Illness\" Asso" +
-                "ciation=\"WcfService.DbContext.IllnessHasSymptom_Illness\"><End Role=\"IllnessHasSy" +
-                "mptom_Illness_Source\" EntitySet=\"TableIllnessHasSymptom\" /><End Role=\"IllnessHas" +
-                "Symptom_Illness_Target\" EntitySet=\"TableIllness\" /></AssociationSet><Association" +
-                "Set Name=\"IllnessHasSymptom_Symptom\" Association=\"WcfService.DbContext.IllnessHa" +
-                "sSymptom_Symptom\"><End Role=\"IllnessHasSymptom_Symptom_Source\" EntitySet=\"TableI" +
-                "llnessHasSymptom\" /><End Role=\"IllnessHasSymptom_Symptom_Target\" EntitySet=\"Tabl" +
-                "eSymptom\" /></AssociationSet><AssociationSet Name=\"LifeFuncMeasure_Patient\" Asso" +
-                "ciation=\"WcfService.DbContext.LifeFuncMeasure_Patient\"><End Role=\"LifeFuncMeasur" +
-                "e_Patient_Source\" EntitySet=\"TableLifeFuncMeasure\" /><End Role=\"LifeFuncMeasure_" +
-                "Patient_Target\" EntitySet=\"TablePatient\" /></AssociationSet><AssociationSet Name" +
-                "=\"PatientWasSick_Illness\" Association=\"WcfService.DbContext.PatientWasSick_Illne" +
-                "ss\"><End Role=\"PatientWasSick_Illness_Source\" EntitySet=\"TablePatientWasSick\" />" +
-                "<End Role=\"PatientWasSick_Illness_Target\" EntitySet=\"TableIllness\" /></Associati" +
-                "onSet><AssociationSet Name=\"PatientWasSick_Patient\" Association=\"WcfService.DbCo" +
-                "ntext.PatientWasSick_Patient\"><End Role=\"PatientWasSick_Patient_Source\" EntitySe" +
-                "t=\"TablePatientWasSick\" /><End Role=\"PatientWasSick_Patient_Target\" EntitySet=\"T" +
-                "ablePatient\" /></AssociationSet><AssociationSet Name=\"User_Roles\" Association=\"W" +
-                "cfService.DbContext.User_Roles\"><End Role=\"User_Roles_Target\" EntitySet=\"TableRo" +
-                "le\" /><End Role=\"User_Roles_Source\" EntitySet=\"TableUser\" /></AssociationSet></E" +
-                "ntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+            private const string ModelPart1 = "arget\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"LifeFuncMeasure_Pati" +
+                "ent_Source\"><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialConstraint>" +
+                "</Association><Association Name=\"PatientWasSick_Illness\"><End Type=\"WcfService.D" +
+                "bContext.Illness\" Role=\"PatientWasSick_Illness_Target\" Multiplicity=\"1\"><OnDelet" +
+                "e Action=\"Cascade\" /></End><End Type=\"WcfService.DbContext.PatientWasSick\" Role=" +
+                "\"PatientWasSick_Illness_Source\" Multiplicity=\"*\" /><ReferentialConstraint><Princ" +
+                "ipal Role=\"PatientWasSick_Illness_Target\"><PropertyRef Name=\"Id\" /></Principal><" +
+                "Dependent Role=\"PatientWasSick_Illness_Source\"><PropertyRef Name=\"IllnessId\" /><" +
+                "/Dependent></ReferentialConstraint></Association><Association Name=\"PatientWasSi" +
+                "ck_Patient\"><End Type=\"WcfService.DbContext.Patient\" Role=\"PatientWasSick_Patien" +
+                "t_Target\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Type=\"WcfServ" +
+                "ice.DbContext.PatientWasSick\" Role=\"PatientWasSick_Patient_Source\" Multiplicity=" +
+                "\"*\" /><ReferentialConstraint><Principal Role=\"PatientWasSick_Patient_Target\"><Pr" +
+                "opertyRef Name=\"Id\" /></Principal><Dependent Role=\"PatientWasSick_Patient_Source" +
+                "\"><PropertyRef Name=\"PatientId\" /></Dependent></ReferentialConstraint></Associat" +
+                "ion><Association Name=\"User_Roles\"><End Type=\"WcfService.DbContext.User\" Role=\"U" +
+                "ser_Roles_Source\" Multiplicity=\"*\" /><End Type=\"WcfService.DbContext.Role\" Role=" +
+                "\"User_Roles_Target\" Multiplicity=\"*\" /></Association><EntityContainer Name=\"Pati" +
+                "entsContext\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"TableIllness\" En" +
+                "tityType=\"WcfService.DbContext.Illness\" /><EntitySet Name=\"TableIllnessHasSympto" +
+                "m\" EntityType=\"WcfService.DbContext.IllnessHasSymptom\" /><EntitySet Name=\"TableS" +
+                "ymptom\" EntityType=\"WcfService.DbContext.Symptom\" /><EntitySet Name=\"TableLifeFu" +
+                "ncMeasure\" EntityType=\"WcfService.DbContext.LifeFuncMeasure\" /><EntitySet Name=\"" +
+                "TablePatient\" EntityType=\"WcfService.DbContext.Patient\" /><EntitySet Name=\"Table" +
+                "Output\" EntityType=\"WcfService.DbContext.Output\" /><EntitySet Name=\"TablePatient" +
+                "WasSick\" EntityType=\"WcfService.DbContext.PatientWasSick\" /><EntitySet Name=\"Tab" +
+                "leQuestion\" EntityType=\"WcfService.DbContext.Question\" /><EntitySet Name=\"TableR" +
+                "ole\" EntityType=\"WcfService.DbContext.Role\" /><EntitySet Name=\"TableUser\" Entity" +
+                "Type=\"WcfService.DbContext.User\" /><FunctionImport Name=\"GetUser\" ReturnType=\"Co" +
+                "llection(WcfService.DbContext.User)\" EntitySet=\"TableUser\" m:HttpMethod=\"GET\"><P" +
+                "arameter Name=\"email\" Type=\"Edm.String\" /></FunctionImport><FunctionImport Name=" +
+                "\"GetPatient\" ReturnType=\"Collection(WcfService.DbContext.Patient)\" EntitySet=\"Ta" +
+                "blePatient\" m:HttpMethod=\"GET\"><Parameter Name=\"pesel\" Type=\"Edm.String\" /></Fun" +
+                "ctionImport><FunctionImport Name=\"GetRole\" ReturnType=\"Collection(WcfService.DbC" +
+                "ontext.Role)\" EntitySet=\"TableRole\" m:HttpMethod=\"GET\"><Parameter Name=\"role\" Ty" +
+                "pe=\"Edm.String\" /></FunctionImport><FunctionImport Name=\"GetUserRole\" ReturnType" +
+                "=\"Collection(WcfService.DbContext.Role)\" EntitySet=\"TableRole\" m:HttpMethod=\"GET" +
+                "\"><Parameter Name=\"userId\" Type=\"Edm.Int32\" Nullable=\"false\" /></FunctionImport>" +
+                "<FunctionImport Name=\"GetPatientMeasures\" ReturnType=\"Collection(WcfService.DbCo" +
+                "ntext.LifeFuncMeasure)\" EntitySet=\"TableLifeFuncMeasure\" m:HttpMethod=\"GET\"><Par" +
+                "ameter Name=\"pesel\" Type=\"Edm.String\" /></FunctionImport><FunctionImport Name=\"G" +
+                "etSymptom\" ReturnType=\"Collection(WcfService.DbContext.Symptom)\" EntitySet=\"Tabl" +
+                "eSymptom\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"GetQuestion\" ReturnType=\"Co" +
+                "llection(WcfService.DbContext.Question)\" EntitySet=\"TableQuestion\" m:HttpMethod=" +
+                "\"GET\" /><FunctionImport Name=\"GetOutput\" ReturnType=\"Collection(WcfService.DbCon" +
+                "text.Output)\" EntitySet=\"TableOutput\" m:HttpMethod=\"GET\" /><FunctionImport Name=" +
+                "\"fill\" m:HttpMethod=\"GET\" /><AssociationSet Name=\"IllnessHasSymptom_Illness\" Ass" +
+                "ociation=\"WcfService.DbContext.IllnessHasSymptom_Illness\"><End Role=\"IllnessHasS" +
+                "ymptom_Illness_Source\" EntitySet=\"TableIllnessHasSymptom\" /><End Role=\"IllnessHa" +
+                "sSymptom_Illness_Target\" EntitySet=\"TableIllness\" /></AssociationSet><Associatio" +
+                "nSet Name=\"IllnessHasSymptom_Symptom\" Association=\"WcfService.DbContext.IllnessH" +
+                "asSymptom_Symptom\"><End Role=\"IllnessHasSymptom_Symptom_Source\" EntitySet=\"Table" +
+                "IllnessHasSymptom\" /><End Role=\"IllnessHasSymptom_Symptom_Target\" EntitySet=\"Tab" +
+                "leSymptom\" /></AssociationSet><AssociationSet Name=\"LifeFuncMeasure_Patient\" Ass" +
+                "ociation=\"WcfService.DbContext.LifeFuncMeasure_Patient\"><End Role=\"LifeFuncMeasu" +
+                "re_Patient_Source\" EntitySet=\"TableLifeFuncMeasure\" /><End Role=\"LifeFuncMeasure" +
+                "_Patient_Target\" EntitySet=\"TablePatient\" /></AssociationSet><AssociationSet Nam" +
+                "e=\"PatientWasSick_Illness\" Association=\"WcfService.DbContext.PatientWasSick_Illn" +
+                "ess\"><End Role=\"PatientWasSick_Illness_Source\" EntitySet=\"TablePatientWasSick\" /" +
+                "><End Role=\"PatientWasSick_Illness_Target\" EntitySet=\"TableIllness\" /></Associat" +
+                "ionSet><AssociationSet Name=\"PatientWasSick_Patient\" Association=\"WcfService.DbC" +
+                "ontext.PatientWasSick_Patient\"><End Role=\"PatientWasSick_Patient_Source\" EntityS" +
+                "et=\"TablePatientWasSick\" /><End Role=\"PatientWasSick_Patient_Target\" EntitySet=\"" +
+                "TablePatient\" /></AssociationSet><AssociationSet Name=\"User_Roles\" Association=\"" +
+                "WcfService.DbContext.User_Roles\"><End Role=\"User_Roles_Target\" EntitySet=\"TableR" +
+                "ole\" /><End Role=\"User_Roles_Source\" EntitySet=\"TableUser\" /></AssociationSet></" +
+                "EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -522,11 +522,13 @@ namespace MediApp.DbServices
         /// Create a new Illness object.
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
+        /// <param name="date">Initial value of Date.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Illness CreateIllness(int ID)
+        public static Illness CreateIllness(int ID, global::System.DateTime date)
         {
             Illness illness = new Illness();
             illness.Id = ID;
+            illness.Date = date;
             return illness;
         }
         /// <summary>
@@ -571,6 +573,48 @@ namespace MediApp.DbServices
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Date in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTime Date
+        {
+            get
+            {
+                return this._Date;
+            }
+            set
+            {
+                this.OnDateChanging(value);
+                this._Date = value;
+                this.OnDateChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTime _Date;
+        partial void OnDateChanging(global::System.DateTime value);
+        partial void OnDateChanged();
     }
     /// <summary>
     /// There are no comments for WcfService.DbContext.IllnessHasSymptom in the schema.
@@ -1123,8 +1167,6 @@ namespace MediApp.DbServices
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _Id;
-        internal List<Response> Answer;
-
         partial void OnIdChanging(int value);
         partial void OnIdChanged();
     }
