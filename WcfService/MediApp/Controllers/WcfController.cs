@@ -148,25 +148,6 @@ namespace MediApp.Controllers
             };
             return pFull;
         }
-
-        public static IEnumerable <IllnessFull> getIllnesses(int id)
-        {
-            var illness = db.TablePatientWasSick.Expand("Illness,Illness").Where(i => i.PatientId == id);
-
-            var models = new List<IllnessFull>();
-            foreach (var i in illness)
-            {
-                models.Add(new IllnessFull
-                {
-                    Date = i.Date,
-                    Description = i.Description,
-                    Name = i.Illness.Name,
-                    PatientId = id
-                });
-            }
-            
-            return models.AsEnumerable();
-        }
         public static IEnumerable<SharedModels.IllnessModel> getIllness(int id)
         {
             var illness = db.TablePatientWasSick.Expand("Illness,Illness").Where(i => i.PatientId == id);

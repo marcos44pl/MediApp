@@ -41,7 +41,7 @@ namespace MediApp.Controllers
         {
             ViewBag.Message = "Historia przebytych chorób";
 
-            return View(new IllnessFull());
+            return View(new SharedModels.IllnessModel());
         }
 
         [MediAuthorize(Roles = RolesKind.PATIENT)]
@@ -50,7 +50,8 @@ namespace MediApp.Controllers
             ViewBag.Message = "Historia chorób";
             //var pat = db.TablePatient.Where(e => e.Pesel == SessionPersister.User.Pesel);
             //int id = pat.First().Id;
-            return View(WcfController.getIllnesses(id).AsEnumerable());
+            var model = new SharedModels.IllnessModel { IdPatient = id };
+            return View(model);
         }
     }
 }
